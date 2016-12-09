@@ -1,0 +1,165 @@
+ArchLinux - Install
+
+1.Download Arch-Linux ISO.
+2.Put-Iso-Into-USB
+3.Boot USB
+4.Choose [x86_64] or [i686]
+5.>cfdisk
+6.DELETE ALL [SDA]
+7.Create [SDA]
+******************************
+   /dev/sda1    1GB~4GB
+   /dev/sda2    30%-Disk-Space
+   /dev/sda3    45%~50%-Disk-Space
+   /dev/sda4    2*RAM-SPACE
+******************************
+
+8.Install-File-System
+******************************
+>mkfs.ext4 /dev/sda2
+>mkfs.ext4 /dev/sda3
+>mkswap /dev/sda4
+>swapon /dev/sda4
+>mkfs.ext4 /dev/sda1
+******************************
+
+9.Mount-SDA
+******************************
+>mount /dev/sda2 /mnt
+>mkdir /mnt/{boot,home}
+>mount /dev/sda1 /mnt/boot
+>mount /dev/sda3 /mnt/home
+******************************
+
+10.Change Mirrolist [*IMPORTANT]
+******************************
+>sed -i "s/^\b/#/g" /etc/pacman.d/mirrorlist
+>nano /etc/pacman.d/mirrorlist
+ADD TEXT:
+Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
+USE [Ctrl+X] And Y And [Enter] to save and quit.
+******************************
+
+11.Update source
+******************************
+>pacman -Syy
+******************************
+
+12.Install basic system
+******************************
+>pacstrap -i /mnt base base-devel net-tools
+******************************
+
+13.Fstab
+******************************
+>genfstab -U -p /mnt >> /mnt/etc/fstab
+******************************
+
+14.Basic system setup
+******************************
+>arch-chroot /mnt /bin/bash
+>alias ls='ls --color'
+******************************
+
+15.Set Locale
+******************************
+>nano /etc/locale.gen
+>locale-gen
+>echo LANG=zh_CN.UTF-8 >> locale.conf
+******************************
+
+16.Set Console
+******************************
+>nano /etc/vconsole.conf
+Add text:
+KEYMAP=us
+FONT=
+******************************
+
+17.Set Time Zone
+******************************
+>ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+******************************
+
+18.Set BIOS time
+******************************
+nano /etc/adjtime
+Add Text:
+0.000000 0 0.000000
+0
+LOCAL
+******************************
+
+19.Set LoaclHost-Name
+******************************
+echo [HostsName] > /etc/hostname
+******************************
+
+20.RamDisk
+******************************
+mkinitcpio -p linux
+******************************
+
+21.User setup
+******************************
+>passwd
+>>[Set Password]
+>useradd -m -g users -G wheel -s /bin/bash [UserName]
+>passwd [UserName]
+>>[Set Password]
+******************************
+
+20.Install GRUB
+******************************
+>pacman -S grub-bios 
+>grub-install /dev/sda 
+>grub-mkconfig -o /boot/grub/grub.cfg
+******************************
+
+21.Reboot
+******************************
+>exit
+>umount /mnt/{boot,home}
+>umount /mnt
+>Reboot
+******************************
+
+22.Install Gnome
+******************************
+>ip link set [NET-CARD-NAME] up
+>dhcpcd
+>pacman -Syy
+>pacman -S gnome
+>pacman -S file-roller evolution gedit gnome-music gnome-photos cheese gnome-mplayer
+>pacman -S unrar unzip p7zip
+>pacman -S deepin deepin-extra lightdm
+>pacman -S file-roller evince gedit thunderbird gpicview
+>pacman -S chromium
+******************************
+
+22.Start Service
+******************************
+>pacman -S networkmanager
+>systemctl enable NetworkManager
+>systemctl enable gdm
+>systemctl enable lightdm ***[May Error,Doesn't matter]
+
+******************************
+
+23.Reboot and into Gnome
+******************************
+>reboot
+******************************
+
+24.Change to Chinese
+******************************
+>nano /etc/locale.gen
+REMOVE # before "zh_CN*"
+>locale-gen
+Setting - Langauage - "ÖÐÎÄ"
+>Reboot
+>pacman -S wqy-microhei
+>Reboot
+******************************
+
+

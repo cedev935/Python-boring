@@ -1,0 +1,8 @@
+#!/bin/sh
+dpkg --add-archture i386
+apt-get install -y wine1.9
+export WINEPREFIX=$HOME/.wqq
+wine wineboot -u
+wine regedit $override
+wine qq-inst.exe
+wine start $qq_launch
