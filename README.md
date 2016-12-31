@@ -15,3 +15,5 @@
 **goWiki**: Golang写的markdown解析web服务: [goWiki(LZZ)](https://github.com/lizongzeshunshun/goWiki)
 
 **ETransV2**: Golang文件传输工具: [ETransV2(LZZ)](https://github.com/lizongzeshunshun/ETransV2)
+
+PS：由于网速原因，项目的个人文件在不就的将来将被全部转到某云盘，届时本项目将只留下由技术含量的东西。
