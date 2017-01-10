@@ -2,8 +2,6 @@
 
 **项目集中地，包括E系列和boring-python系列**
 
-**开发已被冻结，直到2017-01-11**
-
 ## Getting Start
 
 **py**: 包含各种小工具，请自行查看: [py](https://github.com/redapple0204/my-boring-python/tree/master/py)
