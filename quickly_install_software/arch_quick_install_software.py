@@ -20,4 +20,10 @@ if choice == "1":
 	print ('请选择')
 choice_qq = input()
 if choice_qq == "1":
-	print ("test")
+	print ('正在下载安装中，请稍等....')
+	fpath = os.getcwd()
+	os.chdir(fpath)
+	deepin_crossover_link = requests.get('http://mirrors.ustc.edu.cn/deepin/pool/non-free/c/crossover-15/crossover-15_15.0.5-1_i386.deb')
+	data = urllib.request.urlopen(deepin_crossover_link).read()
+	with open("deepin_crossover.deb", 'wb') as f:
+	    f.write(data)
