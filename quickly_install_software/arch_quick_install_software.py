@@ -1,6 +1,6 @@
 VERSION="0.1.0-alpha"
 RELEASE_DATE="20170116"
-import os,urllib.request,re,sys,requests
+import os,urllib.request,re,sys,requests,urllib.request
 
 def download( link, savename ):
 	netf = requests.get(link)
@@ -30,9 +30,5 @@ if choice == "1":
 choice_qq = input()
 if choice_qq == "1":
 	print ('正在下载安装中，请稍等....')
-	fpath = os.getcwd()
-	os.chdir(fpath)
-	deepin_crossover_link = requests.get('http://mirrors.ustc.edu.cn/deepin/pool/non-free/c/crossover-15/crossover-15_15.0.5-1_i386.deb')
-	data = urllib.request.urlopen(deepin_crossover_link).read()
-	with open("deepin_crossover.deb", 'wb') as f:
-	    f.write(data)
+	urllib.request.urlretrieve("http://mirrors.ustc.edu.cn/deepin/pool/non-free/c/crossover-15/crossover-15_15.0.5-1_i386.deb", "deepin_crossover.deb")
+	
