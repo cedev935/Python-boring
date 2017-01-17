@@ -3,7 +3,7 @@ RELEASE_DATE="20170116"
 import os,urllib.request,re,sys,requests
 
 def download( link, savename ):
-	netf = requests.get('http://mirrors.ustc.edu.cn/deepin/pool/non-free/c/crossover-15/crossover-15_15.0.5-1_i386.deb')
+	netf = requests.get(link)
 	fdata = urllib.request.urlopen(netf).read()
 	with open(savename, 'wb') as f:
 		f.write(fdata)
