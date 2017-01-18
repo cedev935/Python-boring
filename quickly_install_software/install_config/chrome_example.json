@@ -1,7 +1,7 @@
 {
     "head": {
         "name": "Chrome",
-        "description": "A fast Internat browser.",
+        "description": "A fast Internet browser.",
         "version": "55.0.2883.87 m"
     },
     "install": {
