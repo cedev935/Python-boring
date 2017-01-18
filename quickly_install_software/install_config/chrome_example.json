@@ -6,50 +6,36 @@
     },
     "install": {
         "download": {
-            "Windows": {
-                "file1": {
-                    "link1": "http://baidu.com",
+            "Windows": [
+                {
+                    "link": "http://baidu.com",
                     "saveName": "1"
                 },
-                "file2": {
-                    "link2": "http://baidu.com",
+                {
+                    "link": "http://baidu.com",
                     "saveName": "2"
                 }
-            },
-            "OSX": {
-                "file1": {
-                    "link1": "http://baidu.com",
+            ],
+            "Linux": [
+                {
+                    "link": "http://baidu.com",
                     "saveName": "1"
                 },
-                "file2": {
-                    "link2": "http://baidu.com",
+                {
+                    "link": "http://baidu.com",
                     "saveName": "2"
                 }
-            },
-            "Linux": {
-                "file1": {
-                    "link1": "http://baidu.com",
-                    "saveName": "1"
-                },
-                "file2": {
-                    "link2": "http://baidu.com",
-                    "saveName": "2"
-                }
-            }
+            ]
         },
         "setup": {
-            "Windows": {
-                "do1": "[download]",
-                "do2": "print('example')"
-            },
-            "OSX": {
-                "do1": "[download]",
-                "do2": "print('example')"
-            },
-            "Linux": {
-                "do1": "[download]",
-                "do2": "print('example')"
-            }
+            "Windows": [
+                "print('haha')",
+                "print('example')"
+            ],
+            "Linux": [
+                "print('haha')",
+                "print('example')"
+            ]
         }
     }
 }
