@@ -3,7 +3,11 @@
 VERSION="0.1.0-alpha"
 RELEASE_DATE="20170118"
 
-import json,os,urllib.request,platform
+import json,os,os.path,urllib.request,platform,shutil
+
+'''
+The following functions are provided for this programme.
+'''
 
 def readFile(filepth):
     with open(filepth) as f:
@@ -33,6 +37,37 @@ def runSteps(jsonD, platf):
     steps = jsonD["install"]["setup"][platf]
     for step in steps: exec(step)
 
+    
+'''
+The following functions are provided for the config files.
+'''
+
+def makeDir(pth):
+    if not os.path.isdir(pth):
+        os.makedirs(pth)
+
+def copyFile(pth1, pth2):
+    shutil.copy(pth1, pth2)
+    
+def copyTree(pth1, pth2):
+    shutil.copytree(pth1, pth2)
+
+def rmTree(pth):
+    shutil.rmtree(pth)
+
+def moveAll(pth1, pth2):
+    shutil.move(pth1, pth2)
+
+def rmFile(pth):
+    os.remove(pth)
+
+def runCmd(cmdstr):
+    os.system(cmdstr)
+
+
+'''
+The main function is the start of the programme.
+'''
 def Emain():
     if platform.system() != ("Windows" or "Linux"):
         print("Sorry, this platform can't run the programme.")
