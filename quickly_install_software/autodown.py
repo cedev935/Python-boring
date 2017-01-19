@@ -1,7 +1,7 @@
 # Python 3.6+
 
-VERSION="0.1.0-alpha"
-RELEASE_DATE="20170118"
+VERSION="0.1.1"
+RELEASE_DATE="20170119"
 
 import json,os,os.path,urllib.request,platform,shutil
 
