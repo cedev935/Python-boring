@@ -1,0 +1,41 @@
+{
+    "head": {
+        "name": "Chrome",
+        "description": "A fast Internet browser.",
+        "version": "55.0.2883.87 m"
+    },
+    "install": {
+        "download": {
+            "Windows": [
+                {
+                    "link": "http://baidu.com",
+                    "saveName": "1"
+                },
+                {
+                    "link": "http://baidu.com",
+                    "saveName": "2"
+                }
+            ],
+            "Linux": [
+                {
+                    "link": "http://baidu.com",
+                    "saveName": "1"
+                },
+                {
+                    "link": "http://baidu.com",
+                    "saveName": "2"
+                }
+            ]
+        },
+        "setup": {
+            "Windows": [
+                "print('haha')",
+                "print('example')"
+            ],
+            "Linux": [
+                "print('haha')",
+                "print('example')"
+            ]
+        }
+    }
+}
