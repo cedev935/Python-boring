@@ -8,3 +8,5 @@
 快速安装源没有的或者依赖关系超级复杂的软件。
 
 配置文件规范：[WIKI](https://github.com/redapple0204/my-boring-python/wiki/autodown.py%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
+
+更新日志：[查看](https://github.com/redapple0204/my-boring-python/blob/master/quickly_install_software/update_log.md)
