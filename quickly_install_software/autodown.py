@@ -69,7 +69,7 @@ def runCmd(cmdstr):
 The main function is the start of the programme.
 '''
 def Emain():
-    if platform.system() != ("Windows" or "Linux"):
+    if (platform.system() != "Windows") and (platform.system() != "Linux"):
         print("Sorry, this platform can't run the programme.")
         exit()
     print("Welcome to use autodown.py")
