@@ -5,7 +5,8 @@ oss = platform.system()
 while True :
 	now_time = datetime.datetime.now()
 	winter_hoilday_boom = datetime.datetime.strptime('2017-02-12  14:00:00', '%Y-%m-%d %H:%M:%S')
-	winter_hoilday_boom_summer_number = 31-(winter_hoilday_boom-now_time).days
+	winter_hoilday_boom_c = datetime.datetime.strptime('2017-02-13  00:00:00', '%Y-%m-%d %H:%M:%S')
+	winter_hoilday_boom_summer_number = 32-(winter_hoilday_boom_c-now_time).days
 	QM = datetime.datetime.strptime('2017-04-02  00:00:00', '%Y-%m-%d %H:%M:%S')
 	LD = datetime.datetime.strptime('2017-04-29  00:00:00', '%Y-%m-%d %H:%M:%S')
 	DW = datetime.datetime.strptime('2017-05-28  00:00:00', '%Y-%m-%d %H:%M:%S')
