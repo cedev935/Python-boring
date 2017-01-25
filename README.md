@@ -18,7 +18,6 @@
 
 **ETransV2**: Golang文件传输工具: [ETransV2(LZZ)](https://github.com/lizongzeshunshun/ETransV2)
 
-**Quickly-Install-Software**: Linux下快速安装常用程序解决方案: [Quickly-Install-Software](https://github.com/redapple0204/my-boring-python/tree/master/quickly_install_software)
 
 ## 免责声明
 
