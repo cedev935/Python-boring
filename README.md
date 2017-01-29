@@ -1,4 +1,4 @@
-# @redapple0204 & @lizongzeshunshun
+# Project *my-boring-python*
 
 ![Python Version](https://img.shields.io/badge/python-3.x-green.svg)
 ![Golang](https://img.shields.io/badge/Go-powered-blue.svg)
