@@ -24,3 +24,9 @@
 **用户以各种方式使用本项目内软件（包括但不限于修改使用、直接使用、通过第三方使用）的过程中，不得以任何方式利用本软件直接或间接从事违反中国法律、以及社会公德的行为。软件的使用者需对自身行为负责，因使用软件引发的一切纠纷，由使用者承担全部法律及连带责任。作者不承担任何法律及连带责任。**
 
 **对免责声明的解释、修改及更新权均属于作者所有。**
+
+ENG:
+
+**You may not use the Software in any way to directly or indirectly engage in acts that violate Chinese laws and social morality in any way by using the software in this project (including but not limited to modification, direct use and use by a third party) . The user of the software shall be responsible for his / her own actions. All the disputes arising from the use of the software shall be borne by the user in all legal and joint responsibilities. The author does not undertake any legal and joint liability.**
+
+**The interpretation, modification and updating of the Disclaimer are the property of the author.**
