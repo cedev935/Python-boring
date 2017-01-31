@@ -4,5 +4,5 @@
 ~~无法完美在wine环境下完美运行。~~
 
 
-###警告：crossover破解补丁已失效，如需要者请开issue来询问最新破解办法。
+###警告：crossover破解补丁已失效，如需要者请查看[这个issue](https://github.com/redapple0204/my-boring-python/issues/111)
 
