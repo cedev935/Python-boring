@@ -18,7 +18,7 @@
 
 **ETransV2**: Golang文件传输工具: [ETransV2(LZZ)](https://github.com/lizongzeshunshun/ETransV2)
 
->注：原“tmp”文件夹可在[这里](https://tpedutw-my.sharepoint.com/personal/redapple0204_tp_edu_tw/_layouts/15/onedrive.aspx?id=%2fpersonal%2fredapple0204_tp_edu_tw%2fDocuments%2ftmp&FolderCTID=0x012000A5CA3BE026B1014B9EB822D90151DA44)查看
+>注：原“tmp”文件夹可在[这里](https://tpedutw-my.sharepoint.com/personal/redapple0204_tp_edu_tw/_layouts/15/guestaccess.aspx?folderid=0c0979ec07a254a65b0688fd16589839d&authkey=AYV7MkuQhYIfLmp9HDAT_gM)查看
 
 ## 免责声明
 
