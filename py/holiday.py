@@ -18,7 +18,7 @@ while True :
 	print('今天相当于暑假的')
 	print('8月',winter_hoilday_boom_summer_number,'日')
 	print('寒假已经过去了')
-	print (((now_time-winter_hoilday_boom_BFB).total_seconds())*100/2505600,'%')
+	print (((now_time-winter_hoilday_boom_BFB).total_seconds())*100/2635200,'%')
 	print('距离清明节还剩下')
 	print (QM-now_time)
 	print('距离劳动节还剩下')
