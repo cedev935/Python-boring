@@ -28,6 +28,10 @@
 
 >注：原“tmp”文件夹可在[这里](https://tpedutw-my.sharepoint.com/personal/redapple0204_tp_edu_tw/_layouts/15/guestaccess.aspx?folderid=0c0979ec07a254a65b0688fd16589839d&authkey=AYV7MkuQhYIfLmp9HDAT_gM)查看
 
+## 贡献
+
+有好用的工具或者方法？ 欢迎提交Pull Request将其添加到本项目。
+
 ## 免责声明
 
 **用户以各种方式使用本项目内软件（包括但不限于修改使用、直接使用、通过第三方使用）的过程中，不得以任何方式利用本软件直接或间接从事违反中国法律、以及社会公德的行为。软件的使用者需对自身行为负责，因使用软件引发的一切纠纷，由使用者承担全部法律及连带责任。作者不承担任何法律及连带责任。**
