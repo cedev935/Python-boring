@@ -10,9 +10,9 @@
 
 **py**: 包含各种小工具，请自行查看: [py](https://github.com/redapple0204/my-boring-python/tree/master/py)
 
-**ETransV2**: 用golang写的文件传输: [ETransV2](https://github.com/redapple0204/my-boring-python/tree/master/ETransV2)
+**ETransV2**: 用golang写的文件传输: [ETransV2](https://github.com/redapple0204/my-boring-python/tree/master/project/ETransV2)
 
-**vim-config**: @K-Guan提供的vim配置文件: [vim-config](https://github.com/redapple0204/my-boring-python/tree/master/vim-config)
+**vim-config**: @K-Guan提供的vim配置文件: [vim-config](https://github.com/redapple0204/my-boring-python/tree/master/script/vim-config)
 
 **goWiki**: Golang写的markdown解析web服务: [goWiki(LZZ)](https://github.com/lizongzeshunshun/goWiki)
 
