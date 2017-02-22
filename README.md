@@ -22,8 +22,15 @@
 
 **Arch的wineqq pkgbuild** [PKGBUILD-wineqq](https://github.com/redapple0204/my-boring-python/tree/master/PKGBUILD/PKGBUILD-wineqq)
 
-**几何画板破解版** :请开issue来询问
+**Arch 安装向导** [Arch-Install-Guide](https://github.com/redapple0204/my-boring-python/tree/master/tutorial/Arch-Install-Guide)
 
+**kali 1.0 仍然可以用的源** [kail 1.0 source](https://github.com/redapple0204/my-boring-python/tree/master/tutorial/kali1.0-source)
+
+**bat编写的pcs破解百度云限速** [bat pcs](https://github.com/redapple0204/my-boring-python/tree/master/script/pcs_bat)
+
+** Github issue 备份工具** [github issue backup](https://github.com/redapple0204/my-boring-python/tree/master/script/github-issue-backup)
+
+**几何画板破解版** :请开issue来询问
 
 **crossover破解版** :请开issue来询问
 
