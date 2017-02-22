@@ -16,8 +16,6 @@
 
 **goWiki**: Golang写的markdown解析web服务: [goWiki(LZZ)](https://github.com/lizongzeshunshun/goWiki)
 
-**ETransV2**: Golang文件传输工具: [ETransV2(LZZ)](https://github.com/lizongzeshunshun/ETransV2)
-
 **Arch vmdk镜像 & 打包好的系统安装文件** [arch vmdk & tar](https://github.com/redapple0204/my-boring-python/wiki/Arch-%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%95%9C%E5%83%8F-&-%E6%89%93%E5%8C%85%E5%A5%BD%E7%9A%84%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6-%E4%B8%8B%E8%BD%BD)
 
 **Arch的wineqq pkgbuild** [PKGBUILD-wineqq](https://github.com/redapple0204/my-boring-python/tree/master/PKGBUILD/PKGBUILD-wineqq)
