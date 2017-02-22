@@ -28,7 +28,7 @@
 
 **bat编写的pcs破解百度云限速** [bat pcs](https://github.com/redapple0204/my-boring-python/tree/master/script/pcs_bat)
 
-** Github issue 备份工具** [github issue backup](https://github.com/redapple0204/my-boring-python/tree/master/script/github-issue-backup)
+**Github issue 备份工具** [github issue backup](https://github.com/redapple0204/my-boring-python/tree/master/script/github-issue-backup)
 
 **几何画板破解版** :请开issue来询问
 
