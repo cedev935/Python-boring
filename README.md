@@ -2,7 +2,7 @@
 
 ![Python Version](https://img.shields.io/badge/python-3.x-green.svg)
 ![Golang](https://img.shields.io/badge/Go-powered-blue.svg)
-![Development](https://img.shields.io/badge/development-frozen-red.svg)
+![Development](https://img.shields.io/badge/development-bugs--fix--only-red.svg)
 
 **项目集中地，包括E系列和boring-python系列**
 
@@ -20,9 +20,19 @@
 
 **Arch vmdk镜像 & 打包好的系统安装文件** [arch vmdk & tar](https://github.com/redapple0204/my-boring-python/wiki/Arch-%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%95%9C%E5%83%8F-&-%E6%89%93%E5%8C%85%E5%A5%BD%E7%9A%84%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6-%E4%B8%8B%E8%BD%BD)
 
+**Arch的wineqq pkgbuild** [PKGBUILD-wineqq](https://github.com/redapple0204/my-boring-python/tree/master/PKGBUILD-wineqq)
+
 **几何画板破解版** :请开issue来询问
 
+
+**crossover破解版** :请开issue来询问
+
 > 注：原“tmp”文件夹可在[这里](https://tpedutw-my.sharepoint.com/personal/redapple0204_tp_edu_tw/_layouts/15/guestaccess.aspx?folderid=0c0979ec07a254a65b0688fd16589839d&authkey=AYV7MkuQhYIfLmp9HDAT_gM)查看
+
+
+## 贡献
+
+有好用的工具或者方法？ 欢迎提交Pull Request将其添加到本项目。
 
 ## 免责声明
 
