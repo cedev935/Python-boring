@@ -4,7 +4,7 @@
 ![Golang](https://img.shields.io/badge/Go-powered-blue.svg)
 ![Development](https://img.shields.io/badge/development-frozen-red.svg)
 
-纪念郑敏希转学，冻结开发一天
+纪念郑敏希出国留学，冻结开发一天
 
 **项目集中地，包括E系列和boring-python系列**
 
