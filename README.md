@@ -3,6 +3,7 @@
 ![Python Version](https://img.shields.io/badge/python-3.x-green.svg)
 ![Golang](https://img.shields.io/badge/Go-powered-blue.svg)
 ![Development](https://img.shields.io/badge/development-frozen-red.svg)
+![Silence](https://img.shields.io/badge/Silence-powered-red.svg)
 
 @redapple0204: 纪念郑敏希出国留学，冻结开发一天。
 
