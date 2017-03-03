@@ -4,7 +4,9 @@
 ![Golang](https://img.shields.io/badge/Go-powered-blue.svg)
 ![Development](https://img.shields.io/badge/development-frozen-red.svg)
 
-纪念郑敏希出国留学，冻结开发一天
+@redapple0204: 纪念郑敏希出国留学，冻结开发一天。
+
+@lizongzeshunshun: 纪念LWGL行被拆分，冻结开发1天，并且我在14天内不会提交commits。
 
 **项目集中地，包括E系列和boring-python系列**
 
