@@ -5,7 +5,7 @@
 ![Development](https://img.shields.io/badge/development-frozen-red.svg)
 ![Silence](https://img.shields.io/badge/Silence-powered-red.svg)
 
-@redapple0204: 纪念郑敏希出国留学，冻结开发一天。
+@redapple0204: 纪念郑敏希出国留学，~冻结开发一天。~ 仍然无法恢复心情，故无限期延长停止时间，直到恢复心情为止
 
 @lizongzeshunshun: 纪念LWGL行被拆分，冻结开发1天，并且我在14天内不会提交commits。
 
