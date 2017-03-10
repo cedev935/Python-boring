@@ -2,9 +2,7 @@
 
 ![Python Version](https://img.shields.io/badge/python-3.x-green.svg)
 ![Golang](https://img.shields.io/badge/Go-powered-blue.svg)
-![Development](https://img.shields.io/badge/development-frozen-red.svg)
-
-@redapple0204: 纪念郑敏希出国留学，由于仍然无法恢复心情，故无限期延长停止时间，直到恢复心情为止
+![Development](https://img.shields.io/badge/bugs-fix-only-red.svg)
 
 **项目集中地，包括E系列和boring-python系列**
 
