@@ -1,7 +1,5 @@
 ## BAT编写的一个通过PCS来破解百度云限速的bat
 
-提示：pcs已失效，所以现在该bat暂时无法使用。
-
 ### 使用方法：
 
 先下载[这个](https://github.com/redapple0204/my-boring-python/archive/master.zip)压缩文件，然后解压"script“文件夹，找到“pcs_bat”，打开这个文件夹，然后双击”setup.bat“来运行。
