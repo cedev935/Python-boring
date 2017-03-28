@@ -2,7 +2,7 @@
 
 ### 使用方法：
 
-先下载[这个](https://github.com/redapple0204/my-boring-python/archive/master.zip)压缩文件，然后解压"script“文件夹，找到“pcs_bat”，打开这个文件夹，然后双击”setup.bat“来运行。
+先下载[这个](https://tpedutw-my.sharepoint.com/personal/redapple0204_tp_edu_tw/_layouts/15/guestaccess.aspx?docid=16812b588523c4848b66f44c956d6fcbc&authkey=AT7M4Do6QOFBtgdoc4jglLY)压缩文件，然后解压，然后双击”setup.bat“来运行。
 
 具体的使用说法请看bat内部说明
 
