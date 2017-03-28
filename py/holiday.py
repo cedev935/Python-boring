@@ -14,6 +14,7 @@ while True :
 	MT = dt.datetime.strptime('2017-04-20  00:00:00', '%Y-%m-%d %H:%M:%S')
 	LD = dt.datetime.strptime('2017-04-29  00:00:00', '%Y-%m-%d %H:%M:%S')
 	DW = dt.datetime.strptime('2017-05-28  00:00:00', '%Y-%m-%d %H:%M:%S')
+	HK = dt.datetime.strptime('2017-06-26  00:00:00', '%Y-%m-%d %H:%M:%S')
 	ZK = dt.datetime.strptime('2018-06-23  00:00:00', '%Y-%m-%d %H:%M:%S') #根据往年中考时间推测
 	GK = dt.datetime.strptime('2021-06-07  00:00:00', '%Y-%m-%d %H:%M:%S')
 #	print('距离寒假结束还剩下')
@@ -30,6 +31,8 @@ while True :
 	print (LD-now_time)
 	print('距离端午节还剩下')
 	print (DW-now_time)
+	print('距离生地会考还剩下')
+	print (HK-now_time)
 	print('距离中考还剩下')
 	print (ZK-now_time)
 	print('距离高考还剩下')
