@@ -1,8 +1,10 @@
 # Project *my-boring-python*
 
+由于期中考试，开发已被冻结，将持续到2017-04-18日，19日开始恢复active状态
+
 ![Python Version](https://img.shields.io/badge/python-3.x-green.svg)
 ![Golang](https://img.shields.io/badge/Go-powered-blue.svg)
-![Development](https://img.shields.io/badge/development-bugs--fix--only-red.svg)
+![Development](https://img.shields.io/badge/development-frozen-red.svg)
 
 **项目集中地，包括E系列和boring-python系列**
 
