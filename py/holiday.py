@@ -11,7 +11,7 @@ while True :
 #	winter_hoilday_start = dt.datetime.strptime('2017-01-13  00:00:00', '%Y-%m-%d %H:%M:%S')
 #	winter_hoilday_boom_BFB = dt.datetime(2017,1,13,00,00,00)
 	QM = dt.datetime.strptime('2017-04-02  00:00:00', '%Y-%m-%d %H:%M:%S')
-	MT = dt.datetime.strptime('2017-04-20  00:00:00', '%Y-%m-%d %H:%M:%S')
+	MT = dt.datetime.strptime('2017-04-17  00:00:00', '%Y-%m-%d %H:%M:%S')
 	LD = dt.datetime.strptime('2017-04-29  00:00:00', '%Y-%m-%d %H:%M:%S')
 	DW = dt.datetime.strptime('2017-05-28  00:00:00', '%Y-%m-%d %H:%M:%S')
 	HK = dt.datetime.strptime('2017-06-26  00:00:00', '%Y-%m-%d %H:%M:%S')
