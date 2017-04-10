@@ -4,7 +4,7 @@
 
 ![Python Version](https://img.shields.io/badge/python-3.x-green.svg)
 ![Golang](https://img.shields.io/badge/Go-powered-blue.svg)
-![Development](https://img.shields.io/badge/development-frozen-red.svg)
+[![Development](https://img.shields.io/badge/development-frozen-red.svg)](https://github.com/redapple0204/my-boring-python/blob/master/status.md)
 
 **项目集中地，包括E系列和boring-python系列**
 
