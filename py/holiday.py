@@ -10,7 +10,6 @@ while True :
 #	winter_hoilday_boom_summer_number = 31-(winter_hoilday_boom_c-now_time).days
 #	winter_hoilday_start = dt.datetime.strptime('2017-01-13  00:00:00', '%Y-%m-%d %H:%M:%S')
 #	winter_hoilday_boom_BFB = dt.datetime(2017,1,13,00,00,00)
-	DW = dt.datetime.strptime('2017-05-28  00:00:00', '%Y-%m-%d %H:%M:%S')
 	HK = dt.datetime.strptime('2017-06-26  00:00:00', '%Y-%m-%d %H:%M:%S')
 	QMKS = dt.datetime.strptime('2017-07-03  00:00:00', '%Y-%m-%d %H:%M:%S')
 	ZK = dt.datetime.strptime('2018-06-23  00:00:00', '%Y-%m-%d %H:%M:%S') #根据往年中考时间推测
@@ -21,8 +20,6 @@ while True :
 #	print('8月',winter_hoilday_boom_summer_number,'日')
 #	print('寒假已经过去了')
 #	print (((now_time-winter_hoilday_boom_BFB).total_seconds())*100/2631600,'%') #组长需要提前1小时到校
-	print('距离端午节还剩下')
-	print (DW-now_time)
 	print('距离生地会考还剩下')
 	print (HK-now_time)
 	print('距离期末考试还剩下')
