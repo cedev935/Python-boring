@@ -10,7 +10,7 @@ while True :
 #	winter_hoilday_boom_summer_number = 31-(winter_hoilday_boom_c-now_time).days
 #	winter_hoilday_start = dt.datetime.strptime('2017-01-13  00:00:00', '%Y-%m-%d %H:%M:%S')
 #	winter_hoilday_boom_BFB = dt.datetime(2017,1,13,00,00,00)
-	HK = dt.datetime.strptime('2017-06-26  00:00:00', '%Y-%m-%d %H:%M:%S')
+	HK = dt.datetime.strptime('2017-06-26  15:00:00', '%Y-%m-%d %H:%M:%S')
 	QMKS = dt.datetime.strptime('2017-07-03  00:00:00', '%Y-%m-%d %H:%M:%S')
 	ZK = dt.datetime.strptime('2018-06-23  00:00:00', '%Y-%m-%d %H:%M:%S') #根据往年中考时间推测
 	GK = dt.datetime.strptime('2021-06-07  00:00:00', '%Y-%m-%d %H:%M:%S')
