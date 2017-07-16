@@ -4,13 +4,6 @@
 ![Golang](https://img.shields.io/badge/Go-powered-blue.svg)
 [![Development](https://img.shields.io/badge/development-active-red.svg)](https://github.com/redapple0204/my-boring-python/blob/master/status.md)
 
->第一件大事已经悄然来袭（其实应该算是最开始的第一阶段），我都没想到会那么快就来，还以为要到8月份....
-
->哎，来了就来了吧，我有什么办法，就这样先吧....
-
->PS：由于这件事情及其他原因....所以我在7.1？（？>=4)-7.30可能会暂时无从管辖本项目，这个时候麻烦@lizongzeshunshun 了....
-
->离开之前，我应该是会把百度云破解写完的.....
 
 **项目集中地，包括E系列和boring-python系列**
 
@@ -30,7 +23,6 @@
 
 **Arch 安装向导** [Arch-Install-Guide](https://github.com/redapple0204/my-boring-python/tree/master/tutorial/Arch-Install-Guide)
 
-**kali 1.0 仍然可以用的源** [kail 1.0 source](https://github.com/redapple0204/my-boring-python/tree/master/tutorial/kali1.0-source)
 
 **bat编写的pcs破解百度云限速** [bat pcs](https://github.com/redapple0204/my-boring-python/tree/master/script/pcs_bat)
 
