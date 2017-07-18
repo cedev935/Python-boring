@@ -10,3 +10,5 @@
 ## bugs-fix-only
 在bugs-fix-only状态下，没有新项目和新特性会被加入代码库，但是一旦有bug被汇报，我们会进行修复。
 
+## developing-activing
+在developing-activing状态下，软件会被有序、快速的开发。值得注意的是developing-activing是比active更活跃的一个级别。

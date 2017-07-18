@@ -1,9 +1,9 @@
-## BAT±àĞ´µÄÒ»¸öÍ¨¹ıPCSÀ´ÆÆ½â°Ù¶ÈÔÆÏŞËÙµÄbat
+## BATç¼–å†™çš„ä¸€ä¸ªé€šè¿‡PCSæ¥ç ´è§£ç™¾åº¦äº‘é™é€Ÿçš„bat
 
-### Ê¹ÓÃ·½·¨£º
+### ä½¿ç”¨æ–¹æ³•ï¼š
 
-ÏÈÏÂÔØ[Õâ¸ö](https://github.com/redapple0204/my-boring-python/archive/master.zip)Ñ¹ËõÎÄ¼ş£¬È»ºó½âÑ¹"pcs_bat¡°ÎÄ¼ş¼Ğ£¬Ë«»÷¡±setup.bat¡°À´ÔËĞĞ¡£
+å…ˆä¸‹è½½[è¿™ä¸ª](https://tpedutw-my.sharepoint.com/personal/redapple0204_tp_edu_tw/_layouts/15/guestaccess.aspx?docid=16812b588523c4848b66f44c956d6fcbc&authkey=AT7M4Do6QOFBtgdoc4jglLY)å‹ç¼©æ–‡ä»¶ï¼Œç„¶åè§£å‹ï¼Œç„¶ååŒå‡»â€setup.batâ€œæ¥è¿è¡Œã€‚
 
-¾ßÌåµÄÊ¹ÓÃËµ·¨Çë¿´batÄÚ²¿ËµÃ÷
+å…·ä½“çš„ä½¿ç”¨è¯´æ³•è¯·çœ‹batå†…éƒ¨è¯´æ˜
 
-ÈçÓĞbug£¬»¶Ó­Ìáissue
+å¦‚æœ‰bugï¼Œæ¬¢è¿æissue

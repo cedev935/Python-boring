@@ -2,7 +2,8 @@
 
 ![Python Version](https://img.shields.io/badge/python-3.x-green.svg)
 ![Golang](https://img.shields.io/badge/Go-powered-blue.svg)
-![Development](https://img.shields.io/badge/development-bugs--fix--only-red.svg)
+[![Development](https://img.shields.io/badge/development-active-red.svg)](https://github.com/redapple0204/my-boring-python/blob/master/status.md)
+
 
 **项目集中地，包括E系列和boring-python系列**
 
@@ -10,20 +11,24 @@
 
 **py**: 包含各种小工具，请自行查看: [py](https://github.com/redapple0204/my-boring-python/tree/master/py)
 
-**ETransV2**: 用golang写的文件传输: [ETransV2](https://github.com/redapple0204/my-boring-python/tree/master/ETransV2)
+**ETransV2**: 用golang写的文件传输: [ETransV2](https://github.com/redapple0204/my-boring-python/tree/master/project/ETransV2)
 
-**vim-config**: @K-Guan提供的vim配置文件: [vim-config](https://github.com/redapple0204/my-boring-python/tree/master/vim-config)
+**vim-config**: @K-Guan提供的vim配置文件: [vim-config](https://github.com/redapple0204/my-boring-python/blob/master/script/vim-config.tar.gz)
 
 **goWiki**: Golang写的markdown解析web服务: [goWiki(LZZ)](https://github.com/lizongzeshunshun/goWiki)
 
-**ETransV2**: Golang文件传输工具: [ETransV2(LZZ)](https://github.com/lizongzeshunshun/ETransV2)
-
 **Arch vmdk镜像 & 打包好的系统安装文件** [arch vmdk & tar](https://github.com/redapple0204/my-boring-python/wiki/Arch-%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%95%9C%E5%83%8F-&-%E6%89%93%E5%8C%85%E5%A5%BD%E7%9A%84%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6-%E4%B8%8B%E8%BD%BD)
 
-**Arch的wineqq pkgbuild** [PKGBUILD-wineqq](https://github.com/redapple0204/my-boring-python/tree/master/PKGBUILD-wineqq)
+**Arch的wineqq pkgbuild** [PKGBUILD-wineqq](https://github.com/redapple0204/my-boring-python/tree/master/PKGBUILD/PKGBUILD-wineqq)
+
+**Arch 安装向导** [Arch-Install-Guide](https://github.com/redapple0204/my-boring-python/tree/master/tutorial/Arch-Install-Guide)
+
+
+**bat编写的pcs破解百度云限速** [bat pcs](https://github.com/redapple0204/my-boring-python/tree/master/script/pcs_bat)
+
+**Github issue 备份工具** [github issue backup](https://github.com/redapple0204/my-boring-python/tree/master/script/github-issue-backup)
 
 **几何画板破解版** :请开issue来询问
-
 
 **crossover破解版** :请开issue来询问
 
