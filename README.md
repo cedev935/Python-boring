@@ -7,6 +7,8 @@
 
 **项目集中地，包括E系列和boring-python系列**
 
+注：请到[这里](https://github.com/redapple0204/my-boring-python/pull/177)提出你的问题（因为原issue含有太多个人信息已经被关闭）
+
 ## Getting Start
 
 **py**: 包含各种小工具，请自行查看: [py](https://github.com/redapple0204/my-boring-python/tree/master/py)
