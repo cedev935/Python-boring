@@ -51,7 +51,7 @@ uid       [ unknown] Class04OpenSourceOrganization <Class04OpenSourceOrganizatio
 
 ### 1.2.1 进行验证
 
-`gpg -verify <sign_file_name(.sig or .asc)>`
+`gpg --verify <sign_file_name(.sig or .asc)>`
 
 **Example**
 
