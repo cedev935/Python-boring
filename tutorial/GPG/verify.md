@@ -73,8 +73,8 @@ C:\Users\Jack\Documents>gpg --verify multiget.db.sig
 gpg: no signed data
 gpg: can't hash datafile: No data
 ```
-问题：签名与文件不位于同一目录
-解决：将签名文件（通常是.sig后缀）与要验证的文件放于同一目录
+* 问题：签名与文件不位于同一目录
+* 解决：将签名文件（通常是.sig后缀）与要验证的文件放于同一目录
 
 ## 2 签名参数错误
 
@@ -86,5 +86,5 @@ Please remember that the signature file (.sig or .asc)
 should be the first file given on the command line.
 ```
 
-问题：签名与文件不位于同一目录（`--verify multiget.db`)，参数必须是签名而不是文件本身。
-解决：将文件名改成签名的文件名（`--verify multiget.db.sig`）
+* 问题：签名与文件不位于同一目录（`--verify multiget.db`)，参数必须是签名而不是文件本身。
+* 解决：将文件名改成签名的文件名（`--verify multiget.db.sig`）
