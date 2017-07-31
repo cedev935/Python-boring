@@ -10,8 +10,8 @@
 
 #### Params
 
-* key=<key>
-* value=<value>
+* key: <key>
+* value: <value>
 
 ### Read a storge
 
@@ -19,7 +19,7 @@
 
 #### Params
 
-* key=<key>
+* key: <key>
 
 ### Delete a storge
 
@@ -27,4 +27,4 @@
 
 #### Params
 
-* key=<key>
+* key: <key>
