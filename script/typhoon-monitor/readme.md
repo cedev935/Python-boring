@@ -4,6 +4,8 @@
 
 python3 needed.
 
+在线演示项目：https://github.com/Guanrenfu/typhoon 欢迎直接watch来查看台风的最新消息。
+
 ### 使用方法：
 
 vps：
