@@ -1,0 +1,5 @@
+cd ~/typhoon
+echo maybe there is a typhoon or some typhoon information has been updated,please check it ! >> typhoon.md
+git add typhoon.md
+git commit -m "maybe there is a typhoon or some typhoon information has been updated,please check it !"
+git push
