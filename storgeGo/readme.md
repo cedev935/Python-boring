@@ -1,6 +1,6 @@
 # storgeGo - A key-value storge API
 
-**The data is storge in the RAM!**
+**The data is storged in the RAM!**
 
 ## API
 
