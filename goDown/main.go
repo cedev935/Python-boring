@@ -58,10 +58,6 @@ func downloadFilePart(wg *sync.WaitGroup, rangeStart, rangeEnd int64, url, fileS
 	rangeStartString := intToString(rangeStart)
 	rangeEndString := intToString(rangeEnd)
 	req.Header.Add("Range", "bytes=" + rangeStartString + "-" + rangeEndString)
-	req.Header.Add("User-Agent", "netdisk;5.3.4.5;PC;PC-Windows;5.1.2600;WindowsBaiduYunGuanJia")
-	req.Header.Add("Referer", "http://pan.baidu.com/disk/home")
-	req.Header.Add("Cookie", "BDUSS=dyVU9teWt0b2h-emliZ1Jad3RtYmUzWVF6eEhHTzBRYlJlOUZrTkZCRUl3WTlaTVFBQUFBJCQAAAAAAAAAAAEAAADE5NY9cmVkYXBwbGUwMjA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg0aFkINGhZdD")
-	req.Header.Add("Cookie", "pcsett=1500524481-261f8aea1e9fff0324380bd96dffb0bb")
 	resp, err := httpClient.Do(req)
 	if err != nil {
 		for i:=1;i<(maxRetryTimes + 1);i++ {
@@ -90,8 +86,6 @@ func downloadFilePart(wg *sync.WaitGroup, rangeStart, rangeEnd int64, url, fileS
 func sizeOfTheHttpFile(url string) (size int64, err error) {
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("HEAD", url, nil)
-	req.Header.Add("Cookie", "BDUSS=dyVU9teWt0b2h-emliZ1Jad3RtYmUzWVF6eEhHTzBRYlJlOUZrTkZCRUl3WTlaTVFBQUFBJCQAAAAAAAAAAAEAAADE5NY9cmVkYXBwbGUwMjA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg0aFkINGhZdD")
-	req.Header.Add("Cookie", "pcsett=1500524481-261f8aea1e9fff0324380bd96dffb0bb")
 	if err != nil {
 		return 0, err
 	}
@@ -196,11 +190,6 @@ func deleteDownloadCache(fileName string, threadNum int64) error {
 	
 
 func main() {
-	log.Println("233.zip")
-	err := downloadFullFile("http://pcs.baidu.com/rest/2.0/pcs/file?method=download&app_id=250528&path=%2FWin3.2_MEMDISK.7z", "236.rar", 512, 4)
-	if err != nil {
-		log.Println(err.Error())
-		os.Exit(2)
-	}
+	
 }
 
