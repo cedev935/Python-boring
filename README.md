@@ -1,7 +1,8 @@
 # Project *my-boring-python*
 
 ![Python Version](https://img.shields.io/badge/python-3.x-green.svg)
-![Golang](https://img.shields.io/badge/Go-powered-blue.svg)
+![Golang](https://img.shields.io/badge/Go-Powered-blue.svg)
+![.Net](https://img.shields.io/badge/.Net-Powered-green.svg)
 [![Development](https://img.shields.io/badge/development-developing--activing-red.svg)](https://github.com/redapple0204/my-boring-python/blob/master/status.md)
 
 
