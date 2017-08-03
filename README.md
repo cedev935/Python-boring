@@ -43,7 +43,7 @@
 
 **goDown**: Golang多线程下载器
 
-**BaiduNetDiskCloudDownloader**: 百度云盘云下载（离线下载，需要vps部署）
+**BaiduNetDiskCloudDownloader**: 百度云盘云下载（离线下载，需要在vps上部署）
 
 > 注：原“tmp”文件夹可在[这里](https://tpedutw-my.sharepoint.com/personal/redapple0204_tp_edu_tw/_layouts/15/guestaccess.aspx?folderid=0c0979ec07a254a65b0688fd16589839d&authkey=AYV7MkuQhYIfLmp9HDAT_gM)查看
 
