@@ -33,10 +33,10 @@ def decidefAction(dt):
 monitoring = False
 
 while True:
-    response = urllib.request.urlopen('http://192.168.198.129:8080/search.txt')
-    html = response.read().decode("gb2312")
+    response = urllib.request.urlopen('http://178.62.115.148:5032/get?key=out.txt')
+    html = response.read().decode('utf-8') 
 #if re.search(r'(.*)192.168.1.111(.*)ESTABLISHED(.*)', html):
-    if re.search(r'192.168.1.233', html):
+    if re.search(r'119.28.63.164', html):
         decidetAction(html)
     else:
         decidefAction(html)
