@@ -13,6 +13,7 @@ while True :
 	SJ = dt.datetime.strptime('2017-08-29  14:00:00', '%Y-%m-%d %H:%M:%S')
 	ZK = dt.datetime.strptime('2018-06-23  00:00:00', '%Y-%m-%d %H:%M:%S') #根据往年中考时间推测
 	GK = dt.datetime.strptime('2021-06-07  00:00:00', '%Y-%m-%d %H:%M:%S')
+	summer_hoilday_boom_BFB = dt.datetime(2017, 7, 8, 00, 00, 00)
 #	print('距离寒假结束还剩下')
 #	print (winter_hoilday_boom-now_time)
 #	print('今天相当于暑假的')
@@ -21,6 +22,8 @@ while True :
 #	print (((now_time-winter_hoilday_boom_BFB).total_seconds())*100/2631600,'%') #组长需要提前1小时到校
 	print('距离暑假结束还剩下')
 	print (SJ-now_time)
+	print('暑假已经过去了')
+	print(((now_time - summer_hoilday_boom_BFB).total_seconds()) * 100 / 4579200, '%')
 	print('距离中考还剩下')
 	print (ZK-now_time)
 	print('距离高考还剩下')
