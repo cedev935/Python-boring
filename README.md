@@ -35,6 +35,12 @@
 
 **crossover破解版** :请开issue来询问
 
+**storgeGo**: key-value存储服务端，请自行查看
+
+**storgeGo Python SDK**: storgeGo的Python SDK，请自行查看
+
+**ScreenFetch**: 屏幕截图器（5s一次，120张打包一次）
+
 > 注：原“tmp”文件夹可在[这里](https://tpedutw-my.sharepoint.com/personal/redapple0204_tp_edu_tw/_layouts/15/guestaccess.aspx?folderid=0c0979ec07a254a65b0688fd16589839d&authkey=AYV7MkuQhYIfLmp9HDAT_gM)查看
 
 
