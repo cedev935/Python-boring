@@ -1,7 +1,7 @@
 ##  Github issue备份工具
 ### 使用方法
 
-首先请打开powershell（如果系统没有自带请百度下载安装）
+首先请打开Powershell（如果系统没有自带请百度下载安装）
 
 然后打开powershell，输入
 
