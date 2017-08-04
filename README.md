@@ -41,7 +41,7 @@
 
 **ScreenFetch**: 屏幕截图器（5s一次，120张打包一次）
 
-**goDown**: Golang多线程下载器
+**goDown**: Golang多线程下载工具
 
 **BaiduNetDiskCloudDownloader**: 百度云盘云下载（离线下载，需要在vps上部署）
 
