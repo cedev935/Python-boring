@@ -71,6 +71,17 @@ func downloadFilePart(wg *sync.WaitGroup, rangeStart, rangeEnd int64, url, fileS
 	rangeStartString := intToString(rangeStart)
 	rangeEndString := intToString(rangeEnd)
 	req.Header.Add("Range", "bytes=" + rangeStartString + "-" + rangeEndString)
+	// req.Header.Add("", "")
+	// req.Header.Add("User-Agent", "")
+	// req.Header.Add("Referer", "")
+ 	// req.Header.Add("Cookie", "")
+ 	// req.Header.Add("Cookie", "")
+	/*
+	Sometimes more header need to be add
+	to download file properly,
+	add them by
+	req.Header.Add(string, string)
+	*/
 	resp, err := httpClient.Do(req)
 	defer resp.Body.Close()
 	if err != nil {
@@ -110,6 +121,17 @@ func sizeOfTheHttpFile(url string) (size int64, err error) {
 	*/
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("HEAD", url, nil)
+	// req.Header.Add("", "")
+	// req.Header.Add("User-Agent", "")
+	// req.Header.Add("Referer", "")
+ 	// req.Header.Add("Cookie", "")
+ 	// req.Header.Add("Cookie", "")
+	/*
+	Sometimes more header need to be add
+	to download file properly,
+	add them by
+	req.Header.Add(string, string)
+	*/
 	defer resp.Body.Close()
 	if err != nil {
 		return 0, err
