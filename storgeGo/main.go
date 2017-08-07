@@ -48,5 +48,12 @@ func main() {
 	http.HandleFunc("/change", changeHandler)
 	http.HandleFunc("/get", getHandler)
 	http.HandleFunc("/delete", deleteHandler)
+	// 5032 is the default port of the program.
+	// It's not safe to run this program on Internet,
+	// because the program doesn't auth at all,
+	// so wo suggest you to run this program in the Lan.
+	// To listen in the Lan, use
+	// http.ListenAndServe("<IP in LAN>:<Port>", nil)
+	// Eg.: http.Listen And Serve("192.168.1.4:5032", nil)
 	http.ListenAndServe(":5032", nil)
 }
