@@ -44,6 +44,19 @@ func stringToInt(s string) (i int64, err error) {
 }
 
 func downloadFilePart(wg *sync.WaitGroup, rangeStart, rangeEnd int64, url, fileSavingPath string, maxRetryTimes int) error {
+	/*
+	In this function, a part of file will be downloaded.
+	I used wg *sync.WaitGroup because when download a file,
+	this function will be ran in many goroutines at the same time
+	to download different part of a complete file.
+	The `rangeStart`and `rangeEnd` decide what part of the file will
+	be downloaded(this function use HTTP header `Range: bytes=startByte-endByte`
+	`maxRetryTimes` is important. When downloading big files,
+	many requests will be send and some will be failed.
+	`maxRetryTimes` decides how many times will the function retry
+	if it's failed to send a request. We suggest you to set it
+	from 4 to 10. When you start more thread, more `maxRetryTimes` is needed.
+	*/
 	wg.Add(1)
 	defer wg.Done()
 	timeout := time.Duration(1 * time.Second)
@@ -59,8 +72,10 @@ func downloadFilePart(wg *sync.WaitGroup, rangeStart, rangeEnd int64, url, fileS
 	rangeEndString := intToString(rangeEnd)
 	req.Header.Add("Range", "bytes=" + rangeStartString + "-" + rangeEndString)
 	resp, err := httpClient.Do(req)
+	defer resp.Body.Close()
 	if err != nil {
 		for i:=1;i<(maxRetryTimes + 1);i++ {
+			// If the request failed, retry and leave message.
 			log.Println("[ERROR] Can't send the request. Retrying for", normalIntToString(i), "time(s). RangeID:", intToString(rangeStart))
 			resp, err = httpClient.Do(req)
 			if err == nil {
@@ -68,24 +83,34 @@ func downloadFilePart(wg *sync.WaitGroup, rangeStart, rangeEnd int64, url, fileS
 			}
 		}
 		if err != nil {
+			// If failed and try for more times than `maxRetryTimes`,
+			// program will be force terminate.
 			log.Println("[FATAL] Out of retrying times.")
 			os.Exit(2)
 		}
 	}
+	// Here we create a file with a name
+	// of `fileSavingPath`
+	// The part of the file will be storaged in this file.
 	f, err := os.Create(fileSavingPath)
+	defer f.Close()
 	if err != nil {
 		log.Println(err.Error())
 		return err
 	}
+	// Here we copy the response to the file.
 	io.Copy(f, resp.Body)
-	f.Close()
-	resp.Body.Close()
 	return nil
 }
 
 func sizeOfTheHttpFile(url string) (size int64, err error) {
+	/*
+	This function is used to get the size of a file,
+	to decide how big will a part be.
+	*/
 	httpClient := &http.Client{}
 	req, err := http.NewRequest("HEAD", url, nil)
+	defer resp.Body.Close()
 	if err != nil {
 		return 0, err
 	}
@@ -94,11 +119,20 @@ func sizeOfTheHttpFile(url string) (size int64, err error) {
 		return 0, err
 	}
 	fileLength := resp.ContentLength
-	resp.Body.Close()
 	return fileLength, nil
 }
 
 func downloadFullFile(url, saveName string, threadNum int64, maxRetryTimes int) error {
+	/*
+	In this function, whole file will be downloaded.
+	`maxRetryTimes` will be used as the description
+	of the function `downloadFilePart`(Because we pass the
+	`maxRetryTimes` to it :) )
+	`threadNum` will decide how big is a part be.
+	*/
+	
+	// Here we created a folder with a name of
+	// the file. All parts will be storged in it.
 	os.Mkdir(saveName, os.ModePerm)
 	threadNumInt, err := Int64ToInt(threadNum)
 	if err != nil {
@@ -109,9 +143,10 @@ func downloadFullFile(url, saveName string, threadNum int64, maxRetryTimes int) 
 	if err != nil {
 		return err
 	}
-	everyPartFileLength := fileLength / threadNum
+	everyPartFileLength := fileLength / threadNum // To get how big a part be.
 	var hasDownloadedSize int64
 	var wg sync.WaitGroup
+	// Here we start the first goroutine first.
 	go downloadFilePart(&wg, hasDownloadedSize, hasDownloadedSize + everyPartFileLength, url, saveName + "/" + "0", maxRetryTimes)
 	hasDownloadedSize += everyPartFileLength
 	var i int
@@ -142,6 +177,11 @@ func downloadFullFile(url, saveName string, threadNum int64, maxRetryTimes int) 
 }
 
 func mergeTwoPartsToFirstOne(pathFileFirst, pathFileSecond string) error {
+	/*
+	This function is used to merge two part file to one(the
+	first one). It will be used to merge all downloaded
+	part file in the function `mergeDownloadFiles`
+	*/
 	fileIn, err := os.OpenFile(pathFileSecond, os.O_RDWR, 0666)
 	if err != nil {
 		return err
@@ -160,6 +200,10 @@ func mergeTwoPartsToFirstOne(pathFileFirst, pathFileSecond string) error {
 }
 
 func mergeDownloadFiles(saveName string, threadNum int64) error {
+	/*
+	This function is used to merge all parts of a file,
+	to finally get a complete file.
+	*/
 	threadNumInt, err := Int64ToInt(threadNum)
 	if err != nil {
 		return err
@@ -175,6 +219,10 @@ func mergeDownloadFiles(saveName string, threadNum int64) error {
 }
 
 func deleteDownloadCache(fileName string, threadNum int64) error {
+	/*
+	After merge all parts to a complete file. Parts need to
+	be clean. This function is used for this.
+	*/
 	threadNumInt, err := Int64ToInt(threadNum)
 	if err != nil {
 		return err
