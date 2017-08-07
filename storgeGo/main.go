@@ -44,7 +44,7 @@ func getHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	log.Println("Running at port 5032")
+	log.Println("[INFO] Program started.")
 	http.HandleFunc("/change", changeHandler)
 	http.HandleFunc("/get", getHandler)
 	http.HandleFunc("/delete", deleteHandler)
@@ -54,6 +54,9 @@ func main() {
 	// so wo suggest you to run this program in the Lan.
 	// To listen in the Lan, use
 	// http.ListenAndServe("<IP in LAN>:<Port>", nil)
-	// Eg.: http.Listen And Serve("192.168.1.4:5032", nil)
+	// Eg.: http.ListenAndServe("192.168.1.4:5032", nil)
+	// Sometimes you need to listen only for your device.
+	// In this case, use
+	// http.ListenAndServe("127.0.0.1", nil)
 	http.ListenAndServe(":5032", nil)
 }
