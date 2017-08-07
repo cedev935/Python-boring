@@ -85,7 +85,7 @@ func downloadFilePart(wg *sync.WaitGroup, rangeStart, rangeEnd int64, url, fileS
 	defer wg.Done()
 	timeout := time.Duration(1 * time.Second)
 	httpClient := &http.Client{
-		Timeout: timeout
+		Timeout: timeout,
 	}
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
@@ -156,11 +156,11 @@ func sizeOfTheHttpFile(url string) (size int64, err error) {
 	add them by
 	req.Header.Add(string, string)
 	*/
-	defer resp.Body.Close()
 	if err != nil {
 		return 0, err
 	}
 	resp, err := httpClient.Do(req)
+	defer resp.Body.Close()
 	if err != nil {
 		return 0, err
 	}
