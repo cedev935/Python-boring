@@ -83,7 +83,20 @@ func downloadFilePart(wg *sync.WaitGroup, rangeStart, rangeEnd int64, url, fileS
 	*/
 	wg.Add(1)
 	defer wg.Done()
-	timeout := time.Duration(1 * time.Second)
+	/*
+	Here we set `timeout`, it is important.
+	If time-out, a request will be failed, and
+	download will be termiated so it's important
+	to set `timeout` properly.
+	We suggest you to set `timeout` according to
+	your target delay. For example, your target
+	delay is 200ms, we suggest you to set `timeout`
+	to 2 * time.Second or more. It will be nothing
+	too bad if you set it bigger but it will be fatal
+	if you set it too low, so we suggest you to set it
+	bigger.
+	*/
+	timeout := time.Duration(5 * time.Second)
 	httpClient := &http.Client{
 		Timeout: timeout,
 	}
