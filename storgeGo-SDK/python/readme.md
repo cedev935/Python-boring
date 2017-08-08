@@ -5,7 +5,7 @@ Usage:
 ``` python
 sgo = StorgeGoObject(APIUrl)
 
-sgo.CreateOrChangeStorge(key, value) # Create a storge or change the value of a key
+sgo.createOrChangeStorge(key, value) # Create a storge or change the value of a key
 
 sgo.readStorge(key) # Read the value of a key
 
