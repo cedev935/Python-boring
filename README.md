@@ -8,6 +8,15 @@
 
 **项目集中地，包括E系列和boring-python系列**
 
+**官方免费技术支持（滑稽），尽力帮助：**
+* Telegram [@neteroster](https://t.me/neteroster)
+* Telegram [@redapple0204](https://t.me/redapple0204)
+* EMAIL neteroster@outlook.com
+* EMAIL neteroster@c4o.me
+* EMAIL redapple02041@gmail.com
+
+**TG消息一般会优先处理**
+
 请到[这里](https://github.com/redapple0204/my-boring-python/pull/177)提出你的问题（因为原issue含有太多个人信息已经被关闭）
 
 ## Getting Start
