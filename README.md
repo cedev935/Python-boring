@@ -12,7 +12,7 @@
 * Telegram [@neteroster](https://t.me/neteroster)
 * Telegram [@redapple0204](https://t.me/redapple0204)
 * EMAIL neteroster@outlook.com
-* EMAIL neteroster@c4o.me
+* EMAIL neter@c4o.me
 * EMAIL redapple02041@gmail.com
 
 **TG消息一般会优先处理**
