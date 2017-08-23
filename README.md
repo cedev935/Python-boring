@@ -8,7 +8,7 @@
 
 **项目集中地，包括E系列和boring-python系列**
 
-**官方免费技术支持（滑稽），尽力帮助：**
+**官方免费技术支持 ![](https://tb2.bdstatic.com/tb/editor/images/face/i_f25.png?t=20140803) ，尽力帮助：**
 * Telegram [@neteroster](https://t.me/neteroster)
 * Telegram [@redapple0204](https://t.me/redapple0204)
 * EMAIL neteroster@outlook.com
