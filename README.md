@@ -63,9 +63,7 @@
 
 ## 捐助
 
-请挂好梯子（可在[这里](https://doub.bid/sszhfx/)找梯子），然后访问[这里](https://db.tt/ZpYMOYPu)注册dropbox来支持我们。
-
-谢谢。
+目前暂无免费捐助项目，敬请期待。
 
 ## 免责声明
 
