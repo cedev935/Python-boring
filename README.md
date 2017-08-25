@@ -63,7 +63,7 @@
 
 ## 捐助
 
-请挂好梯子（可在[这里](http://doub.bid)找梯子），然后访问[这里](https://doub.bid/sszhfx/)注册dropbox来支持我们。
+请挂好梯子（可在[这里](https://doub.bid/sszhfx/)找梯子），然后访问[这里](https://db.tt/ZpYMOYPu)注册dropbox来支持我们。
 
 谢谢。
 
