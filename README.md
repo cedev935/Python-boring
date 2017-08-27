@@ -11,7 +11,7 @@
 * Telegram [@neteroster](https://t.me/neteroster)
 * Telegram [@redapple0204](https://t.me/redapple0204)
 * EMAIL neteroster@outlook.com
-* EMAIL neter@c4o.me
+* EMAIL neteoster@c4o.me
 * EMAIL redapple02041@gmail.com
 
 **Telegram messages will be handled first.**
