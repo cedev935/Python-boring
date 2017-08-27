@@ -1,5 +1,7 @@
 # Project *my-boring-python*
 
+![](https://github.com/redapple0204/my-boring-python/blob/master/logo.png)
+
 ![Python Version](https://img.shields.io/badge/python-3.x-green.svg)
 ![Golang](https://img.shields.io/badge/Go-Powered-blue.svg)
 ![.Net](https://img.shields.io/badge/.Net-Powered-green.svg)
