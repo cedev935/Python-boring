@@ -18,6 +18,8 @@
 
 ## Getting Start
 
+**Any Code of Baidu Netdisk will not be updated anymore**
+
 **vim-config**: Vim config provided by @KGuan [vim-config](https://github.com/redapple0204/my-boring-python/blob/master/vim-config.tar.gz)
 
 **goWiki** A markdown tools written in Go [goWiki(LZZ)](https://github.com/lizongzeshunshun/goWiki)
