@@ -39,7 +39,7 @@
 
 **storgeGo Python SDK** Python SDK of storgeGo
 
-**ScreenFetch** Yeah, just screenfetcher(shoot every 5s, automatically compressing)
+**ScreenFetch** Yeah, just screenfetcher(shoots every 5s, automatically compressing)
 
 **goDown** Multi-thread downloading tools written in Go
 
