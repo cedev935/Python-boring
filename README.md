@@ -16,8 +16,6 @@
 
 ## Getting Start
 
-**py** Lots of interesting script :) [py](https://github.com/redapple0204/my-boring-python/tree/master/py)
-
 **ETransV2** Files transmission tools written in Go [ETransV2](https://github.com/redapple0204/my-boring-python/tree/master/project/ETransV2)
 
 **vim-config**: Vim config provided by @KGuan [vim-config](https://github.com/redapple0204/my-boring-python/blob/master/script/vim-config.tar.gz)
