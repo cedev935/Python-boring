@@ -16,9 +16,7 @@
 
 ## Getting Start
 
-**ETransV2** Files transmission tools written in Go [ETransV2](https://github.com/redapple0204/my-boring-python/tree/master/project/ETransV2)
-
-**vim-config**: Vim config provided by @KGuan [vim-config](https://github.com/redapple0204/my-boring-python/blob/master/script/vim-config.tar.gz)
+**vim-config**: Vim config provided by @KGuan [vim-config](https://github.com/redapple0204/my-boring-python/blob/master/vim-config.tar.gz)
 
 **goWiki** A markdown tools written in Go [goWiki(LZZ)](https://github.com/lizongzeshunshun/goWiki)
 
@@ -26,10 +24,7 @@
 
 **Arch QQ Build** [PKGBUILD-wineqq](https://github.com/redapple0204/my-boring-python/tree/master/PKGBUILD/PKGBUILD-wineqq)
 
-**Arch installation guide** [Arch-Install-Guide](https://github.com/redapple0204/my-boring-python/tree/master/tutorial/Arch-Install-Guide)
-
-
-**PCS Baidu Cloud Download Tools(Bat)** [bat pcs](https://github.com/redapple0204/my-boring-python/tree/master/script/pcs_bat)
+**PCS Baidu Cloud Download Tools(Bat)** [bat pcs](https://github.com/redapple0204/my-boring-python/tree/master/pcs_bat)
 
 **Github issue backup tools(Powershell)** [github issue backup](https://github.com/redapple0204/my-boring-python/tree/master/script/github-issue-backup)
 
