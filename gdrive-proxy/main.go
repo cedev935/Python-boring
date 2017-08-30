@@ -19,12 +19,8 @@ import (
 )
 
 type DriveFile struct {
-	ID     string
-	APIUrl string
-}
-
-func (driveFile *DriveFile) getAPIURL() {
-	driveFile.APIUrl = "https://www.googleapis.com/drive/v3/files/" + driveFile.ID + "?alt=media"
+	ID   string
+	Name string
 }
 
 func getTokenFromWeb(config *oauth2.Config) *oauth2.Token {
@@ -104,18 +100,23 @@ func streamHandler(w http.ResponseWriter, r *http.Request) {
 	driveFile := &DriveFile{
 		ID: fileID,
 	}
-	driveFile.getAPIURL()
-	req, err := http.NewRequest("GET", driveFile.APIUrl, nil)
+	srv, err := drive.New(client)
+	if err != nil {
+		log.Println("[ERROR]", err.Error())
+	}
+	respName, err := srv.Files.Get(driveFile.ID).Do()
+	driveFile.Name = respName.Name
 	if err != nil {
 		log.Println("[ERROR]", err.Error())
 		return
 	}
-	resp, err := client.Do(req)
+	respStream, err := srv.Files.Get(driveFile.ID).Download()
 	if err != nil {
 		log.Println("[ERROR]", err.Error())
 		return
 	}
-	io.Copy(w, resp.Body)
+	w.Header().Add("Content-Disposition", "inline; filename=\""+driveFile.Name+"\"")
+	io.Copy(w, respStream.Body)
 }
 
 func main() {
