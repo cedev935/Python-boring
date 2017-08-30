@@ -84,35 +84,52 @@ func saveToken(file string, token *oauth2.Token) {
 	json.NewEncoder(f).Encode(token)
 }
 
+var DriveConfig *oauth2.Config
+
+func getConfig(configPath string) (config *oauth2.Config, err error) {
+	if DriveConfig == nil {
+		b, err := ioutil.ReadFile(configPath)
+		if err != nil {
+			return nil, err
+		}
+		config, err := google.ConfigFromJSON(b, drive.DriveReadonlyScope)
+		if err != nil {
+			return nil, err
+		}
+		DriveConfig = config
+	}
+	return DriveConfig, nil
+}
+
 func streamHandler(w http.ResponseWriter, r *http.Request) {
 	ctx := context.Background()
-	b, err := ioutil.ReadFile("client_secret.json")
-	if err != nil {
-		log.Fatalf("Unable to read client secret file: %v", err)
-	}
-	config, err := google.ConfigFromJSON(b, drive.DriveReadonlyScope)
-	if err != nil {
-		log.Fatalf("Unable to parse client secret file to config: &v", err)
-	}
-	client := getClient(ctx, config)
 	r.ParseForm()
 	fileID := r.Form.Get("id")
 	driveFile := &DriveFile{
 		ID: fileID,
 	}
+	config, err := getConfig("client_secret.json")
+	if err != nil {
+		log.Println("[ERROR]", err.Error())
+		fmt.Fprintf(w, "Error: %v", err)
+		return
+	}
+	client := getClient(ctx, config)
 	srv, err := drive.New(client)
 	if err != nil {
 		log.Println("[ERROR]", err.Error())
 	}
 	respName, err := srv.Files.Get(driveFile.ID).Do()
-	driveFile.Name = respName.Name
 	if err != nil {
 		log.Println("[ERROR]", err.Error())
+		fmt.Fprintf(w, "Error: %v", err)
 		return
 	}
+	driveFile.Name = respName.Name
 	respStream, err := srv.Files.Get(driveFile.ID).Download()
 	if err != nil {
 		log.Println("[ERROR]", err.Error())
+		fmt.Fprintf(w, "Error: %v", err)
 		return
 	}
 	w.Header().Add("Content-Disposition", "inline; filename=\""+driveFile.Name+"\"")
