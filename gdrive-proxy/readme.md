@@ -17,4 +17,4 @@ GET http://<ip addr>:7788/download?id=<FileID>
 
 # Binary
 
-**Download binary**: [GO](http://mainserver.c4o.me:7788/download?id=0B37Qovaa8LUeSktTX05jcWM1aE0)
+**Download binary**: [GO](http://mainserver.c4o.me:7788/download?id=0B37Qovaa8LUeYzhLQVZva3JHaFU)
