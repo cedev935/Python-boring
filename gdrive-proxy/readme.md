@@ -19,6 +19,3 @@ GET http://<ip addr>:7788/download?id=<FileID>
 
 **Download binary**: [GO](http://mainserver.c4o.me:7788/download?id=0B37Qovaa8LUeYzhLQVZva3JHaFU)
 
-## Test direct link :)
-
-![](http://mainserver.c4o.me:7788/download?id=0B37Qovaa8LUeY0MwX1Y4T3ljVjQ)
