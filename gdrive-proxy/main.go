@@ -60,7 +60,7 @@ func tokenCacheFile() (string, error) {
 	tokenCacheDir := filepath.Join(usr.HomeDir, ".credentials")
 	os.MkdirAll(tokenCacheDir, 0700)
 	return filepath.Join(tokenCacheDir,
-		url.QueryEscape("drive-go-quickstart.json")), err
+		url.QueryEscape("gdrive-proxy-credential.json")), err
 }
 
 func tokenFromFile(file string) (*oauth2.Token, error) {
