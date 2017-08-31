@@ -28,12 +28,12 @@ func getTokenFromWeb(config *oauth2.Config) *oauth2.Token {
 	fmt.Printf("Go to the following link in your browser then type the "+"authorization code: \n%v\n", authURL)
 	var code string
 	if _, err := fmt.Scan(&code); err != nil {
-		log.Fatalf("Unable to read authorization code %v", err)
+		log.Fatalf("Unable to read authorization code: %v", err)
 	}
 
 	tok, err := config.Exchange(oauth2.NoContext, code)
 	if err != nil {
-		log.Println("Unable to retrieve token from web %v", err)
+		log.Fatalf("Unable to retrieve token from web: %v", err)
 
 	}
 	return tok
@@ -133,6 +133,7 @@ func streamHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Header().Add("Content-Disposition", "inline; filename=\""+driveFile.Name+"\"")
+	w.Header().Add("Content-Length", respStream.Header.Get("Content-Length"))
 	io.Copy(w, respStream.Body)
 }
 
