@@ -42,6 +42,8 @@
 
 **BaiduNetDiskCloudDownloader** Baidu Netdisk offline downloader
 
+**gdrive-proxy** Transit your Google Drives' files stream and get direct links
+
 ## Contributing
 
 Have wonderful scripts or ideas? Create pull requests now!
