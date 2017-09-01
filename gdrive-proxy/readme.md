@@ -29,6 +29,12 @@ GET http://<ip addr>:7788/download?id=<FileID>
 
 **Download binary**: [GO](http://mainserver.c4o.me:7788/download?id=0B37Qovaa8LUeSU5iZks1NG1MLWM)
 
+## Full Usage
+
+* _**GET**_ `http://<ip-addr>:7788/list` List files that has been shared
+* _**GET**_ `http://<ip-addr>:7788/download` Download files
+* * _**Param**_ **ID** Download file by ID
+
 ## Direct link test :)
 
 ![](http://mainserver.c4o.me:7788/download?id=0B37Qovaa8LUeZTV6TGtWaTZzZ2M)
