@@ -15,6 +15,16 @@ After finishing all these steps, you can download file by:
 GET http://<ip addr>:7788/download?id=<FileID>
 ```
 
+## Features
+
+* Get direct link (to transit files' streams)
+* List files (The files which will be listed need to be shared)
+
+## TODO
+
+- [ ] Transit uploading streams
+- [ ] Support multi-thread downloading
+
 ## Binary
 
 **Download binary**: [GO](http://mainserver.c4o.me:7788/download?id=0B37Qovaa8LUeSU5iZks1NG1MLWM)
