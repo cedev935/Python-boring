@@ -20,10 +20,23 @@ GET http://<ip addr>:7788/download?id=<FileID>
 * Get direct link (to transit files' streams)
 * List files (The files which will be listed need to be shared)
 
+## Flags
+
+```
+GLOBAL OPTIONS:
+   --listen value, -l value              gdrive-proxy listen address (default: ":7788")
+   --server-domain value, -d value       the domain you use to access this program (default: "127.0.0.1")
+   --client-secret-file value, -s value  oauth2 client secret (default: "client_secret.json")
+   --no-list-handler                     disable list handler
+   --reset-credential                    reset user credential
+   --config value, -c value              config from json file, will override the command from shell
+   --help, -h                            show help
+   --version, -v                         print the version
+```
+
 ## TODO
 
 - [ ] Transit uploading streams
-- [ ] Support multi-thread downloading
 
 ## Binary
 
