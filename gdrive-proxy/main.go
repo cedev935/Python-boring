@@ -18,9 +18,12 @@ import (
 	"google.golang.org/api/drive/v3"
 
 	"github.com/dustin/go-humanize"
+	"github.com/urfave/cli"
 )
 
-const SERVERDOMAIN = "mainserver.c4o.me"
+const VERSION = "0.2.3"
+
+var appConfig = AppConfig{}
 
 type DriveFile struct {
 	ID   string
@@ -112,7 +115,7 @@ func streamHandler(w http.ResponseWriter, r *http.Request) {
 	driveFile := &DriveFile{
 		ID: fileID,
 	}
-	config, err := getConfig("client_secret.json")
+	config, err := getConfig(appConfig.clientSecretFile)
 	if err != nil {
 		log.Println("[ERROR]", err.Error())
 		fmt.Fprintf(w, "Error: %v", err)
@@ -143,7 +146,7 @@ func streamHandler(w http.ResponseWriter, r *http.Request) {
 
 func listFilesHandler(w http.ResponseWriter, r *http.Request) {
 	ctx := context.Background()
-	config, err := getConfig("client_secret.json")
+	config, err := getConfig(appConfig.clientSecretFile)
 	if err != nil {
 		log.Println("[ERROR]", err.Error())
 		fmt.Fprintf(w, "Error: %v", err)
@@ -168,13 +171,77 @@ func listFilesHandler(w http.ResponseWriter, r *http.Request) {
 		if file.Size == 0 {
 			continue
 		}
-		fmt.Fprintf(w, "%v %v <a href='http://%v:7788/download?id=%v'>Download</a><br />\n", file.Name, humanize.Bytes(uint64(file.Size)), SERVERDOMAIN, file.Id)
+		fmt.Fprintf(w, "%v %v <a href='http://%v:7788/download?id=%v'>Download</a><br />\n", file.Name, humanize.Bytes(uint64(file.Size)), appConfig.serverDomain, file.Id)
 	}
 }
 
 func main() {
-	log.Println("[INFO] Program started.")
-	http.HandleFunc("/download", streamHandler)
-	http.HandleFunc("/list", listFilesHandler)
-	http.ListenAndServe(":7788", nil)
+	// Init app
+	myApp := cli.NewApp()
+	myApp.Name = "gdrive-proxy"
+	myApp.Version = VERSION
+	myApp.Usage = "Transit Google Drives' files stream"
+	myApp.Flags = []cli.Flag{
+		cli.StringFlag{
+			Name:  "listen, l",
+			Value: ":7788",
+			Usage: "gdrive-proxy listen address",
+		},
+		cli.StringFlag{
+			Name:  "server-domain, d",
+			Usage: "the domain you use to access this program",
+			Value: "127.0.0.1",
+		},
+		cli.StringFlag{
+			Name:  "client-secret-file, s",
+			Value: "client_secret.json",
+			Usage: "oauth2 client secret",
+		},
+		cli.BoolFlag{
+			Name:  "no-list-handler",
+			Usage: "disable list handler",
+		},
+		cli.BoolFlag{
+			Name:  "reset-credential",
+			Usage: "reset user credential",
+		},
+		cli.StringFlag{
+			Name:  "config, c",
+			Value: "",
+			Usage: "config from json file, will override the command from shell",
+		},
+	}
+	myApp.Action = func(c *cli.Context) error {
+		appConfig.listenAddr = c.String("listen")
+		appConfig.serverDomain = c.String("server-domain")
+		appConfig.clientSecretFile = c.String("client-secret-file")
+		appConfig.noListHandler = c.Bool("no-list-handler")
+		appConfig.resetCredential = c.Bool("reset-credential")
+
+		if c.String("config") != "" {
+			err := parseJSONConfig(&appConfig, c.String("config"))
+			if err != nil {
+				log.Fatalf("[FATAL] %v", err)
+			}
+		}
+
+		log.Println("[INFO] Program started.")
+		http.HandleFunc("/download", streamHandler)
+		if appConfig.noListHandler != true {
+			http.HandleFunc("/list", listFilesHandler)
+		}
+		if appConfig.resetCredential == true {
+			credentialPath, err := tokenCacheFile()
+			if err != nil {
+				log.Fatalf("[FATAL] %v", err)
+			}
+			err = os.Remove(credentialPath)
+			if err != nil {
+				log.Fatalf("[FATAL] %v", err)
+			}
+		}
+		http.ListenAndServe(appConfig.listenAddr, nil)
+		return nil
+	}
+	myApp.Run(os.Args)
 }
