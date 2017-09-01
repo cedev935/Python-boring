@@ -16,7 +16,11 @@ import (
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/drive/v3"
+
+	"github.com/dustin/go-humanize"
 )
+
+const SERVERDOMAIN = "mainserver.c4o.me"
 
 type DriveFile struct {
 	ID   string
@@ -137,8 +141,40 @@ func streamHandler(w http.ResponseWriter, r *http.Request) {
 	io.Copy(w, respStream.Body)
 }
 
+func listFilesHandler(w http.ResponseWriter, r *http.Request) {
+	ctx := context.Background()
+	config, err := getConfig("client_secret.json")
+	if err != nil {
+		log.Println("[ERROR]", err.Error())
+		fmt.Fprintf(w, "Error: %v", err)
+		return
+	}
+	client := getClient(ctx, config)
+	srv, err := drive.New(client)
+	filesListReq, err := srv.Files.List().Fields("files(id, name, size, shared)").Do()
+	filesList := filesListReq.Files
+	if err != nil {
+		log.Println("[ERROR]", err.Error())
+		fmt.Fprintf(w, "Error: %v", err)
+		return
+	}
+	fmt.Fprintf(w, "<!DOCTYPE html>\n")
+	fmt.Fprintf(w, "<title>Download Files</title>\n")
+	fmt.Fprintf(w, "<h1>Download Files</h1>\n")
+	for _, file := range filesList {
+		if file.Shared == false {
+			continue
+		}
+		if file.Size == 0 {
+			continue
+		}
+		fmt.Fprintf(w, "%v %v <a href='http://%v:7788/download?id=%v'>Download</a><br />\n", file.Name, humanize.Bytes(uint64(file.Size)), SERVERDOMAIN, file.Id)
+	}
+}
+
 func main() {
 	log.Println("[INFO] Program started.")
 	http.HandleFunc("/download", streamHandler)
+	http.HandleFunc("/list", listFilesHandler)
 	http.ListenAndServe(":7788", nil)
 }
