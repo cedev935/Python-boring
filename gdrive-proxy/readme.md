@@ -36,7 +36,7 @@ GLOBAL OPTIONS:
 
 ## TODO
 
-- [ ] Transit uploading streams
+Nothing now
 
 ## Binary
 
