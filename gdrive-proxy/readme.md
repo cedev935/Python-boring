@@ -46,7 +46,7 @@ Nothing now
 
 * _**GET**_ `http://<ip-addr>:<port>/list` List files that has been shared
 * _**GET**_ `http://<ip-addr>:<port>/download` Download files
-* * _**Param**_ **ID** Download file by ID
+  * _**Param**_ **ID** Download file by ID
 
 ## Direct link test :)
 
