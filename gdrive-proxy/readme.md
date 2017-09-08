@@ -12,7 +12,7 @@ Then, in the console, a link will be printed, use your browser to open it and fi
 After finishing all these steps, you can download file by:
 
 ```
-GET http://<ip addr>:7788/download?id=<FileID>
+GET http://<ip addr>:<port>/download?id=<FileID>
 ```
 
 ## Features
