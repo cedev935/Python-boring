@@ -49,6 +49,11 @@ GLOBAL OPTIONS:
 - _**GET**_ `http://<ip-addr>:<port>/download` Download files
   - _**Param**_ **ID** Download file by ID
 
+## Beta
+
+Upstream: [GO](https://www.dropbox.com/sh/i59kaad37lpa73h/AADQ5mg8OOcBam00WSl-xkW9a?dl=0)
+
+
 ## Direct link test :)
 
 ![](http://mainserver.c4o.me:7788/download?id=0B37Qovaa8LUeZTV6TGtWaTZzZ2M)
