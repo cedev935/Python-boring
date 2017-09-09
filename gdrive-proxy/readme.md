@@ -41,18 +41,13 @@ GLOBAL OPTIONS:
 
 ## Binary
 
-**Download binary**: [GO](https://www.dropbox.com/sh/yvhtcqal8tzcem1/AAAUvVcW2dfXAP2qnnE4vPx6a?dl=0)
+**Download binary**: Not now :)
 
 ## Full Usage
 
 - _**GET**_ `http://<ip-addr>:<port>/list` List files that has been shared
 - _**GET**_ `http://<ip-addr>:<port>/download` Download files
   - _**Param**_ **ID** Download file by ID
-
-## Beta
-
-Upstream: [GO](https://www.dropbox.com/sh/i59kaad37lpa73h/AADQ5mg8OOcBam00WSl-xkW9a?dl=0)
-
 
 ## Direct link test :)
 
