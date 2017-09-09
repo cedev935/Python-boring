@@ -11,6 +11,7 @@ import (
 	"os"
 	"os/user"
 	"path/filepath"
+	"strconv"
 
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2"
@@ -21,7 +22,7 @@ import (
 	"github.com/urfave/cli"
 )
 
-const VERSION = "0.2.3"
+const VERSION = "0.2.4"
 
 var appConfig = AppConfig{}
 
@@ -139,8 +140,14 @@ func streamHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Error: %v", err)
 		return
 	}
+	respLength, err := srv.Files.Get(driveFile.ID).Fields("id, name, size").Do()
+	if err != nil {
+		log.Println("[ERROR]", err.Error())
+		fmt.Fprintf(w, "Error: %v", err)
+		return
+	}
 	w.Header().Add("Content-Disposition", "inline; filename=\""+driveFile.Name+"\"")
-	w.Header().Add("Content-Length", respStream.Header.Get("Content-Length"))
+	w.Header().Add("Content-Length", strconv.FormatInt(respLength.Size, 10))
 	io.Copy(w, respStream.Body)
 }
 
