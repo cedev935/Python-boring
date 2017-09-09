@@ -41,7 +41,7 @@ GLOBAL OPTIONS:
 
 ## Binary
 
-**Download binary**: [GO](http://mainserver.c4o.me:7788/download?id=0B37Qovaa8LUeSU5iZks1NG1MLWM)
+**Download binary**: [GO](https://www.dropbox.com/sh/yvhtcqal8tzcem1/AAAUvVcW2dfXAP2qnnE4vPx6a?dl=0)
 
 ## Full Usage
 
