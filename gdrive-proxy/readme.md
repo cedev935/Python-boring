@@ -3,22 +3,23 @@
 **Use your vps to transit Drives' files stream**
 
 ## Usage
+
 First, start the program.
 
-Second, start your browser and open `http://<ip-addr>:7788/download` (\<ip-addr\> is the ip address of the device where you run this program)
+Second, start your browser and open `http://<ip-addr>:<port>/download` (\<ip-addr\> is the ip address of the device where you run this program, \<port\> is defaultly set to 7788)
 
 Then, in the console, a link will be printed, use your browser to open it and finish the authentication process, a code will finally show on your browser, copy it to the console and press \<Enter\>.
 
 After finishing all these steps, you can download file by:
 
 ```
-GET http://<ip addr>:7788/download?id=<FileID>
+GET http://<ip addr>:<port>/download?id=<FileID>
 ```
 
 ## Features
 
-* Get direct link (to transit files' streams)
-* List files (The files which will be listed need to be shared)
+- Get direct link (to transit files' streams)
+- List files (The files which will be listed need to be shared)
 
 ## Flags
 
@@ -36,17 +37,17 @@ GLOBAL OPTIONS:
 
 ## TODO
 
-Nothing now
+- Single server multi users
 
 ## Binary
 
-**Download binary**: [GO](http://mainserver.c4o.me:7788/download?id=0B37Qovaa8LUeSU5iZks1NG1MLWM)
+**Download binary**: Not now :)
 
 ## Full Usage
 
-* _**GET**_ `http://<ip-addr>:7788/list` List files that has been shared
-* _**GET**_ `http://<ip-addr>:7788/download` Download files
-* * _**Param**_ **ID** Download file by ID
+- _**GET**_ `http://<ip-addr>:<port>/list` List files that has been shared
+- _**GET**_ `http://<ip-addr>:<port>/download` Download files
+  - _**Param**_ **ID** Download file by ID
 
 ## Direct link test :)
 
