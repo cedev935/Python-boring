@@ -27,4 +27,18 @@
 
 #### Params
 
-* key= \<key>
+* key: \<key>
+
+### List all storage
+
+**GET** /list
+
+### Sync from another node
+
+**GET** /sync
+
+#### Params
+
+* apiaddr: the ip address of another node
+
+
