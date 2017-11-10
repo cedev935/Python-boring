@@ -8,10 +8,10 @@
 [![Development](https://img.shields.io/badge/development-frozen-red.svg)](https://github.com/redapple0204/my-boring-python/blob/master/status.md)
 
 **Support**
-* Telegram [@neteroster](https://t.me/neteroster) // NOT AVAILABLE FOR 6 DAYS FROM 2017-11-05 TO 2017-11-10
+* Telegram [@neteroster](https://t.me/neteroster)
 * Telegram [@redapple0204](https://t.me/redapple0204)
-* EMAIL neteroster@outlook.com // NOT AVAILABLE FOR 6 DAYS FROM 2017-11-05 TO 2017-11-10
-* EMAIL neteoster@c4o.me // NOT AVAILABLE FOR 6 DAYS FROM 2017-11-05 TO 2017-11-10
+* EMAIL neteroster@outlook.com
+* EMAIL neteoster@c4o.me
 * EMAIL redapple02041@gmail.com
 
 **Telegram messages will be handled first.**
