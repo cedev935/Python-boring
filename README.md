@@ -14,7 +14,21 @@
 * EMAIL neteoster@c4o.me
 * EMAIL redapple02041@gmail.com
 
-**Telegram messages will be handled first.**
+### NeterOster To You
+
+**Because of the ZhongKao, the code will not be maintained by me all the time this year because the maintainers is preparing for the exam.**
+
+**If you have any quetion, you can still contect me by the those ways. However, I can't sure that I can reply you.**
+
+**It's a hard decision to stop maintaining this project, but it's necessary for me.**
+
+**I hope that you the viewers who is watching the screen, now, can get something whether it's knowledge or something else like a kind of emotions or feelings.**
+
+**We are together.**
+
+**NeterOster** 2017.11.29
+
+
 
 ## Getting Start
 
