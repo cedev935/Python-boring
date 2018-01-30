@@ -29,11 +29,11 @@ while True: #循环
 	homework_jindutiao = open(r"C:\Users\redapple\.holiday\homework_jdt.txt", "r").read() #读取文件
 	convent_summer = 28-summer_holiday_last_ture #计算相当于暑假的多少号
 	if convent_summer <= 0: #但是如果<28天就说明相当于暑假的7月
-		convent_summer_seven = 31-(summer_holiday_last_ture-28) #所以这个时候就要重新计算
+		convent_summer_seven = 31-(summer_holiday_last_ture-28) #所以这个时候就要重新计算     
 		print_summer = "7月" + str(convent_summer_seven) #就是相当于暑假的七月
 	else: #反之
 		print_summer = "8月" + str(convent_summer) #就是相当于暑假的八月
-	tips = "今天是" + str(today) + "\n" + "距离寒假结束还有" + str(summer_holiday_last_ture) + "天" + "\n" + "寒假已经过去了" + str(jdt) + "\n" + "现在相当于暑假的" + str(print_summer) + "日" + "\n" + "寒假作业已经完成了" + str(homework_jindutiao) #配置窗口要显示的内容
+	tips = "今天是" + str(today) + "\n" + "距离寒假结束还有" + str(summer_holiday_last_ture) + "天" + "\n" + "寒假已经过去了" + "\n" +                           str(jdt) + "\n" + "现在相当于暑假的" + str(print_summer) + "日" + "\n" + "寒假作业已经完成了" + "\n" +           str(homework_jindutiao) #配置窗口要显示的内容
 	tips_finally = easygui.codebox(tips,"倒计时小程序",file) #显示窗口
 	file.close() #关闭文件
 	if tips_finally == None: #如果用户按了关闭或取消
