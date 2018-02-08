@@ -73,8 +73,9 @@ while True: #循环
 	remove_egl = cal.replace("February 2018","二零一八年二月") #删除最顶上的日历以免替换的时候有歧义
 	today_false = datetime.date.today() #倒入今天日期
 	today_true = str(today_false.day) #str今天日期（精确到日）
-	change_nowday = remove_egl.replace(today_true+" ","今") #替换今天日期
-	change_all = change_nowday.replace("25","毕") #替换假期结束日期
+	change_guonian = remove_egl.replace("16","年")
+	change_finish = change_guonian.replace("25","毕") #替换假期结束日期
+	change_all = change_finish.replace(today_true+" ","今") #替换今天日期
 	tips = "今天是" + str(today) + "\n" + "距离寒假结束还有" + str(summer_holiday_last_ture) + "天" + "\n" + "寒假已经过去了" + "\n" + str(jdt) + "\n" + "现在相当于暑假的" + str(print_summer) + "日" + "\n" + "寒假作业已经完成了" + "\n" + str(homework_jindutiao) + "\n" + calc_weekday + "\n" + "日历显示如下" + "\n" + change_all  #配置窗口要显示的内容
 	tips_finally = easygui.codebox(tips,"倒计时小程序",file) #显示窗口
 	file.close() #关闭文件
