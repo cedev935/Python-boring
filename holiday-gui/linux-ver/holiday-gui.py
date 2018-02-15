@@ -33,6 +33,12 @@ while True: #循环
 		print_summer = "7月" + str(convent_summer_seven) #就是相当于暑假的七月
 	else: #反之
 		print_summer = "8月" + str(convent_summer) #就是相当于暑假的八月
+	convent_last_winter = 12-summer_holiday_last_ture
+	if convent_last_winter <=0:
+		convent_last_winter_Jan = 31-(summer_holiday_last_ture-12)
+		print_winter = "1月"+str(convent_last_winter_Jan)
+	else:
+		print_winter = "2月"+str(convent_last_winter)
 	basic_day = datetime.date.today() #导入今天
 	check_day = datetime.date(2018,2,25) #导入结束的日期
 	days_gap  = (check_day-basic_day).days-(7-basic_day.isoweekday()) #计算差几个周
@@ -75,8 +81,8 @@ while True: #循环
 	today_true = str(today_false.day) #str今天日期（精确到日）
 	change_guonian = remove_egl.replace("16","年")
 	change_finish = change_guonian.replace("25","毕") #替换假期结束日期
-	change_all = change_finish.replace(today_true+" ","今") #替换今天日期
-	tips = "今天是" + str(today) + "\n" + "距离寒假结束还有" + str(summer_holiday_last_ture) + "天" + "\n" + "寒假已经过去了" + "\n" + str(jdt) + "\n" + "现在相当于暑假的" + str(print_summer) + "日" + "\n" + "寒假作业已经完成了" + "\n" + str(homework_jindutiao) + "\n" + calc_weekday + "\n" + "日历显示如下" + "\n" + change_all  #配置窗口要显示的内容
+	change_all = change_finish.replace(today_true,"今") #替换今天日期
+	tips = "今天是" + str(today) + "\n" + "距离寒假结束还有" + str(summer_holiday_last_ture) + "天" + "\n" + "寒假已经过去了" + "\n" + str(jdt) + "\n" + "现在相当于暑假的" + str(print_summer) + "日" + "\n" + "现在相当于去年寒假的" + str(print_winter) + "日" + "\n" + "寒假作业已经完成了" + "\n" + str(homework_jindutiao) + "\n" + calc_weekday + "\n" + "日历显示如下" + "\n" + change_all  #配置窗口要显示的内容
 	tips_finally = easygui.codebox(tips,"倒计时小程序",file) #显示窗口
 	file.close() #关闭文件
 	if tips_finally == None: #如果用户按了关闭或取消
