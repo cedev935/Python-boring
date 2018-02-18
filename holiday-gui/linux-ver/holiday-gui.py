@@ -27,9 +27,9 @@ while True: #循环
 	os.system("rm /home/redapple/.holiday/homework_jdt.txt") #删掉已有的文件（自己改路径）
 	os.system('python3 /home/redapple/.holiday/homework_jdt.py > /home/redapple/.holiday/homework_jdt.txt') #把进度条写入文件
 	homework_jindutiao = open("/home/redapple/.holiday/homework_jdt.txt", "r").read() #读取文件
-	convent_summer = 28-summer_holiday_last_ture #计算相当于暑假的多少号
-	if convent_summer <= 0: #但是如果<28天就说明相当于暑假的7月
-		convent_summer_seven = 31-(summer_holiday_last_ture-28) #所以这个时候就要重新计算
+	convent_summer = 29-summer_holiday_last_ture #计算相当于暑假的多少号
+	if convent_summer <= 0: #但是如果<29天就说明相当于暑假的7月
+		convent_summer_seven = 31-(summer_holiday_last_ture-29) #所以这个时候就要重新计算
 		print_summer = "7月" + str(convent_summer_seven) #就是相当于暑假的七月
 	else: #反之
 		print_summer = "8月" + str(convent_summer) #就是相当于暑假的八月
