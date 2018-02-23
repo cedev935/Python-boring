@@ -20,9 +20,6 @@
 
 8.对比去年暑假和去年寒假
 
-## 截图
-
-![qq 20180223185948](https://user-images.githubusercontent.com/16254644/36591113-def5f6fc-18cb-11e8-9e8c-5eb33ac56779.png)
 
 ## 使用方法
 
