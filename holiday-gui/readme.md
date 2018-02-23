@@ -20,6 +20,9 @@
 
 8.对比去年暑假和去年寒假
 
+## 截图
+
+![](https://github.com/redapple0204/my-boring-python/blob/master/holiday-gui/windows-ver/QQ%E6%88%AA%E5%9B%BE20180223200618.png)
 
 ## 使用方法
 
