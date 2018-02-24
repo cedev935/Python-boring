@@ -83,8 +83,10 @@ while True: #循环
 	change_finish = change_guonian.replace("25","毕") #替换假期结束日期
 	change_all = change_finish.replace(today_true,"今") #替换今天日期
 	now_time_hour = hour=time.localtime().tm_hour
+	now_time_minutes = hour=time.localtime().tm_min
 	calc_hours = 24-now_time_hour+(summer_holiday_last)*24+14
-	tips = "今天是" + str(today) + "\n" + "距离寒假结束还有" + str(summer_holiday_last_ture) + "天" + "\n" + "距离寒假结束还有" + str(calc_hours) + "个小时" + "\n" + "寒假已经过去了" + "\n" + str(jdt) + "\n" + "现在相当于暑假的" + str(print_summer) + "日" + "\n" + "现在相当于去年寒假的" + str(print_winter) + "日" + "\n" + "寒假作业已经完成了" + "\n" + str(homework_jindutiao) + "\n" + calc_weekday + "\n" + "日历显示如下" + "\n" + change_all  #配置窗口要显示的内容
+	calc_minutes = ((summer_holiday_last)*24+14)*60+(24-now_time_hour)*60+60-now_time_minutes
+	tips = "今天是" + str(today) + "\n" + "距离寒假结束还有" + str(summer_holiday_last_ture) + "天" + "\n" + "距离寒假结束还有" + str(calc_hours) + "个小时" + "\n" + "距离寒假结束还有" + str(calc_minutes) + "分钟" + "\n" + "寒假已经过去了" + "\n" + str(jdt) + "\n" + "现在相当于暑假的" + str(print_summer) + "日" + "\n" + "现在相当于去年寒假的" + str(print_winter) + "日" + "\n" + "寒假作业已经完成了" + "\n" + str(homework_jindutiao) + "\n" + calc_weekday + "\n" + "日历显示如下" + "\n" + change_all  #配置窗口要显示的内容
 	tips_finally = easygui.codebox(tips,"倒计时小程序",file) #显示窗口
 	file.close() #关闭文件
 	if tips_finally == None: #如果用户按了关闭或取消
