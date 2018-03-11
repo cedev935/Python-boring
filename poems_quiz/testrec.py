@@ -65,6 +65,5 @@ while(True):
         failed += 1
     print("当前速度指数 " + str(1/(total_time_cost/(passed+failed))))
     print("当前正确率 " + str((passed/(passed+failed))*100) + "% ")
-    print("当前分数: " + str(1/(total_time_cost/(passed+failed)) * ((passed/(passed+failed))*100)))
 
 
