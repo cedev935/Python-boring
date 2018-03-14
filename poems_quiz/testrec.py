@@ -1,12 +1,9 @@
 # Python 3.x
 
-import os,random,time
-
 '''
 请把诗句放在与本文件同目录的poems.txt
 格式如下：
 --------NOT INCLUDE THIS---------
-
 望岳
 岱宗夫如何？齐鲁青未了。
 造化钟神秀，阴阳割昏晓。
@@ -21,6 +18,7 @@ import os,random,time
 --------NOT INCLUDE THIS---------
 '''
 
+import os,random,time
 poems_file = open("poems.txt")
 poems_str = poems_file.read()
 poems_file.close()
@@ -34,7 +32,6 @@ failed = 0
 total_time_cost = 0
 while(True):
     test_poem = poems_list[random.randint(0,poems_num-1)] # select a poem randomly
-    
     test_poem_sents = test_poem.split("\n") # split the poem into sentences list
     test_poem_sents.pop() # del last ""
     del test_poem_sents[0]
@@ -47,10 +44,12 @@ while(True):
         test_sent_list = test_sent.split("？")
 
     if test_first_or_last == 0:
-        show_first_or_last = "下一句"
+        show_first_or_last = "下一句" 
     else:
         show_first_or_last = "上一句"
     start_time = time.time()
+#   inputp = input("请输入 “" + test_sent_list[test_first_or_last] + "”" + "【" + test_poem_title +"】" +  show_first_or_last + " ：" )
+# If you want to see the tittle of the poem, you can enable this line.
     inputp = input("请输入 “" + test_sent_list[test_first_or_last] + "” 的" + show_first_or_last + " ：")
     end_time = time.time()
     time_cost = end_time - start_time
