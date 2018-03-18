@@ -2,7 +2,7 @@
 
 **检测你的古诗背诵能力，testrec.py是直接在控制台考研您的古诗背诵能力。而testrec_output.py是把测试输出到文档，方便您打印。**
 
-WARNING:testrec_out.py会在第一次打开的时候提示找不到文件，不用理会。
+【WARNING】testrec_out.py会在第一次打开的时候提示找不到文件，不用理会。
 
 PS：优点比较
 
