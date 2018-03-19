@@ -1,8 +1,15 @@
 # Python 3.x
 
 import os,random,time
-type_count = str(input("请输入生成的诗句个数,【WARNING】这会替换以前存在的诗句"))
-os.system("echo 古诗默写测试 > output.txt && echo 测试答案 > answer.txt")
+type_count = str(input("请输入生成的诗句个数,【WARNING】这会替换以前存在的诗句："))
+delete_choice = input("是否删除原文档（不删除可以智能检测重复）[y/n]")
+if delete_choice == "y":
+	os.system("echo 古诗默写测试 > output.txt && echo 测试答案 > answer.txt")
+elif delete_choice == "n":
+	os.system("echo '     ' >> output.txt && echo '       ' >> answer.txt")
+else:
+	print("输入错误")
+	exit()
 count = int(1)
 while True:
 	poems_file = open("poems.txt")
