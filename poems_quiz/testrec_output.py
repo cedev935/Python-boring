@@ -1,8 +1,12 @@
 # Python 3.x
 
-import os,random,time
+import os,random,time,datetime
 type_count = str(input("请输入生成的诗句个数,【WARNING】这会替换以前存在的诗句："))
 delete_choice = input("是否删除原文档（不删除可以智能检测重复）[y/n]")
+today = str(datetime.date.today())
+time_hour = str(time.localtime().tm_hour)
+time_minutes = str(time.localtime().tm_min) 
+now_time = "本份题目生成时间为:"+" "+today+" "+time_hour+"："+time_minutes
 if delete_choice == "y":
 	os.system("echo 古诗默写测试 > output.txt && echo 测试答案 > answer.txt")
 elif delete_choice == "n":
@@ -33,11 +37,11 @@ while True:
 		show_first_or_last = "下一句" 
 	else:
 		show_first_or_last = "上一句"
-	output = (str(count) + "." + "请写出 “" + test_sent_list[test_first_or_last] + "”" + "【" + test_poem_title +"】" +  show_first_or_last + " ：" )
-	answer = (str(count) + "." + "【" + test_poem_title + "】 " + test_sent_list[0] + " " + test_sent_list[1])
+	output = (str(count) + "." + "请写出 “" + test_sent_list[test_first_or_last] + "”" + "（" + test_poem_title +"）" +  show_first_or_last + " ：" )
+	answer = (str(count) + "." + "（" + test_poem_title + "） " + test_sent_list[0] + " " + test_sent_list[1])
 	output_file_open = open("output.txt",'r')
 	output_file = output_file_open.read()
-	if test_sent_list[test_first_or_last] + "”" + "【" + test_poem_title +"】" +  show_first_or_last in output_file:
+	if test_sent_list[test_first_or_last] + "”" + "（" + test_poem_title +"）" +  show_first_or_last in output_file:
 		print("查找到重复诗句！将换成一句新的！")
 		count-=1
 	else:
@@ -47,5 +51,7 @@ while True:
 	if int(count) < int(type_count):
 		count+=1
 	else:
+		os.system("echo" + " " + now_time + ">> output.txt")
+		os.system("echo" + " " + now_time + ">> answer.txt")
 		print("生成完毕")
 		exit()
