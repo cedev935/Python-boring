@@ -37,11 +37,15 @@ while True:
 		show_first_or_last = "下一句" 
 	else:
 		show_first_or_last = "上一句"
-	output = (str(count) + "." + "请写出 “" + test_sent_list[test_first_or_last] + "”" + "（" + test_poem_title +"）" +  show_first_or_last + " ：" )
+	if test_first_or_last == 0:
+		output_raw = test_sent_list[test_first_or_last] + "，" + "_________________" + "（" + test_poem_title +"）"
+	else:
+		output_raw = "_________________" + "，" + test_sent_list[test_first_or_last] + "（" + test_poem_title +"）" 
+	output = (str(count) + "." + output_raw)
 	answer = (str(count) + "." + "（" + test_poem_title + "） " + test_sent_list[0] + " " + test_sent_list[1])
 	output_file_open = open("output.txt",'r')
 	output_file = output_file_open.read()
-	if test_sent_list[test_first_or_last] + "”" + "（" + test_poem_title +"）" +  show_first_or_last in output_file:
+	if output_raw in output_file:
 		print("查找到重复诗句！将换成一句新的！")
 		count-=1
 	else:
