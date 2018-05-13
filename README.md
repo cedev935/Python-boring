@@ -16,7 +16,7 @@
 
 ### NeterOster To You
 
-**Because of the 'ZhongKao', the code will not be maintained by me all the time this year because the maintainers is preparing for the exam.**
+**Because of the ZhongKao, the code will not be maintained by me all the time this year because the maintainers is preparing for the exam.**
 
 **If you have any quetion, you can still contect me by the those ways. However, I can't sure that I can reply you.**
 
