@@ -4,8 +4,7 @@
 
 ### 今日心情
 
-![qq 20180703205533](https://user-images.githubusercontent.com/16254644/42221111-8e21c618-7f03-11e8-9441-2d7227b96871.png)
-
+![qq 20180703205827](https://user-images.githubusercontent.com/16254644/42221197-e8ba8286-7f03-11e8-9871-8a3d50670074.png)
 
 ### 制作目的
 
