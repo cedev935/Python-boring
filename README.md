@@ -8,6 +8,8 @@
 [![Development](https://img.shields.io/badge/development-active-blue.svg)](https://github.com/redapple0204/my-boring-python/blob/master/status.md)
 
 **Support**
+
+*The Project is created by two high school students in Shenzhen, China.*
 * Telegram [@neteroster](https://t.me/neteroster)
 * Telegram [@redapple0204](https://t.me/redapple0204)
 * EMAIL neteroster@outlook.com
