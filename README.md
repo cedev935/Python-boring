@@ -5,30 +5,16 @@
 ![Python Version](https://img.shields.io/badge/python-3.x-green.svg)
 ![Golang](https://img.shields.io/badge/Go-Powered-blue.svg)
 ![.Net](https://img.shields.io/badge/.Net-Powered-green.svg)
-[![Development](https://img.shields.io/badge/development-frozen-red.svg)](https://github.com/redapple0204/my-boring-python/blob/master/status.md)
+[![Development](https://img.shields.io/badge/development-active-blue.svg)](https://github.com/redapple0204/my-boring-python/blob/master/status.md)
 
 **Support**
+
+*The Project is created by two high school students in Shenzhen, China.*
 * Telegram [@neteroster](https://t.me/neteroster)
 * Telegram [@redapple0204](https://t.me/redapple0204)
 * EMAIL neteroster@outlook.com
 * EMAIL neteoster@c4o.me
 * EMAIL redapple02041@gmail.com
-
-### NeterOster To You
-
-**Because of the ZhongKao, the code will not be maintained by me all the time this year because the maintainers is preparing for the exam.**
-
-**If you have any quetion, you can still contect me by the those ways. However, I can't sure that I can reply you.**
-
-**It's a hard decision to stop maintaining this project, but it's necessary for me.**
-
-**I hope that you the viewers who is watching the screen, now, can get something whether it's knowledge or something else like a kind of emotions or feelings.**
-
-**We are together.**
-
-**NeterOster** 2017.11.29
-
-
 
 ## Getting Start
 
