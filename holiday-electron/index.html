@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <Title>Holiday-Electron</Title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/textareacss.css">
+        <style type="text/css">
+        p {font-size: 20px}
+        </style>
+    </head>
+    <body>
+        <p id="date">Today is: </p>
+        <p id="time">Now: </p>
+        <p id="holidayName">Holiday: </p>
+        <p id="holidayStartEnd">Holiday Time: </p>
+        <p id="toEndTime">Holiday To End: </p>
+        <br />
+
+        <div class="homework" style="height: 10px">
+            <div class="container" style="height: 10px">
+                <div class="row" style="height: 10px">
+                    <div class="col-md-offset-3 col-md-6" style="height: 10px">
+                        <div class="progress" style="height: 20px">
+                            <div class="progress-bar" style="width: 55%; background:#005394;" id="probar">
+                                <span id="sppercent">55%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <h3><b>HomeWork</b></h3>
+        <textarea id="homeworkcon"></textarea>
+
+        <script type="text/javascript">
+        const fs = require("fs");
+        const humanizeDuration = require('humanize-duration')
+        function showTime () {
+            var dt = new Date();
+            var y = dt.getFullYear();
+            var m = dt.getMonth() + 1;
+            var d = dt.getDay();
+            var h = dt.getHours();
+
+            var mins = dt.getMinutes();
+            var secs = dt.getSeconds();
+            var millsecs = dt.getMilliseconds();
+
+            document.getElementById("date").innerHTML = "Today is: " + y +"-" + m + "-" + d;
+            document.getElementById("time").innerHTML = "Now: " + h + ":" + mins + ":" + secs + "." + millsecs;
+        }
+        showTime();
+        setInterval(showTime, 1000);
+
+        fs.readFile('holiday.json', 'utf-8', function(err, data){
+            showHoliday(data);
+            setInterval(showHoliday, 1000, data);
+        });
+        function showHoliday (holidayData) {
+            holiday = JSON.parse(holidayData);
+            document.getElementById("holidayName").innerHTML = "Holiday Name: " + holiday.holiday.name;
+            document.getElementById("holidayStartEnd").innerHTML = "Holiday From " + holiday.holiday.startDate + " To " + holiday.holiday.endDate;
+            var holidayStart = new Date(holiday.holiday.startDate);
+            var holidayEnd = new Date(holiday.holiday.endDate);
+            var nowDate = new Date();
+            var startToNow = nowDate - holidayStart;
+            var nowToEnd = holidayEnd - nowDate; //millisecs
+            document.getElementById("toEndTime").innerHTML = "Still " + humanizeDuration(nowToEnd) + " left.";
+
+            var passPercent = startToNow/(holidayEnd - holidayStart) * 100;
+            document.getElementById("probar").style.width = passPercent.toFixed(3).toString() + "%";
+            document.getElementById("sppercent").innerHTML = "Holiday has passed " + passPercent.toFixed(3).toString() + "%";
+        }
+        function showHomework () {
+            fs.readFile('homework.txt', 'utf-8', function(err, data) {
+                document.getElementById("homeworkcon").innerHTML = data;
+            })
+        }
+        showHomework();
+
+        function writeHomework () {
+            var cont = document.getElementById("homeworkcon").value;
+            fs.writeFile("homework.txt", cont);
+        }
+        setInterval(writeHomework, 5000)
+
+        </script>
+    </body>
+</html>
