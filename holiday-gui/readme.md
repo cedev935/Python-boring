@@ -24,7 +24,7 @@
 
 ## 截图
 
-![](https://github.com/redapple0204/my-boring-python/blob/master/holiday-gui/windows-ver/QQ%E6%88%AA%E5%9B%BE20180224132125.png)
+![qq 20180805183421](https://user-images.githubusercontent.com/16254644/43685035-3ed8276a-98de-11e8-98b4-56c454598dd9.png)
 
 ## 使用方法
 
