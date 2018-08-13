@@ -9,7 +9,9 @@ This script helps you check and get INTERNET connection.
 import requests,json
 
 def check_international_connection():
-    req = requests.get('https://www.google.com/ncr')
+    try:
+        req = requests.get('https://www.google.com/ncr')
+    except: return False
     if req.status_code != 200 :
         return False
     elif req.status_code == 200:
@@ -17,7 +19,9 @@ def check_international_connection():
     return False
 
 def check_national_connection():
-    req = requests.get('https://www.baidu.com')
+    try:
+        req = requests.get('https://www.baidu.com')
+    except: return False
     if req.status_code != 200 :
         return False
     elif req.status_code == 200:
