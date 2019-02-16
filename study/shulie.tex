@@ -1,0 +1,100 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\title{关于数列的一些学习记录}
+\author{李宗泽}
+\date{\today}
+
+\def\inlinedisplay#1{$\displaystyle #1$}
+
+\begin{document}
+	\maketitle
+	\section{数列的概念}
+	\paragraph{数列}
+	数列是由\textbf{数字组成的序列}，一个数列可以用 $\{a_n\}$ 表示，数列中的每个数字，称为数列的\textbf{项}，用 $a_n$ 表示 $\{a_n\}$ 数列的第 $n$ 项.
+	\paragraph{数列的通项公式}
+	若能找到一个表达式 \inlinedisplay{f(n) = a_n (n \in \mathbb{Z} ^ +)} 给出数列 $\{a_n\}$ 的第 $n$ 项的值，则称这个 $f(n)$ 为数列 $\{a_n\}$ 的通项公式.
+	\paragraph{数列的前$n$项和}
+	一般地，用 $S_n$ 表示一个数列的前 $n$ 项和. 有 
+	\[S_n=a_1+a_2+a_3+\cdots+a_n=\sum_{i=1}^n a_i\]
+	特殊地，$S_1=a_1$
+	\paragraph{数列的递推公式}
+	数列的递推公式表示数列相邻项的关系. 例如 \inlinedisplay{a_{n+1}-a_n = d}
+	
+	\section{基本数列}
+	\subsection{等差数列}
+	\paragraph{等差数列的概念}
+	等差数列，也就是递推公式可以为 \inlinedisplay{a_{n+1}-a_n=d (d \ne 0)} 的数列，它的后一项与前一项的差值是一个相等常数.
+	\paragraph{等差数列的通项公式}
+	等差数列的通项公式是
+	\[a_n = a_1 + d(n-1) (n \in \mathbb{Z} ^ +)\]
+	其中，$a_1$ 称为\textbf{首项}，$d$ 称为\textbf{公差}.
+	\paragraph{等差数列通项公式的推导}
+	下面，我们试着推导等差数列的通项公式.
+	\newline
+	首先，根据等差数列的递推公式 \inlinedisplay{a_{n+1}-a_n = d}，把 $n$ 取遍 \inlinedisplay{1,2,3,\cdots,n} 代入，得到一系列等式
+	\begin{gather*}
+	a_2-a_1=d
+	\\
+	a_3-a_2=d
+	\\
+	a_4-a_3=d
+	\\
+	\vdots
+	\\
+	a_n-a_{n-1}=d
+	\end{gather*}
+	将这一系列等式全部相加，我们得到 $a_n-a_1=d(n-1)$，也就是
+	\[a_n = a_1 + d(n-1)\]
+	这就是等差数列的通项公式.
+	\paragraph{等差数列通项公式的推广}
+	等差数列通项公式有一个更广泛的表达，也就是
+	\[a_n = a_m + d(n-m) (n,m \in \mathbb{Z} ^ +)\]
+	对于这个公式，本文不做证明.
+	\paragraph{等差数列的前$n$项和}
+	等差数列前$n$项和的公式是
+	\[S_n = \sum_{i=1}^{n} [a_1 + d(n-1)] = \frac{a_1+a_n}{2} \cdot n\]
+	关于这个公式的推导，有很多方式，本文叙述两种常用方法
+	\subparagraph{倒序相加法}
+	这是相当正统的一个手法. 首先
+	\[S_n = a_1 + (a_1 + d) + (a_1 + 2d) + \cdots + a_1 + d(n-1)\]
+	而同时有
+	\[S_n = [a_1 + d(n-1)] + [a_1 + d(n-2)] + \cdots + a_1\]
+	两式相加，就得到了
+	\[2S_n = n(a_1 + a_n)\]
+	因此
+	\[S_n = \frac{a_1+a_n}{2} \cdot n \]
+	\subparagraph{积分求和法}
+	欲求 \inlinedisplay{f(n) = \sum_{i=1}^{n} [a_1 + d(n-1)]}
+	首先求导，得到
+	\[f'(n) = \sum_{i=1}^{n} d + C = nd + C\]
+	再对 $f'(n)$ 积分，得到
+	\[\int{f'(n)} = \frac{1}{2}dn^2 + Cn = f(n) \]
+	而 \inlinedisplay{f(1) = a = \frac{1}{2}d + C}，代入之，得到
+	\[f(n) = \frac{1}{2}dn^2 - \frac{1}{2}dn + a \]
+	这就完成了求和
+	
+	\paragraph{等差数列的性质}
+	等差数列有许多基本性质，接下来介绍其中的几个
+	\subparagraph{平均数与数值替换}
+	在等差数列 $ \{a_n\} $ 中，任意的四个正整数 $m,n,p,q$ 满足 $m+n=p+q$，那么有
+	\[a_m+a_n=a_p+a_q\]
+	等式两边项数只要相等，且下标相加相等，那么这个等式就成立，例如
+	\[a_m+a_n+a_h+a_g = a_q + a_t + a_s + a_l\]
+	当 $m+n+a+g = q+t+s+l$，且它们均为正整数时成立
+	\subparagraph{组成新数列}
+	在等差数列 $\{a_n\} $ 中，取连续相等数目的项相加，形成新的数列 $\{b_n\}$，那么 $\{b_n\}$ 也是等差数列.
+	\par
+	例如 $a_1+a_2=b_1$，$a_3+a_4=b_2$，$a_5+a_6=b_3$ 等等组成的数列 $\{b_n\}$ 也是等差数列
+	\par
+	这种情况下，新的数列 $\{b_n\}$ 的公差 $d'$ 是 $d' = m^2 d$
+	\par
+	类似地，在等差数列 $\{a_n\}$ 中，隔连续相等数目的项取项作为新数列 $\{b_n\}$ 的项，那么 $\{b_n\}$ 也是等差数列
+	\par
+	例如，$a_1=b_1$，$a_3=b_2$，$a_5=b_3$，等等，则 $\{b_n\}$ 是等差数列
+	\subparagraph{奇数项（和）与偶数项（和）}
+	这里简单地抛出两个公式
+	\[S_e - S_o = \frac{1}{2}nd (n \in 2k, k \in \mathbb{Z} ^ +)\]
+	\[\frac{S_o}{(n+1)/2} = \frac{S_e}{(n-1)/2} (n \in 2k-1, k \in \mathbb{Z} ^ +)\]
+\end{document}
