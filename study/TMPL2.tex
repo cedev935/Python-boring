@@ -1,0 +1,28 @@
+\documentclass[UTF8]{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+
+\title{<TITLE>}
+
+\makeatletter
+\renewcommand*\maketitle{
+    \begin{flushleft}
+        \bfseries
+        {\LARGE \@title \par}
+        \vspace{-1em}
+    \end{flushleft}
+    
+    
+}
+\makeatother
+
+\titleformat{\section}{\flushleft\bfseries\Large}{\thesection}{1em}{}
+
+\thispagestyle{empty}
+
+\begin{document}
+
+\maketitle
+\noindent\rule{\textwidth}{1pt}
+
+\end{document}
