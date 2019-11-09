@@ -1,10 +1,11 @@
-const poems = `here`
-
 const a = poems.split("++++++++++++++++")
     .map((poem) => {
-        const sent = poem.split(/。|  【 | 】/ )
+        const sent = poem.split(/。|】/).filter((sent) => {
+            if (sent.includes("【")) { return false }
+            return true
+        })
         return sent.filter((sent) => {
-            if (sent.split("，").length != 2){
+            if (sent.split("，").length != 2) {
                 return false
             } return true
         }).map((sents) => {
