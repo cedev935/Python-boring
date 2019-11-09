@@ -1,10 +1,10 @@
 const poems = `here`
 
-const res = poems.split("++++++++++++++++")
+const a = poems.split("++++++++++++++++")
     .map((poem) => {
-        const sent = poem.split("。")
+        const sent = poem.split(/。|  【 | 】/ )
         return sent.filter((sent) => {
-            if (sent.split("，").length != 2) {
+            if (sent.split("，").length != 2){
                 return false
             } return true
         }).map((sents) => {
@@ -15,4 +15,6 @@ const res = poems.split("++++++++++++++++")
         } )
     })
 
-console.log(res)
+a.forEach((eachs) => {
+    eachs.forEach((t) => console.log(t))
+})
