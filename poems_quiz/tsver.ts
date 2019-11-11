@@ -24,6 +24,14 @@ const sentenceFilter = (sentence: string) => {
     return true
 }
 
+const sentencesFilter = (sentences: string[]) => {
+    return sentences.filter(sentenceFilter)
+}
+
+const blankForList = (sents: string[]) => {
+    return sents.map(randomBlank)
+}
+
 const poemFilter = (poem: string) => {
     return true
 }
@@ -31,8 +39,8 @@ const poemFilter = (poem: string) => {
 const result = poems.split("++++++++++++++++")
     .filter(poemFilter)
     .map(sentenceSplit)
-    .map((splitedPoem) => splitedPoem.filter(sentenceFilter))
-    .map((splitedPoem) => splitedPoem.map(randomBlank))
+    .map(sentencesFilter)
+    .map(blankForList)
 
 result.forEach((eachs) => {
     eachs.forEach((t) => console.log(t))
