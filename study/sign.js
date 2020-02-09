@@ -1,7 +1,10 @@
 // THIS FILE IS UNDER MIT LICENSE.
 
-/*! jQuery v3.4.1 | (c) JS Foundation and other contributors | jquery.org/license */
-addjs("https://code.jquery.com/jquery-3.3.1.min.js");
+// Force include jQuery.
+var jQscript = document.createElement('script');
+jQscript.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
+jQscript.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(jQscript);
 
 function goSign() {
     try {
