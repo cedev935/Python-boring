@@ -22,4 +22,4 @@ function goSign() {
     }
 }
 
-interval = setInterval(function() { goSign(); }, 5000);
+interval = setInterval(function() { goSign(); }, 12000);
