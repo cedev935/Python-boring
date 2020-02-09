@@ -5,7 +5,7 @@
 ![Python Version](https://img.shields.io/badge/python-3.x-green.svg)
 ![Golang](https://img.shields.io/badge/Go-Powered-blue.svg)
 ![.Net](https://img.shields.io/badge/.Net-Powered-green.svg)
-[![Development](https://img.shields.io/badge/development-frozen-red.svg)](https://github.com/redapple0204/my-boring-python/blob/master/status.md)
+[![Development](https://img.shields.io/badge/development-pigeon-red.svg)](https://github.com/redapple0204/my-boring-python/blob/master/status.md)
 
 **Support**
 
