@@ -2,7 +2,7 @@
 
 
 // -----!!!WARNING!!!-----
-// 'Tencent Class' **CAN NOW DETECT** WHEATHER THE STUDENT'S WEB BROWSER IS AT THE CLASS TAB!
+// 'Tencent Class' **CAN NOW DETECT** WHETHER THE STUDENT'S WEB BROWSER IS AT THE CLASS TAB!
 // USE AT YOUR OWN RISK!
 
 // Force include jQuery.
