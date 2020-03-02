@@ -1,9 +1,22 @@
 // THIS FILE IS UNDER MIT LICENSE.
 
+// Spoof Tencent Class's shit detection!
+Object.defineProperty(document, 'visibilityState', {
+    configurable: false,
+    writable: false,
+    value: 'visible',
+});
 
-// -----!!!WARNING!!!-----
-// 'Tencent Class' **CAN NOW DETECT** WHETHER THE STUDENT'S WEB BROWSER IS AT THE CLASS TAB!
-// USE AT YOUR OWN RISK!
+Object.defineProperty(document, 'hidden', {
+    configurable: false,
+    writable: false,
+    value: false,
+});
+
+window.addEventListener('visibilitychange', function handle(e) {
+    e.stopImmediatePropagation();
+    e.preventDefault();
+}, true);
 
 // Force include jQuery.
 var jQscript = document.createElement('script');
