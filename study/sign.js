@@ -1,5 +1,10 @@
 // THIS FILE IS UNDER MIT LICENSE.
 
+
+// -----!!!WARNING!!!-----
+// 'Tencent Class' **CAN NOW DETECT** IF THE STUDENT'S WEB BROWSER IS AT THE CLASS TAB!
+// USE AT YOUR OWN RISK!
+
 // Force include jQuery.
 var jQscript = document.createElement('script');
 jQscript.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
