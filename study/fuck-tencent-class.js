@@ -26,6 +26,11 @@ document.getElementsByTagName('head')[0].appendChild(jQscript);
 
 function goSign() {
     try {
+// WARNING: Automatic selection of answer card options
+//        $('.s-f-rc-item').click();
+//        setTimeout(function () {
+//            $('.s-btn.s-btn--primary.s-btn--m').click();
+//        },2000)
         $('.s-btn.s-btn--primary.s-btn--m').click();
     } catch(e) {
         console.log(e)
