@@ -28,7 +28,8 @@ function goSign() {
     try {
         $('.s-btn.s-btn--primary.s-btn--m').click();
 // WARNING: Automatic selection of answer card options
-//        $('.s-f-rc-item').click();
+//        setTimeout(function () {
+//            $('.s-f-rc-item').click();
     } catch(e) {
         console.log(e)
     }
