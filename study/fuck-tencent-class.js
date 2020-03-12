@@ -30,6 +30,7 @@ function goSign() {
 // WARNING: Automatic selection of answer card options
 //        setTimeout(function () {
 //            $('.s-f-rc-item').click();
+//        },1000)
     } catch(e) {
         console.log(e)
     }
