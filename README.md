@@ -9,8 +9,7 @@
 
 **Support**
 
-* EMAIL neteroster@outlook.com
-* EMAIL redapple02041@gmail.com
+Sorry,we can't deal with any issues
 
 ## Getting Start
 
