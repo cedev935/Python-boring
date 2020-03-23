@@ -1,6 +1,9 @@
 # Python 3.x
 import sqlite3,time,psutil
 
+VERSION = "0.0.1"
+
+print("Welcome to InfoRcder! Version: " + VERSION)
 
 def get_database_obj():
     conn = sqlite3.connect("infobase.db")
