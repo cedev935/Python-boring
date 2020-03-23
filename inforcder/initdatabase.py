@@ -3,7 +3,7 @@ import sqlite3
 
 conn = sqlite3.connect("infobase.db")
 
-print("[INFO] Successfully opened database connection")
+print("[INFO] Successfully connected to database.")
 
 c = conn.cursor()
 c.execute('''CREATE TABLE CPUDATA
@@ -19,6 +19,6 @@ c.execute('''CREATE TABLE MEMORYDATA
 
 conn.commit()
 conn.close()
-print("[INFO] Done.")
+print("[INFO] Finished initing database.")
             
             
