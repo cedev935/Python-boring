@@ -19,16 +19,6 @@ window.addEventListener('visibilitychange', function handle(e) {
 }, true);
 
 // Force include jQuery.
-// ==UserScript==
-// @name        New script 
-// @namespace   Violentmonkey Scripts
-// @match       *://*.ke.qq.com/*
-// @grant       none
-// @version     1.0
-// @author      -
-// @description 2020/2/9 上午10:28:50
-// ==/UserScript==
-// Force include jQuery.
 var jQscript = document.createElement('script');
 jQscript.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
 jQscript.type = 'text/javascript';
