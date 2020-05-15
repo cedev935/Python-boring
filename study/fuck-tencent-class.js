@@ -42,7 +42,7 @@ function goSign() {
 // WARNING: WILL CHOICE ANSWER **RANDOMLY** WHEN TEACHER POST AN ANSWER CARD.
 //        setTimeout(function () {
 //            var datiElements = document.getElementsByClassName("head-text");
-//            for(var e of datiElements){if(e.innerHTML.indexOf("单选题") !== -1){ //thanks to @xianfei
+//            for(var e of datiElements){if(e.innerHTML.indexOf("单选题") !== -1){ // Thanks to @xianfei
 //	            var number = document.getElementsByClassName("s-f-rc-item").length
 //	            var random = Math.floor(Math.random()*number);
 //	            document.getElementsByClassName("s-f-rc-item")[random].click();
