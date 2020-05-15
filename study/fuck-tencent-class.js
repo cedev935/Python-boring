@@ -1,6 +1,7 @@
 // THIS FILE IS UNDER MIT LICENSE.
 
 // Spoof Tencent Class's shit detection!
+
 Object.defineProperty(document, 'visibilityState', {
     configurable: false,
     writable: false,
@@ -24,9 +25,10 @@ jQscript.src = 'https://code.jquery.com/jquery-3.4.1.min.js';
 jQscript.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(jQscript);
 
-//If you'd like to use auto choice answer function,please remove "//"
+// If you want to choose the answer randomly, remove "//".
 
-//Load randojs to choice answer randomly
+// Load randojs to choice answer randomly.
+
 //var random_script = document.createElement('script');
 //random_script.src = 'https://randojs.com/1.0.0.js';
 //random_script.type = 'text/javascript';
@@ -35,9 +37,9 @@ document.getElementsByTagName('head')[0].appendChild(jQscript);
 function goSign() {
     try {
         $('.s-btn.s-btn--primary.s-btn--m').click();
-//If you'd like to use auto choice answer function,please remove "//"
+// If you'd like to use auto choice answer function, remove "//".
 
-//WARNING:IT WILL CHOICE ANSWER **RANDOMLY** WHEN TEACHER POST ON AN ANSWER CARD.
+// WARNING: WILL CHOICE ANSWER **RANDOMLY** WHEN TEACHER POST AN ANSWER CARD.
 //        setTimeout(function () {
 //            var datiElements = document.getElementsByClassName("head-text");
 //            for(var e of datiElements){if(e.innerHTML.indexOf("单选题") !== -1){ //thanks to @xianfei
