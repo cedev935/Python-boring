@@ -10,6 +10,8 @@
 **Python 依赖**:
 * `requests`: `pip install requests`
 
+**警告** :: 本脚本**未经正式测试**，是否能成功尚不确定，请谨慎使用。
+
 使用前请先用手机抓包，填写脚本前部分的信息：
 
 * `COOKIE_CREATE`: 创建订单使用的 COOKIE，可以通过还没有充值 B 币时创建订单抓包获取。（TIPS: 请求地址是 `https://api.bilibili.com/x/garb/trade/create`）
