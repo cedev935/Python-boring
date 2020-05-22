@@ -96,6 +96,6 @@ while(True):
         order_req: requests.Response = single_order()
         print(order_req.text)
     except:
-        pass
-    continue
+        print("Unknown Error: Can't create order now.")
+    
     time.sleep(1)
