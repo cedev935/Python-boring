@@ -7,6 +7,9 @@
 * 永久装扮抢购
 * B 币支付（这意味着：必须在抢购前先充值 B 币）
 
+**Python 依赖**:
+* `requests`: `pip install requests`
+
 使用前请先用手机抓包，填写脚本前部分的信息：
 
 * `COOKIE_CREATE`: 创建订单使用的 COOKIE，可以通过还没有充值 B 币时创建订单抓包获取。（TIPS: 请求地址是 `https://api.bilibili.com/x/garb/trade/create`）
