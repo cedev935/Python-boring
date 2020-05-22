@@ -92,7 +92,10 @@ def single_order() -> requests.Response:
 
 
 while(True):
-    order_req: requests.Response = single_order()
-    print(order_req.text)
-
+    try:
+        order_req: requests.Response = single_order()
+        print(order_req.text)
+    except:
+        pass
+    continue
     time.sleep(1)
