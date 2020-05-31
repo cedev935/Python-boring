@@ -1,3 +1,5 @@
+// THIS FILE IS UNDER MIT LICENSE.
+
 // ==UserScript==
 // @name        fuck-tencent-class_expand
 // @namespace   Violentmonkey Scripts
