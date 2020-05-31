@@ -4,11 +4,11 @@
 
 ## 用法
 
-## 基础版
+### 基础版
 
 如果您只想使用自动签到功能和禁止探测功能，请使用``fuck-tencent-class_origin.js``
 
-## 高级版
+### 高级版
 
 如果您想使用自动选择答案请使用``fuck-tencent-class_expand.js``
 
