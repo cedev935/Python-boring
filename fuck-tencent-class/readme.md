@@ -6,11 +6,11 @@
 
 ## 基础版
 
-如果您只想使用自动签到功能和禁止探测功能，请使用``fuck-tencent-class_expand.js``
+如果您只想使用自动签到功能和禁止探测功能，请使用``fuck-tencent-class_origin.js``
 
 ## 高级版
 
-如果您想使用自动选择答案请使用``fuck-tencent-class_origin.js``
+如果您想使用自动选择答案请使用``fuck-tencent-class_expand.js``
 
 **请务必记住，答案选择是随机的**
 
