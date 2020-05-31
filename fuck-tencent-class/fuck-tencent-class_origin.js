@@ -1,5 +1,15 @@
 // THIS FILE IS UNDER MIT LICENSE.
 
+// ==UserScript==
+// @name        fuck-tencent-class_origin
+// @namespace   Violentmonkey Scripts
+// @match       *://*.ke.qq.com/*
+// @grant       none
+// @version     1.0
+// @author      -
+// @description 2020/2/9 上午10:28:50
+// ==/UserScript==
+
 // Spoof Tencent Class's shit detection!
 
 Object.defineProperty(document, 'visibilityState', {
