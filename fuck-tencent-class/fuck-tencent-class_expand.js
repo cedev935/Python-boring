@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        New script 
+// @name        fuck-tencent-class_expand
 // @namespace   Violentmonkey Scripts
 // @match       *://*.ke.qq.com/*
 // @grant       none
