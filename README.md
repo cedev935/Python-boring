@@ -9,7 +9,7 @@
 
 **Support**
 
-Sorry, we can't deal with any issues.
+Sorry, we can't deal with any issues until 2021-06-08.
 
 ## Getting Start
 
