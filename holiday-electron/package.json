@@ -9,7 +9,7 @@
   "author": "NeterOster",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^2.0.6",
+    "electron": "^9.1.0",
     "fs": "0.0.1-security"
   },
   "dependencies": {
