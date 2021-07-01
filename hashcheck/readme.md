@@ -2,6 +2,10 @@
 
 本 Python 脚本将帮助检查数据完整性。
 
+依赖：
+* Python >3.5
+* `humanize`: `pip install humanize`
+
 使用：
 
 第一次使用时请
