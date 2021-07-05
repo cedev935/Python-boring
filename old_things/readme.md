@@ -5,3 +5,5 @@
 [ip1188 linux驱动](https://github.com/redapple0204/my-boring-python/blob/master/old_things/ip1188_linux.md)
 
 [kali1.0可用的源](https://github.com/redapple0204/my-boring-python/blob/master/old_things/kali1.0.md)
+
+[win7以及更低系统上某类tcp软件上传速度慢](https://github.com/redapple0204/my-boring-python/blob/master/old_things/tcp_slow.md)
