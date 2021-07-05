@@ -3,3 +3,5 @@
 [win7 onedrive无法使用问题](https://github.com/redapple0204/my-boring-python/blob/master/old_things/windows7_onedrive.md)
 
 [ip1188 linux驱动](https://github.com/redapple0204/my-boring-python/blob/master/old_things/ip1188_linux.md)
+
+[kali1.0可用的源](https://github.com/redapple0204/my-boring-python/blob/master/old_things/kali1.0.md)
