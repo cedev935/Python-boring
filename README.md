@@ -7,9 +7,6 @@
 ![.Net](https://img.shields.io/badge/.Net-Powered-green.svg)
 [![Development](https://img.shields.io/badge/development-pigeon-red.svg)](https://github.com/redapple0204/my-boring-python/blob/master/status.md)
 
-**Support**
-
-Sorry, we can't deal with any issues until 2021-06-08.
 
 ## Getting Start
 
