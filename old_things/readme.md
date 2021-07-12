@@ -7,3 +7,5 @@
 [kali1.0可用的源](https://github.com/redapple0204/my-boring-python/blob/master/old_things/kali1.0.md)
 
 [win7以及更低系统上某类tcp软件上传速度慢](https://github.com/redapple0204/my-boring-python/blob/master/old_things/tcp_slow.md)
+
+[修复win7及更低版本系统蓝牙连接问题](https://github.com/redapple0204/my-boring-python/blob/master/old_things/fix_win7_bluetooth.md)
