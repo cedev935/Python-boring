@@ -63,7 +63,7 @@ kana_map = [('あ', 'ア', 'a'), # （清音）现代五十音图对表
             ('ろ', 'ロ', 'ro'),
 
             ('わ', 'ワ', 'wa'),
-            ('を', 'ヲ', 'wo')
+            ('を', 'ヲ', 'o')
         
             ]
 
@@ -118,6 +118,7 @@ def random_test_HtR():
         else:
             failed += 1
             rec_wrong_to_file(result, RECORD_FILENAME_HIRA)
+
         print("当前速度指数：" + str(1 / (total_time_cost / (passed + failed))))
         print("当前正确率：" + str((passed / (passed+failed)) * 100) + "%")
         print("")
@@ -142,6 +143,7 @@ def random_test_KtR():
         else:
             failed += 1
             rec_wrong_to_file(result, RECORD_FILENAME_KATA)
+            
         print("当前速度指数：" + str(1 / (total_time_cost / (passed+failed))))
         print("当前正确率：" + str((passed / (passed + failed)) * 100) + "%")
         print("")
