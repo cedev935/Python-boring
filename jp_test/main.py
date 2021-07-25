@@ -35,7 +35,7 @@ kana_map = [('あ', 'ア', 'a'), # （清音）现代五十音图对表
             ('と', 'ト', 'to'),
 
             ('な', 'ナ', 'na'),
-            ('に', 'に', 'ni'),
+            ('に', 'ニ', 'ni'),
             ('ぬ', 'ヌ', 'nu'),
             ('ね', 'ネ', 'ne'),
             ('の', 'ノ', 'no'),
@@ -148,5 +148,5 @@ def random_test_KtR():
         print("当前正确率：" + str((passed / (passed + failed)) * 100) + "%")
         print("")
     
-random_test_HtR()
-# random_test_KtR()
+# random_test_HtR()
+random_test_KtR()
