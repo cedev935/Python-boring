@@ -9,3 +9,5 @@
 [win7以及更低系统上某类tcp软件上传速度慢](https://github.com/redapple0204/my-boring-python/blob/master/old_things/tcp_slow.md)
 
 [修复win7及更低版本系统蓝牙连接问题](https://github.com/redapple0204/my-boring-python/blob/master/old_things/fix_win7_bluetooth.md)
+
+[修复ios追踪按钮变灰](https://github.com/redapple0204/my-boring-python/blob/master/old_things/fix_ios_tracking.md)
