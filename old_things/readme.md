@@ -11,3 +11,5 @@
 [修复win7及更低版本系统蓝牙连接问题](https://github.com/redapple0204/my-boring-python/blob/master/old_things/fix_win7_bluetooth.md)
 
 [修复ios追踪按钮变灰](https://github.com/redapple0204/my-boring-python/blob/master/old_things/fix_ios_tracking.md)
+
+[修复vmware卡顿](https://github.com/redapple0204/my-boring-python/blob/master/old_things/vmware_stuck.md)
