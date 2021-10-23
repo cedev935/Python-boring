@@ -1,0 +1,287 @@
+\documentclass[12pt,a4paper,UTF8]{ctexart} % Use A4 paper with a 12pt font size - different paper sizes will require manual recalculation of page margins and border positions
+\usepackage{listings} % For Code Block
+\usepackage{marginnote} % Required for margin notes
+\usepackage{wallpaper} % Required to set each page to have a background
+\usepackage{lastpage} % Required to print the total number of pages
+\usepackage[left=1.3cm,right=1.8cm,top=1.8cm,bottom=4.0cm,marginparwidth=3.4cm]{geometry} % Adjust page margins
+\usepackage{amsmath} % Required for equation customization
+\usepackage{amssymb} % Required to include mathematical symbols
+\usepackage{xcolor} % Required to specify colors by name
+
+\usepackage{fancyhdr} % Required to customize headers
+\setlength{\headheight}{80pt} % Increase the size of the header to accommodate meta-information
+\pagestyle{fancy}\fancyhf{} % Use the custom header specified below
+\renewcommand{\headrulewidth}{0pt} % Remove the default horizontal rule under the header
+
+\setlength{\parindent}{0cm} % Remove paragraph indentation
+\newcommand{\tab}{\hspace*{2em}} % Defines a new command for some horizontal space
+
+\newcommand\BackgroundStructure{ % Command to specify the background of each page
+	\setlength{\unitlength}{1mm} % Set the unit length to millimeters
+	
+	\setlength\fboxsep{0mm} % Adjusts the distance between the frameboxes and the borderlines
+	\setlength\fboxrule{0.5mm} % Increase the thickness of the border line
+	\put(9, 9){\fcolorbox{black}{white}{\framebox(192, 261){}}} % Main content box
+%	\put(165, 10){\fcolorbox{black}{white}{\framebox(37,247){}}} % Margin box
+	\put(9, 262){\fcolorbox{black}{white}{\framebox(192, 25){}}} % Header box
+	
+    \put(132, 263){\includegraphics[height=23mm,keepaspectratio]{xh}}
+
+	\put(162,277){\large{\textnormal{Designed With}}}
+	\put(168,268){\LARGE\textnormal{{\textbf{\LaTeX}}}}
+}
+
+\lstset{
+    tabsize             =   4,
+    basicstyle          =   \sffamily,          % 基本代码风格
+    keywordstyle        =   \bfseries,          % 关键字风格
+    commentstyle        =   \rmfamily\itshape,  % 注释的风格，斜体
+    stringstyle         =   \ttfamily,  % 字符串风格
+    flexiblecolumns,                % 别问为什么，加上这个
+    numbers             =   left,   % 行号的位置在左边
+    showspaces          =   false,  % 是否显示空格，显示了有点乱，所以不显示了
+    numberstyle         =   \zihao{-5}\ttfamily,    % 行号的样式，小五号，tt等宽字体
+    showstringspaces    =   false,
+    captionpos          =   t,      % 这段代码的名字所呈现的位置，t指的是top上面
+    frame               =   lrtb,   % 显示边框
+    xleftmargin=2.5em,
+}
+
+\lstdefinestyle{CPP}{
+    language        =   C, % 选择语言
+    basicstyle      =   \zihao{-5}\ttfamily,
+    numberstyle     =   \zihao{-5}\ttfamily,
+    keywordstyle    =   \color{blue},
+    keywordstyle    =   [2] \color{teal},
+    stringstyle     =   \color{magenta},
+    commentstyle    =   \color{red}\ttfamily,
+    breaklines      =   true,   % 自动换行，建议不要写太长的行
+    columns         =   fixed,  % 如果不加这一句，字间距就不固定，很丑，必须加
+    basewidth       =   0.5em,
+}
+
+%----------------------------------------------------------------------------------------
+%	HEADER INFORMATION
+%----------------------------------------------------------------------------------------
+
+\fancyhead[L]{\begin{tabular}{l r | l r |} % The header is a table with 4 columns
+		\textbf{作业科目} & 高级程序设计 & \textbf{当前页码} & \thepage/\pageref{LastPage} \\
+		\textbf{作业名称} & 第二次作业 & \textbf{作者姓名} & 李宗泽 \\
+		\textbf{开始日期} & 2021 年 10 月 22 日 & \textbf{作者班级} & 219 \\
+		\textbf{完成日期} & \today & \textbf{作者学号} & 20212232016 \\ 
+\end{tabular}}
+
+
+
+\begin{document}
+	
+	\AddToShipoutPicture{\BackgroundStructure}
+	1. 这一段代码的作用是：要求用户输入两个正整数；输出它们的最大公因数。
+	
+	2. 这一段代码的作用是：要求用户输入两个正整数；输出他们的最小公倍数。
+	
+	3. 第一次的思路如下：
+
+    \begin{lstlisting}[style=CPP]
+/* First Version P1 */
+#include <iostream>
+using namespace std;
+int main()
+{
+    /* P1 */
+    for (int i = 1; i <= 9; i++)
+    {
+        if (i <= 5) for (int j = 1; j <= (2 * i - 1); j++)
+            cout << ((j == (2 * i - 1)) ? "*\n" : "*");
+
+        if (i > 5) for (int j = 1; j <= (9 - 2 * (i - 5)); j++)
+            cout << ((j == (9 - 2 * (i - 5)) ? "*\n" : "*"));
+	    		
+    }
+    return 0;
+}
+    
+    \end{lstlisting}
+    其中运用了一些数学等差数列知识，且显得非常复杂。经过改进，得到以下方法：
+
+    \begin{lstlisting}[style=CPP]
+/* Version 2 P1 */
+#include <iostream>
+using namespace std;
+int main()
+{
+	/* P1 (Simplified Version 0) */
+	int ast_count = 1;
+	for (int i = 1; i <= 9; i++)
+	{
+		for (int j = 1; j <= ast_count; j++) cout << "*";
+		ast_count += (i <= 4 ? 2 : -2);
+		cout << endl;
+	}
+    return 0;
+}
+
+    
+    \end{lstlisting}
+    
+    利用 \texttt{ast\_count} 作为标识符，可以轻松地控制下一行输出的星号数，只需要通过当前行判断下一行所需的星号数，再修改 \texttt{ast\_count} 标识符即可。
+    
+    4. for 循环版本
+    
+        \begin{lstlisting}[style=CPP]
+/* <for> Version P2 */
+#include <iostream>
+using namespace std;
+int main()
+{
+	for (int i = 9; i >= 1; i--)
+	{
+		for (int j = 1; j <= i; j++)
+		{
+			cout << i << "*" << j << "=" << i * j;
+			cout << ((j != 1 && (j * i < 10) && j != i) ? "  " : " ");
+		}
+		cout << endl;
+	}
+    return 0;
+}
+    
+    \end{lstlisting}
+    
+    4. while 循环版本
+        \begin{lstlisting}[style=CPP]
+/* <while> Version P2 */
+#include <iostream>
+using namespace std;
+int main()
+{
+	int i = 9;
+	int j = 1;
+	while (i >= 1)
+	{
+		j = (j == (i + 2) ? 1 : j);
+		while (j <= i)
+		{
+			cout << i << "*" << j << "=" << i * j;
+			cout << ((j != 1 && (j * i < 10) && j != i) ? "  " : " ");
+			j++;
+		}
+		cout << endl;
+		i--;
+	}
+    return 0;
+}
+    
+    \end{lstlisting}
+    
+    4. do-while 循环版本
+        \begin{lstlisting}[style=CPP]
+/* <do-while> Version P2 */
+#include <iostream>
+using namespace std;
+int main()
+{
+	i = 9; j = 1;
+	do
+	{
+		j = (j == (i + 2) ? 1 : j);
+		do
+		{
+			cout << i << "*" << j << "=" << i * j;
+			cout << ((j != 1 && (j * i < 10) && j != i) ? "  " : " ");
+			j++;
+		} while (j <= i);
+		cout << endl;
+		i--;
+	} while (i >= 1);
+    return 0;
+}
+    
+    \end{lstlisting}
+    
+    5. 
+        \begin{lstlisting}[style=CPP]
+/* P3 */
+#include <iostream>
+using namespace std;
+int main()
+{
+	for (int i = 0; i <= 10; i++)
+		for (int j = 0; j <= 5; j++)
+			for (int k = 0; k <= 2; k++)
+			{
+				if (i + 2 * j + 5 * k == 10)
+					cout << "一角的张数=" << i << "\t" << "二角的张数=" << j << "\t" << "五角的张数=" << k << endl;
+			}
+    return 0;
+}
+    
+    \end{lstlisting}
+    
+    6.
+        \begin{lstlisting}[style=CPP]
+/* P4 */
+#include <iostream>
+using namespace std;
+int main()
+{
+	int num_count;
+	int int_input;
+	int positive_count = 0, negative_count = 0, zero_count = 0;
+
+	cout << "键入你要输出的数据个数：";
+	cin >> num_count;
+	cout << endl;
+	cout << "请输入 " << num_count << " 个整数（以空格或换行分隔）：";
+	for (int i = 1; i <= num_count; i++)
+	{
+		cin >> int_input;
+
+		if (int_input > 0) positive_count += 1;
+		else if (int_input < 0) negative_count += 1;
+		else if (int_input == 0) zero_count += 1;
+	}
+	cout << endl;
+	cout << "正数个数：" << positive_count << endl;
+	cout << "负数个数：" << negative_count << endl;
+	cout << "零的个数：" << zero_count << endl;
+}
+    
+    \end{lstlisting}
+    
+    \textbf{7. 学习笔记}
+    
+    第二章正式进入了编写 C++ 程序的过程。除了基本的头文件、注释等内容，书中介绍了 C++ 的基本数据类型。预习其他章节的过程中，我注意到了类型对于 C++ 编程的重要性，因此熟悉 C++ 的基本数据类型和他们的范围非常重要。\par
+    
+    通过听课，我了解了 C++ int 或者 unsigned int 和 short int 等类型的存储范围是如何得到的，需要注意的一点是：unsigned 类型以绝对值方式存储数据，int 类型则以补码方式存储数据，共同点都是：一个码对应且仅对应一个具体数字。\par
+    
+    除此之外，了解了字符类型的存储方式，也就是编码。ASCII 是一种基本的编码方式，后又产生了 GBK 标准用于编码中文；Unicode 则是一种“万国码”，用于统一世界各地文字的编码。\par
+    
+    接下来学习了变量的初始化方式和符号常量。\par
+    
+    运算符和表达式对我来说是很有趣的东西，熟悉他们就能对存储在计算机中的数据进行准确的操作获得期望的结果。同时，需要熟练运算符的优先级和结合性，才能更好判断程序的行为。\par
+    
+    另外，位运算使得 C++ 具有了直接操作二进制数据而非字节数据的能力，包括按位与、或和异或、位移。\par
+    
+    类型转换也是很重要的，包含隐含转换和显式转换。隐含转换不会造成数据精度损失；显式转换可以通过 \texttt{TYPE(exp)} 进行，其中 \texttt{TYPE} 代表一个类型标识符，\texttt{exp} 代表一个表达式。需要注意，显式转换可能丢失值，不安全。\par
+    
+    随后来到程序控制部分；首先简单学习了对 IO 流的控制，包括控制输入输出格式等。\par
+    
+    接下来来到的选择和循环语句的学习，学习了包括 \texttt{for}, \texttt{while} 和 \texttt{do-while} 三种循环结构和 \texttt{if}, \texttt{switch} 两种选择结构。\par
+    
+    学习了这些结构后，能够构造具有一些特殊功能的程序了。本次作业就是很好的例子。\par
+    
+    特别的一点，在学习的过程中，我发现 C++ 的语法是很简洁的，例如 \texttt{if (exp) } 后面可以接单条语句而不需要花括号，当然也可以使用花括号构造复合语句。这种简洁灵活的特性让我对 C++ 更有兴趣了。\par
+    
+    接下来了解了 \texttt{auto} 类型和 \texttt{decltype} 类型的使用方法，利用他们可以方便的自动选择或者根据其他变量构造新的变量的类型。\par
+    
+    在深度探索章节，我明白了一个非常深刻的道理：类型的本质是对其所有操作的集合。或者说，对类型所有的操作，组成了一个类型。在编译后的机器码中，其实是没有类型这种东西的。所有类型的特性，均在编译器编译的过程中，体现在对类型和类型之间的指令操作中去了。\par
+    
+    还有一个小点便是扩展，包括符号扩展和零扩展。一般来说，对有符号类型进行符号扩展，也就是用符号位填充需要的高位；无符号类型则进行零扩展，也就是用零填充需要的二进制高位。\par
+    
+    
+    \paragraph{关于作业代码}
+    注：所有作业源代码将与本文件一起发送到交作业邮箱中，所有作业题目的源码都包含在 \texttt{homework2.cpp} 中，作为附件发送。 
+    
+
+\end{document}
