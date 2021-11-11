@@ -13,7 +13,7 @@ a-- = a-1
 char x ='a' //字符
 string s = "a" //字符串
 int y = 3 //整数
-float n 1.2121f; //单精度浮点数
+float n = 1.2121f; //单精度浮点数
 double t = 4.223E-2 //双精度浮点数
 bool m = true; //布尔量
 ```
