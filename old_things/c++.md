@@ -32,7 +32,7 @@ bool m = true;
 若希望输出true
 ```
 cout << boolalpha;
-cout << m <<edl;
+cout << m << endl;
 ```
 
 ### 7.setw
