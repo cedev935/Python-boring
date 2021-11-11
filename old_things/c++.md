@@ -1,14 +1,14 @@
 ## C++ 临时笔记
 
-### ++运算符
+### 1.++运算符
 
 a++=a+1
 
-### --运算符
+### 2.--运算符
 
 a-- = a-1
 
-### 定义一些变量
+### 3.定义一些变量
 
 char x ='a' //字符
 string s = "a" //字符串
@@ -17,15 +17,15 @@ float n 1.2121f; //单精度浮点数
 double t = 4.223E-2 //双精度浮点数
 bool m = true; //布尔量
 
-### 基本数据类型
+### 4.基本数据类型
 
 int,double,float,char,bool,*,string（要使用 #include <string>）
 
-### 两种获取变量
+### 5.两种获取变量
 
 变量名，变量地址
 
-### bool 输出
+### 6.bool 输出
 
 bool m = true;
 若希望输出true
@@ -34,7 +34,7 @@ cout << boolalpha;
 cout << m <<edl;
 ```
 
-### setw
+### 7.setw
 
 此为粘性设置，只能起作用一次
 
@@ -52,7 +52,7 @@ cout << left
 
 进行左对齐
 
-### ++ 和别的运算符进行运算
+### 8.++ 和别的运算符进行运算
 
 若写为
 
@@ -63,7 +63,7 @@ x = 3
 
 若写为 3+(++x) 则为理想输出
 
-### 三元运算符
+### 9.三元运算符
 
 > x=a<b?a:b
 
@@ -76,16 +76,16 @@ else
 	x=b;
 ```
 
-### 一个错误示例
+### 10.一个错误示例
 
 if(c<7);
 	cout<<"c is less than 7\n";
 	
 if 后面不能有逗号，否则永远为真，后面语句不会执行
 
-## 1.3
+## 1.3节
 
-### 定义的基本架构
+### 1.定义的基本架构
 
 ```
 class student{
@@ -93,26 +93,26 @@ class student{
 }; //类的右半边一定要加分号
 ```
 
-一般吧基本属性设为私有
+一般把基本属性设为私有
 
 1.类的名字 2.类的属性 3.类的功能
 
-### const
+### 2.const
 
 void后加const可以避免修改
 
-### getline
+### 3.getline
 
 ```
 string nameOFCourse // 这是一个函数
 getline(cin,nameOFCourse); //可以处理带有空格的数
 ```
 
-### void
+### 4.void
 
 set 使用void
  
-### 可以在一开始就进行初始化
+### 5.可以在一开始就进行初始化
 
 ```
 Student(string s,int a,int i){
@@ -124,7 +124,7 @@ Student(string s,int a,int i){
 Student stu(TOM,15,170);
 ```
 
-### 计算甚高的程序
+### 6.计算身高的程序
 
 ```
 double kidheight( double s, double f,double m)
@@ -134,7 +134,7 @@ double kidheight( double s, double f,double m)
 	else
 ```
 
-### 注意 不能出现参数不匹配
+### 7.注意 不能出现参数不匹配
 
 ```
 Student(string s,int a,int i){
@@ -147,7 +147,7 @@ Student stu();
 ```
 则为错误
 
-### 括号多重嵌套
+### 8.括号多重嵌套
 
 ```
 int main(){
@@ -160,11 +160,11 @@ int main(){
 }
 ```
 
-### 全局变量与局部变量
+### 9.全局变量与局部变量
 
 在Main之前的是全局变量
 
-### explict
+### 10.explict
 
 ```
 public GradeBook(string name) //仅针对对于一个函数的构造函数
@@ -177,25 +177,25 @@ public GradeBook(string name) //仅针对对于一个函数的构造函数
  courseName = name
  ```
 
-### 自定义头文件
+### 11.自定义头文件
 
 1.使用.h文件
 2.使用 #include "xxx.h"（此处课本已到3.11）
 
 // 10.12
-### cout的一些有坑的输出方式
+### 12.cout的一些有坑的输出方式
 
 cout << xxx << xxx;
 
-## chapter 4
+## Chapter 4
 
-### switch
+### 1.switch
 
 ```
 switch(expression)
 {case const expression 1 :statment1;
 case const expression :statment2;
-...
+
 ```
 
 不能这样使用，否则会一直执行
@@ -214,13 +214,13 @@ case1:case2: day = xxx; break;
 case 1
 case2 : xxx
 ```
-### 循环语句
+### 2.循环语句
 
-#### while循环
+#### (1)while循环
 
 while(){}
 
-#### do while循环
+#### (2)do while循环
 
 do{}while()
 
@@ -240,7 +240,7 @@ i++;
 }while(i<50)
 ```
 
-#### for循环
+#### (3)for循环
 ```
 for(expression1;expression2;expression3)
 	loop body;
@@ -260,13 +260,13 @@ for(unsigned int i=0;i<50;i++)
 cout <<i;
 ```
 
-#### 特别注意
+#### (4)特别注意
 
 一个变量的作用域只能在一个大括号里面
 
 // 2020.10.19笔记
 
-### 用最大最小值
+### 3.用最大最小值
 
 若为Int，则在前头加入#include<climits>
 若为float，则加入 #include<cfloat>
@@ -279,17 +279,17 @@ INT_MAX INT_MIN
 
 DB_MAX DB_MIN
 
-### showpoint
+### 4.showpoint
 
 使用showpoint进行输出小数点
 
-### 强制转换double到int
+### 5.强制转换double到int
 
 > int y =(int)x //c语言提供
 
 > static_cast<int>(x) //c++原生
 
-### 大括号进行初始化
+### 6.大括号进行初始化
 
 可用
 
@@ -301,9 +301,9 @@ DB_MAX DB_MIN
 
 > int i{3.4}
 
-### 一些特殊符号
+### 7.一些特殊符号
 
-1. +=
+#### (1) +=
 
 sum += i 等价于 sum = sum+i
 
@@ -321,18 +321,18 @@ sum = sum + i;
 i++;
 ```
 
-2. ::
+#### (2) ::
 
 预操作符
 
 例子：若想去到外面的i
 用 > ::i
 
-3. ()
+#### (3) ()
 
 if后面一定要加括号
 
-4. ?:
+#### (4) ?:
 
 (条件)?(条件为真结果是这个):(条件为假结果是这个)
 
@@ -342,29 +342,29 @@ if后面一定要加括号
 
 []相当于嵌套
 
-## chapter5 
+## Chapter5 
 
-### 逗号
+### 1.逗号
 
 有逗号先执行后面的语句
 
-### 忽略换行符
+### 2.忽略换行符
 
 cin.ignore(100,\n)
 
-### cin.get()
+### 3.cin.get()
 
 代表取一个字符
 
-### EOF
+### 4.EOF
 
 是一个常量，表示Ctrl+Z（Windows）
 
-### continue
+### 5.continue
 
 退出当次循环
 
-### goto
+### 6.goto
 
 无条件跳转
 
@@ -372,9 +372,9 @@ xxx:
 goto xxx
 
 // 10.26
-### 只有在class类中右括号才加分号
+### 7.只有在class类中右括号才加分号
 
-### 多个+的逻辑操作
+### 8.多个+的逻辑操作
 
 > i+++y
 
@@ -392,6 +392,7 @@ type functionname(formal parameter list)
 statements;
 }
 ```
+	
 ### 2.函数的原型
 
 > double max(double, double);
