@@ -105,7 +105,8 @@ void后加const可以避免修改
 ### 3.getline
 
 ```
-string nameOFCourse // 这是一个函数
+#include<string>
+string nameOFCourse;
 getline(cin,nameOFCourse); //可以处理带有空格的数
 ```
 
