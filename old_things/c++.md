@@ -270,8 +270,8 @@ cout <<i;
 
 ### 3.用最大最小值
 
-若为Int，则在前头加入#include<climits>
-若为float，则加入 #include<cfloat>
+若为Int，则在前头加入 ``#include<climits>``
+若为float，则加入 ``#include<cfloat>``
 
 对于int，最大最小值为
 
