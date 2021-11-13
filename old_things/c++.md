@@ -569,6 +569,8 @@ void fun(){
 
 ### 19.Inline function
 
+节约系统资源
+
 ```
 inline double cube(xxx)
 {
@@ -576,8 +578,9 @@ inline double cube(xxx)
 	}
 
 
-int maint(){
+int main(){
 cout << sube(value) << endl;
+}
 ```
 
 ### 20.&
