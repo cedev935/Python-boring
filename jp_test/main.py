@@ -9,6 +9,7 @@ import time
 
 RECORD_FILENAME_HIRA = 'mistake-hirakana.txt'
 RECORD_FILENAME_KATA = 'mistake-katakana.txt'
+RECORD_FILENAME_MIXED = 'mistake-mixed.txt'
 
 kana_map = [('あ', 'ア', 'a'), # （清音）现代五十音图对表
             ('い', 'イ', 'i'),
@@ -147,6 +148,32 @@ def random_test_KtR():
         print("当前速度指数：" + str(1 / (total_time_cost / (passed+failed))))
         print("当前正确率：" + str((passed / (passed + failed)) * 100) + "%")
         print("")
-    
+
+def random_test_mixed():
+    passed, failed = 0, 0
+    total_time_cost = 0
+
+    while True: 
+        start_time = time.time()
+        if random.randint(0,1) == 0:
+            result = random_test_KtR_single()
+        else:
+            result = random_test_HtR_single()
+
+        end_time = time.time()
+        single_time_cost = end_time - start_time
+        total_time_cost += single_time_cost
+
+        if result == 0:
+            passed += 1
+        else:
+            failed += 1
+            rec_wrong_to_file(result, RECORD_FILENAME_MIXED)
+            
+        print("当前速度指数：" + str(1 / (total_time_cost / (passed+failed))))
+        print("当前正确率：" + str((passed / (passed + failed)) * 100) + "%")
+        print("")
+
+
 # random_test_HtR()
-random_test_KtR()
+random_test_mixed()
