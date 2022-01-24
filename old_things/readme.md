@@ -15,3 +15,5 @@
 [修复vmware卡顿](https://github.com/redapple0204/my-boring-python/blob/master/old_things/vmware_stuck.md)
 
 [解决Windows10睡眠唤醒慢](https://github.com/redapple0204/my-boring-python/blob/master/old_things/wakeup_slow.md)
+
+[解决虚拟机内系统黑屏时间过长的问题](https://github.com/redapple0204/my-boring-python/blob/master/old_things/windows8_startup_slow.md)
