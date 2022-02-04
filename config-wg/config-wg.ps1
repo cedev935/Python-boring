@@ -17,7 +17,7 @@ $MTU = "1440" # MTU size for WireGuard
 $LocalConfig = ""
 $RemoteConfig = ""
 
-if (LOCAL_IP_ADDRESS -eq "" and $REMOTE_IP_ADDRESS -eq "")
+if (LOCAL_IP_ADDRESS -eq "" -and $REMOTE_IP_ADDRESS -eq "")
 {
     Write-Host "WARNING: You have not specified any IP address."
 }
