@@ -120,6 +120,34 @@ print("result is :{}km".format(c)) //答案是c原来的值
 print("result is :{:.1f}km".format(c)) //保留一位小数
 print("result is :{:,.1f}km".format(c)) //保留一位小数，并且加上分度
 ```
+
+添加空格
+```
+num = "ten"
+print(" I have {:30} apples".format(num))
+```
+
+使用混合参数
+
+下列例子将会叠加30个空格，保留4位效数，添加分度的buff
+
+```
+num = 10000.0
+print("I have a {:30,.4f} apples" .format(num))
+```
+
+一种相当于format的用法
+
+```
+num = 10000.0
+print(f"I have a {num} apples")
+```
+
+```
+num = 10000.0
+print(f"I have a {num:30,.4f} apples")
+```
+
 ### 12.去除空格
 
 ```
@@ -266,4 +294,203 @@ print(a)
 ```
 a=list(range(0,100,5))
 print(a[1:5:2]) #从第二个**元素**开始，5指的是结束的**元素（不包括）**，2指的是间隔的**元素**
+print(a[0:3]) #表示从第一个取到第四个（第四个不取）
+print(a[4:]) #从第五个开始取
+print(a[-1]) #取最后一个
+print(a[::-1]) #数列全部倒着写
 ```
+
+//2022.03.08
+
+#### 13.一些常用的函数
+```
+len(num) #list里面元素的个数
+max(num) #list里面的最大值
+min(num) #list里面的最小值
+```
+
+要用max/min函数，必须是int
+
+### 16.tuples
+
+#### 1.创建
+
+```
+a = ("apple","banana")
+```
+
+
+#### 2.做加法
+
+```
+a = ("apple","banana")
+b = ("cabbage",) #必须要在这里加逗号
+c = a + b
+print(c)
+```
+#### 3.乘法
+
+```
+a = ("shit",)
+print(a*3)
+```
+
+会把原来的重复三遍
+
+#### 4.访问
+
+```
+a = ("apple","banana")
+print(a[0])
+```
+
+#### 5.修改性
+
+不可以更改！！也就是修改和删除都不可以！
+
+但是整个tuple是可以删掉的，同理list也可以这样删除
+
+```
+a = ("apple","banana")
+del a 
+```
+
+### 17.sets
+
+#### 1.创建
+
+```
+a = set([1,2,3]) #转换list到set
+b = {1,2,3} #直接创建set
+# a和b相等
+```
+
+不可以存储相同元素（其实可以在创建的时候添加多个元素，但是set不会保存相同的元素，因此print出来不会包含重复的元素）
+
+set是无序的
+
+不可以使用index进行访问
+
+#### 2.in函数
+
+```
+basket = {'apple','orange'}
+print ('orange' in basket) #判断orange在不在basket里面，会返回False或是True
+```
+tuple，list也可以
+
+#### 3.两个set的操作符
+
+```
+a = {'apple','orange','cabbage'}
+b = {'apple','pear'}
+print (a|b) #取并集
+print (a&b) #取交集
+print (a^b) #先取并，减去交
+print ((a|b)-(a&b)) #先取并，减去交
+```
+
+### 18.字典
+
+#### 1.两个重要概念
+
+key和value
+
+#### 2.定义
+
+```
+mydict = {key1:val1,key2:val2,key3:val3} #该代码会报错，注意看下面的笔记
+```
+
+#### 3.创建
+
+```
+sch = {"Monday":"Physic","Tuesday":"Python","Wednesday":"Math"}
+```
+注意不可以使用index
+
+#### 4.访问字典
+
+```
+sch = {"Monday":"Physic","Tuesday":"Python","Wednesday":"Math"}
+print(sch["Monday"])
+print(sch.get("Monday",No class")) #用get函数来get value，第一个参数是key，第二个参数的意思是假设key不在字典里面，就返回后面的数值
+print(sch.get("Sunday","No class") #应用，会返回No class
+```
+
+#### 5.添加新元素
+
+```
+sch = {"Monday":"Physic","Tuesday":"Python","Wednesday":"Math"}
+sch["THR"] = "Chinese" #第一种添加形式
+sch.update({"THR":"Chinese}) #第二种添加形式
+```
+
+#### 6.修改元素
+
+```
+sch = {"Monday":"Physic","Tuesday":"Python","Wednesday":"Math"}
+sch["Monday"] = "Chinese"
+```
+
+#### 7.删除元素
+
+```
+sch = {"Monday":"Physic","Tuesday":"Python","Wednesday":"Math"}
+del sch["Monday"] #第一种形式
+sch.pop("Monday") #第二种形式，推出
+```
+
+#### 8.只获取keys或是values
+
+```
+sch = {"Monday":"Physic","Tuesday":"Python","Wednesday":"Math"}
+print(sch.keys()) #返回所有keys
+print(sch.values()) #返回所有values
+```
+
+#### 9.join函数
+
+```
+sch = {"Monday":"Physic","Tuesday":"Python","Wednesday":"Math"}
+print(", ".join(sch.keys())) #后面加的是可以遍历的数据结构,元素必须是string
+```
+
+### 19.if else语句
+
+#### 1.基础语句（伪代码）
+
+```
+if condition
+	execute sth
+else
+	execute sth else
+```
+
+#### 2.举例
+
+```
+x = True
+if x:
+	print("Executing if")
+else:
+	print("Executing else")
+print("Print regardless of the outcome of the if-else block") #这一行缩进之后，会认为是else里面的内容
+```
+
+缩进注意：要么用tab，要么用space，但是space一定要一样的个数
+
+#### 3.elif
+
+伪代码：
+
+```
+if con1:
+	con1
+elif con2:
+	con2
+else:
+	con1 and con2 false
+```
+
+如果满足if和elif，那么也只会执行if的语句
