@@ -494,3 +494,286 @@ else:
 ```
 
 如果满足if和elif，那么也只会执行if的语句
+
+### 20.for/loop
+
+#### 1.伪代码
+
+```
+for item in item_list:
+	do something to item
+```
+
+#### 2.几个实例
+
+```
+guest_list = ["Eric","Alice","John","Lisa"]
+for guest in guest_list:
+	print("Hi, {:5}, welcome to my party".format(guest))
+```
+
+```
+my_set={"apple","peach","lime"}
+for f in my_set:
+	print(f)
+```
+// 2022.03.15
+#### 3.和字典混合使用
+
+```
+my_dict={"apple":"red","peach":"pink"}
+for f in my_dict:
+	print(f"The color of {f} is {my_dict[f]}") # f是key，my_dict[f]是value
+```
+
+#### 4.把key和value同时赋值
+
+```
+my_dict={"apple":"red","peach":"pink"}
+for f,c in my_dict.items(): #注意这个地方加了.items()
+	print(f"The color of {f} is {c}")
+```
+
+#### 5.也可以之访问keys或者是value
+
+```
+my_dict={"apple":"red","peach":"pink"}
+for f in my_dict.keys():
+	print(f)
+for c in my_dict.values():
+	print(c)
+```
+
+#### 6.range&for
+
+```
+for i in range(5):
+	print("the squad of {} is {}".format(i,i**5))
+```
+
+
+#### 7.List comprehension
+实例1
+```
+my_list = [1,2,3]
+double = [num*2 for num in my_list]
+print(double)
+```
+
+实例2
+
+```
+vocab = ["apple","afternoon","alter"]
+long_words [ w for w in vocab if len(w) > 5]
+print(long_words)
+```
+
+若变为普通写法
+
+```
+vocab = ["apple","afternoon","alter"]
+long_words=[]
+for w in vocab:
+	if len(w) >5:
+		long_word.append(w)
+```
+
+### 21.while/loop
+
+#### 1.一个实例
+
+```
+n = 0
+while n < 5:
+	print("Excuting while loop")
+	n = n+1
+print("Finished while loop")
+```
+
+#### 2. 注意避免死循环
+
+```
+x = 1
+while x <= 5:
+	print(x)
+```
+
+### 22.break
+
+#### 1.一个实例
+
+```
+num = 0
+while num <10:
+	num+= 1
+	if num %2 == 0:
+		break #这将会打破while循环
+	print(num) #最终输出1
+```
+
+### 23.continue
+
+#### 1.一个实例
+
+```
+num = 0
+while num <10:
+	num += 1
+	if num % 2 ==0:
+		continue # 只是满足这个if的时候跳出一次，但是还是会继续
+	print(num) # 输出1、3、5、7、9
+```
+
+### 24.function
+
+#### 1.function形式
+
+
+```
+def functionMame(arg1,arg2,....,argN):
+	statements
+	retuen value
+```
+
+所有写在函数的内容都要缩进
+
+#### 2.一些例子
+
+``` 
+def greet_user():
+	"""Display xxx""" #本质是string，但是可以认为是注释
+	print("Hello!")
+
+great_user()
+```
+
+#### 3.多个双引号
+
+```
+text = """It is a message""" 
+lang_1 = "I know\npython\nc++\n"
+lang_2 = """I know
+python
+c++
+"""
+
+print(text) #string，和一个双引号是一样的
+print(lang_1) 
+print(lang_2) #lang1和lang2是一样的，三个双引号允许写很多东西在多行之间
+```
+
+#### 4.nultiple function calls
+
+```
+def print_num(num):
+	print(f"My favourite number is {num}")
+
+print_num(7)
+print_num(14)
+print_num(2)
+```
+
+#### 5. parameters and arguments
+
+```
+def per(aniaml,pet): #parameters
+
+per('dog','harry') #arguments
+```
+
+postion arguments的意思是按顺序传参，这个例子是先传dog后传harry
+
+#### 6.keyword arugements
+
+```
+def per(aniaml,pet): #parameters
+
+per(aniaml='dog',pet='harry') #arguments
+```
+
+可以不用按照顺序传参。
+
+#### 7.default values
+
+```
+def per(aniaml = "dog",pet = "harry"):
+
+per()
+```
+
+缺省就是dog和harry
+
+如果不定义的话，会报错。
+
+```
+def describe_pet(animal_type,pet_name):
+	print(f"I have a {animal_type).")
+	print(f"My {animal_type}'s name is {pet_name.title()}.")
+describe_pet() #不传或者穿少了都会报错
+```
+
+#### 8.return
+
+```
+def get_name(first,last):
+	full_name = f"{first}{last}"
+	return full_name.tltle()
+
+name = get_name('ann','spencer') 
+print(name)
+```
+
+可以return任何东西
+
+```
+def build(first,last):
+	person = {'first':first,'last':last}
+	return person
+
+name = build('ann','spencer')
+print(name)
+```
+
+#### 9.可以传入list
+
+```
+def greet(names):
+	for name in names:
+		msg = f"Hello,{name.title()}!"
+		print(msg)
+
+users=['ann','john','jim']
+greet(users)
+```
+
+#### 10.修改list
+
+```
+def greet_users(names):
+	removal = names.pop()
+	for name in names:
+		msg = f"Hello,{name.title()}!"
+		print(msg)
+
+users = ['ann','john','jim']
+greet_users(users)
+print(users) #最后已经删掉了，print的是前两个
+```
+
+也就是说，传进去增加了或者修改了，最后的list已经是改变的了
+
+**WDNMD,是title不是title，真是shit！！！！！**
+
+#### 11.避免修改原本的list
+
+```
+def greet_users(names):
+	removal = names.pop()
+	for name in names:
+		msg = f"Hello,{name.title()}!"
+		print(msg)
+
+users = ['ann','john','jim']
+greet_users(users[:]) #相当于全部抽出来了，相当于一个copy
+print(users) 
+```
