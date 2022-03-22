@@ -504,6 +504,7 @@ for item in item_list:
 	do something to item
 ```
 
+for 循环只能用于eatable（tuple，list，set）
 #### 2.几个实例
 
 ```
@@ -777,3 +778,246 @@ users = ['ann','john','jim']
 greet_users(users[:]) #相当于全部抽出来了，相当于一个copy
 print(users) 
 ```
+//2022.03.22
+#### 12.不确定argument的做法（使用*）
+
+```
+def make_pizza(*toppings):
+	print("Toppings:{}".format(",".join(toppings))) // join函数是把eatable得元素串在一起
+
+make_pizza('a')
+make_pizza('a','b','c')
+```
+
+#### 13.多个参数和单个参数可以混合使用，但是注意后面那个才能带星号
+
+```
+def a(a,*b):
+	print("number {}".format(a))
+	print("b{}".format(",".join(b)))
+
+a(16,"fuck")
+a(12,"shit","dict","test")
+```
+
+#### 14.双星号(arbitrary keyword)
+
+```
+def build(first,last,**user): #传进去就相当于字典了
+	user['first']=first
+	user['last'] = last
+	return user
+	
+pro = build('albert','einstein',location='prin',field='phy')
+print(pro)
+```
+
+#### 15.function annotations
+
+可以把参数的type固定住，也可以指定返回值
+
+```
+def greeting(name:str) -> str:  //如果有默认参数，则变为(name:str='Ann')
+	return 'Hello ' + name
+
+print(greeting('John'))
+````
+
+### 24.import
+
+#### 1.使用方法：先把函数存在.py
+
+```
+module_name.function_name()
+```
+
+#### 2.具体用法，假设有一个pizza.py
+
+```
+import pizza
+pizza.make_pizza(16,'pepperoni')
+pizza.make_pizza(12,'mushrooms','green peppers','extra cheese')
+```
+
+#### 3.直接在import里面引用函数
+
+```
+from pizza import make_Pizza
+make_pizza(16,'pepperoni')
+make_pizza(12,'mushrooms','green peppers','extra cheese')
+```
+
+#### 4.重新命名function name
+
+```
+from pizza import make_pizza as mp
+mp(16,'pepperoni')
+mp(12,'mushrooms','green peppers','extra cheese')
+```
+
+#### 5.重新命名module name
+
+```
+import pizza as p
+p.make_pizza(16,'pepperoni')
+p.make_pizza(12,'mushrooms','green peppers','extra cheese')
+```
+
+#### 6.可以import变量
+
+```
+person = {
+	"name":"John",
+	"age":36,
+	"country":"Normay"
+}
+
+#以上为profile.py
+
+import profile
+a = profile.person["age"]
+print(a)
+```
+
+### 25.命名函数
+
+```
+x = lambda a : a +10 //前面的是参数，后面的事表达式
+print(x(5))
+```
+
+```
+x = lambda a,b:a*b
+print(x(5,6))
+```
+
+```
+x = lambda a,b,c :a+b+c
+print(x(5,6,2))
+```
+
+### 26.map函数
+
+#### 1.基本语法
+
+```
+map(funx,iter_obj) //把int传到前面的funx函数里
+```
+
+#### 2.具体例子
+
+```
+def double(n):
+	return n+n
+numbers = (1,2,3,4)
+result = map(double,numbers) #把每个numbers里面的参数传到double里，然后返回得也是一个iterable object
+print(list(result))
+```
+
+```
+number = (1,2,3,4)
+result = map(lamda x:x+x,numbers)
+print(list(result))
+```
+
+#### 3.多个参数的map
+
+```
+numbers1= [1,2,3]
+numbers = [4,5,6]
+result = map(lambda x,y:x+y,numbers1,numbers2) #numbers1,numbers2都要是iterable
+print(list(result))
+```
+
+#### 4.int map
+
+```
+int_list=[1,2,3]
+test = list(map(str,int_list))
+print(test)
+```
+
+
+### 27.python scope（作用域）
+
+#### 1.local scope
+
+```
+dey myfunx():
+	x = 300
+	print(x)
+myfunc()
+```
+
+以上案例x只能在函数里面使用，不能在外面使用
+
+#### 2.function inside funcion
+
+```
+def myfunx():
+	x = 300
+	def myinnerfunx():
+		print(x)
+	myinnerfunc()
+	
+myfunx()
+```
+
+这个时候内部的myinnerfunx可以用外面那一层函数的x
+
+#### 3.全局变量
+
+```
+x = 300
+def myfunx():
+	prinx(x)
+myfunx()
+print(x)
+```
+
+在整个文件里都可以使用
+
+#### 4.相同变量名的处理方法
+
+```
+x = 300
+def myfunc():
+	x = 200
+	print(x) #这种情况下会当成两个变量，所以这个地方结果是200
+
+myfunc()
+print(x) #这个地方print 300
+```
+
+#### 5.声明global 变量
+```
+def myfunx():
+	global x #在此处声明x是全局变量
+	x = 300
+	
+myfunx()
+print(x)#这里不会报错，将会输出300
+```
+
+global可以覆写之前的参数
+
+```
+x = 200
+def myfunx():
+	global x #在此处声明x是全局变量
+	x = 300
+	
+myfunx()
+print(x) #将会输出300
+```
+
+### 28.input函数
+#### 1.基本使用方法
+```
+msg = input("Tell me sth") #括号内是会输出在屏幕上的内容，用户可以输入内容
+print(msg)
+```
+
+#### 2.可以和loop循环使用
+
+
