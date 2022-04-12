@@ -1424,5 +1424,231 @@ print(start_im) #将会输出整个字符，而不仅仅是im
 
 #### 13. search pattern最好都加上"r"
 
-//2022.03.30
+#### 14.compile
 
+```
+import re
+txt = "The rain in Spain"
+prog = re.compile("ai")
+result = prog.match(txt) # match 和 search基本一样
+```
+好处是可以search无数个txt，就不需要重复写了
+
+
+//2022.04.12
+
+### 33.Numpy
+
+#### 1.创建一个numpy array
+
+```
+import numpy as np
+a = np.array([1,2,3,4])
+print('a\n',a) #一维array
+b = np.array([[1,2],[3,4]])
+print('b\n',b) #二维array
+c = np.array([[[1,2],[3,4]],[[3,4],[6,8]]])
+print('c\n',c) #三维array
+```
+
+#### 2.创建一个空array
+
+```
+empty = np.empty((3,4),dtype=int) #dtype指的是数据类型，(3,4)代表的是3*4的二维矩阵
+print(empty) 
+```
+
+#### 3.创建一个full array
+
+```
+full = np.full([3,3],55,dtype=int) #[3,3]指的是3*3的二维矩阵，55指的是默认值
+print(full)
+```
+
+#### 4.arange函数
+
+```
+a = np.arange(10) #从0开始，到9（10不包括）
+print('a\n',a)
+```
+
+```
+b = np.arange(2,10,dtype=float) # 从二开始，到0（10不包括），可以指定float）
+```
+
+```
+c = np.arange(2,3,0.1) #开始的值指定，结束的指定，第三个参数是间隔多少
+```
+
+产生的都是一维array
+
+#### 5.linspace函数
+
+```
+a = np.linspace(1.,4.,6) #第一个是开始，第二个是结束（这个值会取到），第三个是stepsize（也就是会分成几份，这里是从一到六会平均分成六份）
+print("a\n",a)
+```
+
+#### 6.生成随机array
+
+```
+from numpy.random import default_rng #rng = random number generate
+seed = 42 #这里设定seed
+a = default_rng(seed).random((2,2)) # random后的参数是n*n的matrix，seed不传参数的话每次都不一样
+print("a\n",a)
+```
+
+#### 7.产生所有元素都是0或1的array
+
+```
+a = np.zeros([5,2],dtype = float) #产生所有都为0的array
+print(a)
+```
+
+```
+b = np.ones([5,2],dtype = float) #产生所有都为1的array
+print(b)
+```
+
+#### 8.eye函数
+
+产生一个单位矩阵
+
+```
+a = np.eye(3)
+print(a)
+```
+
+```
+b = np.eye(3,5) #可以不一定是方阵，那么能搞到1的就会搞到1
+print(b)
+```
+
+#### 9.diag函数
+
+传入一个1D array，会转换成一个n*n矩阵
+
+```
+a = np.diag([1,2,3])
+print(a)
+```
+
+若传入的是2D array，就会返回一个1D array（提出对角线的元素）
+
+```
+b = np.diag(np.array([[1,2],[3,4]]))
+print(b)
+```
+
+还有一个参数是k，默认是0，这个值代表偏移
+
+```
+a = np.diag([1,2,3],1) #将会产生一个4*4的矩阵，对角线得元素是0，上对角线的才是1，2，3，其实就相当于是在最后一行全加了0
+```
+
+```
+b = np.diag([1,2,3],-1) #将会产生一个4*4矩阵，对角线的元素是0，下对角线的才是1，2，3，其实就是相当于在第一行全加了0
+```
+
+#### 10.ndarray
+
+1. ndarray.ndim 
+
+几维的array？
+
+2. ndarray.shape 
+
+array上的维数
+
+3.ndarray.size
+
+array里面有多少个元素
+
+4. ndarray.dtype
+
+描述array里的元素类型
+
+5. ndarray.data
+
+缓存，存的是array里的元素
+
+具体例子
+
+```
+a = np.arange(15).reshape(3,5) #arange产生的是一个1D array，reshape将会转换成一个matrix，要保证没有reshape之前和之后是一样的。
+print(a.ndim) 
+print(a.shape)
+print(a.size)
+print(a.dtype)
+print(a.data[0,0])
+print(type(a))
+``` 
+
+
+#### 11.基本的操作符
+
+若用基本操作符，是对每个元素都进行操作，并且返回一个新的array
+
+```
+a = np.array([20,30,40,50])
+b = np.arange(4)
+
+print(a-b)
+print(b**2)
+print(10*np.sin(a))
+print(a<35)
+```
+
+#### 12.叉乘和点乘
+
+```
+A = np.array([[1,1],[0,1]])
+B = np.array([[2,0],[3,4]])
+print(A*B) #对应位置的元素相乘
+print(A@B) #矩阵乘法
+print(A.dot(B)) #也是矩阵乘法
+```
+
+#### 13.全局函数
+
+```
+A = np.arange(3)
+print(np.exp(A))
+print(np.sqrt(A))
+```
+
+求和函数
+
+```
+a = np.arange(6).reshape(2,3)
+print(np.sum(a)) #单纯的把所有数据加起来
+print(np.sum(a,axis=0)) #对0这个维度求和（相当于把每一列加起来，竖着来求和）
+print(np.sum(a,axis=1)) #对1这个维度求和（相当于把每一行加起来，横着来求和）
+print(np.sum(a,axis=0,keepdims=True)) #求和的时候保持维度不变，也就是里面再加一个方括号
+print(np.sum(a,axis=0,keepdims=False)) #求和的时候不保持维度不变，默认情况就是false
+```
+
+#### 14.index, slicing and iterating
+
+```
+a = np.arange(15).reshape(3,5)
+print(a)
+print(a[0,1])
+print(a[:,1]) #每一行的第二列
+print(a[0:2,1]) #取第二列前两个元素（“2”是不包括）
+print(a[1,:]) #取第二行每一列
+print(a[1,0:2]) #取第二行前两个数字（“2”不包括）
+```
+
+```
+print(a[-1]) #代表的是a[-1,:]，也就是把a的最后一行全部取出来
+```
+
+允许使用三个点来表示
+
+```
+x[1,2,...] 相当于 x[1,2,:,:,:] #假设x是一个五维array
+x[4,...,5,:] 相当于 x[4,:,:,5,:]
+```
+
+#### 15.
