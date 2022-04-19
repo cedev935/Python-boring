@@ -1651,4 +1651,389 @@ x[1,2,...] 相当于 x[1,2,:,:,:] #假设x是一个五维array
 x[4,...,5,:] 相当于 x[4,:,:,5,:]
 ```
 
-#### 15.
+#### 15.遍历
+
+```
+a = np.arange(15).reshape(3,5)
+for row in a:
+	print(row) #返回的是1D array
+```
+
+如果想要把每一个元素做遍历
+
+```
+a = np.arange(15).reshape(3,5)
+for ele in a.flat:
+	print(ele) 
+```
+
+#### 14.reshape（一维变高维）
+
+```
+a = np.arange(15)
+print(a.shape) #
+a = a.reshape(3,5) #把他变成3*5matrix
+print(a.shape)
+```
+
+其有自动补全的功能，第二个参数改变为-1即可
+
+```
+a = np.arange(12).reshape(3,-1)
+print(a.shape)
+```
+
+#### 15.把more-D 搞成1D（用ravel函数）
+
+```
+a = np.arange(15).reshape(3,5)
+print(a.ravel()) #变成1D array
+```
+
+#### 16.转置
+
+```
+a = np.arange(15).reshape(3,5)
+print(a.T) #转置
+```
+
+#### 17.resize
+
+将会直接改变a
+
+```
+a = np.arange(15).reshape(3,5)
+a.resize(2,6) #这种用法将会改变a
+# a.reshape(2.6) 这种用法不会改变a
+print(a.shape)
+```
+
+#### 18.stacking（将数组组合起来）
+
+vstack 意味着垂直堆起来
+hstack 意味着水平堆起来
+
+```
+from numpy.random import default_rng
+a = np.array([[3,4],[6,9]])
+b = np.array([[3,2],[1,4]])
+c = np.vstack((a,b)) #垂直堆起来（第二个放在第一个下面）
+d = np.hstack((a,b)) #水平堆起来（第二个放在第一个旁边）
+```
+
+#### 19.advanced index
+
+
+```
+a = np.arange(12)**2
+i = np.array([1,1,3,8,5]) # 取第2、4、9、6个元素
+a[i] #打印结果
+```
+
+```
+j = np.array([[3,4],[9,7]]) # 取第4、5，10、8的元素，并且返回的是一个2D array。实际上就是一个排列形式，先取出来在排列成这样的形式
+a[j]
+```
+
+对于2D array也可以这样做，但是取得每一个元素取的实际上对应的是某一行
+
+```
+palette = np.array([[0,0,0],[255,0,0,0],[0,255,0],[0,0,255],[255,255,255]])
+image = np.array([[0,1,2,0],[0,3,4,0]])
+palette[image]
+```
+
+
+```
+a = np.arange(12).reshape(3,4)
+i = np.array([[0,1],[1,2]])
+j = np.array([[2,1],[3,3]])
+a[i,j] # i和j必须是一样的形式
+a[i,2]
+a[:,j]
+```
+```
+i = [0 1       j = [2 1   也就是最后取的是  [a[0,2] a[1,1]
+      1 2]          3 3]                     a[1,3] a[2,3]]
+```
+
+bool出来将会是1D array
+
+```
+a = np.arange(12).reshape(3,4)
+b = a > 4
+a[b] #这里出来的是1D array
+```
+
+#### 20.做一些线性代数的操作
+
+```
+A = np.array([[6,1,1],[4,-2,5],[2,8,7]])
+print(np.linalg.matrix_rank(A)) #计算rank
+print(np.trace(A)) #计算trace
+print(np.linalg.det(A)) #计算det
+print(np.linalg.inv(A)) #计算inv
+print(np.linalg.matrix_power(A,3)) 
+```
+
+计算norm（所有数值的平方加起来再开根号）
+
+```
+from numpy import linalg
+a = np.arange(6).reshape(2,3)
+print(linalg.norm(a))
+print(linalg.norm(a,axis=0)) 
+print(linalg.norm(a,axis=1))
+```
+特征向量，特征值
+```
+a = np.array([[1,3],[4,6]])
+c,d = np.linalg.eig(a) #c是eigen values（特征值），d是eigen vectors（特征向量）
+print(c)
+print(d)
+```
+求解线性方程组
+```
+import numpy as np
+a = np.array([[1,2],[3,4]]) #这是等号左边
+b = np.array([8,18]) #这是等号右边
+print(np.linalg.solve(a,b))
+```
+
+//2022.04.19
+
+
+### 34.collections
+
+> import collections
+
+#### 1.namedtuple
+
+> namedtuple(<Name>,<[Names of Values]>)
+
+Name就是名字，[Names of Values]就是一个list
+
+具体举例（第一种创建方法）
+
+```
+from collections import namedtuple
+book = namedtuple("book",["price","no_of_pages","author"])
+
+harry_potter = book("500","367","JK") #第一个参数就是price，第二个就是no....以此类推
+
+print(harry_potter.price) #第一种访问方式，变量+参数
+print(harry_potter[0])
+```
+
+第二种创建方法
+
+```
+from collections import namedtuple
+movie = namedtuple('movie', 'genre rating lead_actor') #第二个参数是一个string，python会自动分开
+ironman = movie(genre = 'action', rating = '8.9', lead_actor = 'Robert Downey Jr.') #注意在这里一定要指定什么等于什么
+titanic = movie(genre = 'romance' , rating = '8.1', lead_actor = 'Leonardo DiCaprio')
+print(titanic.genre) #调用参数
+print(ironman.rating)
+```
+
+#### 2.从fict里面创建nametuple
+
+```
+from collections import namedtuple
+dictionary = dict({'price':567,'no_of_pages':878,'author':'cathy thomas'})
+
+book = namedtuple('book',['price','no_of_pages','author']) #key必须要一样的才行
+print(book(**dictionary)) #两个星星的意思是把dictionary里面的东西全部传到book里面
+```
+
+#### 3.Counter
+
+实际上是一个dict，有key和value
+key是element
+value是element出现了多少次
+
+```
+from collections import Counter #注意这里的c要大写
+numbers = [4,5,5,2,22,2,2,1,8,9,7,7]
+num_counter = Counter(numbers) #把要计算的数组放进去，如果要放进string也可以
+print(num_counter) #会返回一个dict，类的名字是Counter
+```
+
+string也可以这样做
+
+```
+from collections import Counter #注意这里的c要大写
+string = 'lalalallasfgioudprfhiyewdsf'
+string_count = Counter(string)
+print(string_count)
+```
+
+同样也可以统计一个单词出现了多少次
+
+```
+from collections import Counter #注意这里的c要大写
+line = "he told her that her presentation was not that good"
+list_of_words = line.split() #可以把单词给分开，算出来
+line_count= Counter(list_of_words) #统计单词出现的次数
+print(line_count)
+```
+
+**most_common(top_k) 可以找频率出现最高的**
+
+```
+from collections import Counter #注意这里的c要大写
+line = "he told her that her presentation was not that good"
+list_of_words = line.split() #可以把单词给分开，算出来
+line_count= Counter(list_of_words) #统计单词出现的次数
+print(line_count.most_common(3)) #可以把出现频率最高的三个列出来，返回的是list of tuple
+```
+
+换一种写法，把什么元素出现了多少次写出来
+
+```
+from collections import Counter #注意这里的c要大写
+string = 'lalalallasfgioudprfhiyewdsf'
+string_count = Counter(string)
+for c,f in string_count.most_common(3): #此处赋值给两个valuable
+	print(f"{c} appears {f} times")
+```
+
+#### 4.update和subtract（一加一减）
+
+```
+from collections import Counter #注意这里的c要大写
+food = Counter({"apple":5,"peach":12,"potato":2,"chicken_wing":1}) #用类似dict的形式创建counter
+fruit = Counter({"apple":2,"peach"5})
+food.update(fruit) #更新
+print(food)
+```
+
+```
+from collections import Counter #注意这里的c要大写
+food = Counter({"apple":5,"peach":12,"potato":2,"chicken_wing":1}) #用类似dict的形式创建counter
+fruit = Counter({"apple":2,"peach"5})
+food.subtract(fruit) #减少
+print(food)
+```
+
+
+#### 5.ChainMap
+
+```
+from collections import ChainMap
+dic1={'red':5,'black':1,'white':2}
+dic2={"chennai":"tamail","bangalore":"btm"}
+dic3={"firstname":"sai","lastname":"kumar"}
+my_dict = ChainMap(dic1,dic2,dic3)
+my_dict.maps
+```
+
+可以使用.keys()和.values()
+
+```
+from collections import ChainMap
+dic1={'red':5,'black':1,'white':2}
+dic2={"chennai":"tamail","bangalore":"btm"}
+dic3={"firstname":"sai","lastname":"kumar"}
+my_dict = ChainMap(dic1,dic2,dic3)
+print(list(my_dict.keys())) #把所有keys打印出来
+print(list(my_dict.values()))
+```
+
+使用new_child()在已经声明的Chainmap中加入dict
+
+```
+from collections import ChainMap
+dic1={'red':5,'black':1,'white':2}
+dic2={"chennai":"tamail","bangalore":"btm"}
+dic3={"firstname":"sai","lastname":"kumar"}
+my_dict = ChainMap(dic1,dic2,dic3)
+
+new_dict = {'blue':6,'green':7}
+my_chain = my_dict.new_child(new_dict) #添加新字典
+print(my_chain)
+```
+
+使用reverse反转（因为原来是按顺序放的）
+
+```
+from collections import ChainMap
+dic1={'red':5,'black':1,'white':2}
+dic2={"chennai":"tamail","bangalore":"btm"}
+dic3={"firstname":"sai","lastname":"kumar"}
+my_dict = ChainMap(dic1,dic2,dic3)
+my_dict.maps = reversed(my_dict.maps)
+print(my_dict)
+```
+
+#### 6.defaultdict
+避免访问到了不存在的值
+```
+from collections import defaultdict
+def print_default():
+	return 'value absent' #这里返回的是如果value不存在就会返回
+
+def_dict = defaultdict(print_default) #这里需要定义一个函数
+def_dict["fruit"] = "orange"
+print(def_dict["shit"]) #这里会返回value absent，因为这个key不存在
+```
+
+#### 7.OrderedDict
+
+保持顺序不改变
+
+```
+from collections import OrderedDict
+ordered_vehicle = OrderedDict()
+ordered_vehicle['car'] = 'a'
+ordered_vehicle['truck'] = 'b'
+ordered_vehicle['van'] = 'c'
+
+#先print原先的顺序
+for key,values in ordered_vehicle.items():
+    print(key,values)
+print("-----------------")
+ordered_vehicle['car'] = 'change' #这个地方不会改变顺序
+for key, value in ordered_vehicle.items():
+    print(key, value)
+
+#但是如果先删除了在添加，就会变化了
+print("-----------------")
+ordered_vehicle.pop('car')
+ordered_vehicle['car'] = 'change2' #这个地方改了之后就会导致顺序变化
+for key, value in ordered_vehicle.items():
+    print(key, value)
+```
+
+### 35.文件操作
+
+#### 1.读取操作
+
+```
+with open("pi.txt") as file_object: #file_object是变量名，可以改成任意想要的
+	contents = file_object.read()
+
+print(contents) #缩进没有在with后面的话，python会自动close掉这个文件
+```
+
+也可以指定paths
+
+```
+with open("1/pi.txt") as a: #这里使用的是相对路径 
+	contents = a.read()
+	
+print(contents)
+```
+
+使用绝对路径
+
+```
+file_path = "C:/Users/redapple/Desktop/pi.txt"
+# file_path = "C:\\Users\\redapple\\Desktop\\pi.txt" #因为一个斜杠有特殊作用，因此需要两个斜杠
+
+with open(file_path) as a:
+	contents = a.read()
+	
+print(contents)
+```
+
