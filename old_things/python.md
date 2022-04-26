@@ -1,15 +1,15 @@
-## Python 学习笔记
+# Python 学习笔记
 
 // 2022.2.22
 
-### 1.如何获取一个变量的类型
+## 1.如何获取一个变量的类型
 
 ```
 test = "xxx"
 print(type(test))
 ```
 
-### 2.bool
+## 2.bool
 
 ```
 x = True
@@ -18,7 +18,7 @@ y = False
 
 NoneType 直接赋None
 
-### 3.变量名要求
+## 3.变量名要求
 
 变量名只能是 字母、数字、下划线
 
@@ -26,7 +26,7 @@ NoneType 直接赋None
 
 python变量名区分大小写
 
-### 4.可以使用int(x)进行类型转化
+## 4.可以使用int(x)进行类型转化
 
 ```
 x = "233"
@@ -34,7 +34,7 @@ x = "233"
 ```
 同样的还有int() float() str()
 
-### 5.若字符串相加，会把数字直接粘贴进来
+## 5.若字符串相加，会把数字直接粘贴进来
 
 ```
 x = "10"
@@ -45,29 +45,29 @@ x +y
 
 该结果仍为string
 
-### 6.字符操作表
+## 6.字符操作表
 
-#### 1. + 
+### 1. + 
 
-#### 2. -
+### 2. -
 
-#### 3. /
+### 3. /
 
 注意，除出来会有小数
 
-#### 4.% 取余
+### 4.% 取余
 
-#### 5. *
+### 5. *
 
-#### 6.// 除出来取整数
+### 6.// 除出来取整数
 
 例如 7//2 是 3
 
 只会向下取整
 
-#### 7.** 平方
+### 7.** 平方
 
-### 7.可用and 来判断
+## 7.可用and 来判断
 
 ```
 x = 14
@@ -75,14 +75,14 @@ x = 14
 (x > 10) and (x <20)
 ```
 
-### 8.字符串可以乘以一个整数
+## 8.字符串可以乘以一个整数
 
 ```
 x = "2333"
 x*3
 ```
 
-### 9.常用符号
+## 9.常用符号
 
 \' 单引号
 \" 双引号
@@ -92,7 +92,7 @@ x*3
 \t tab
 \b 删除
 
-### 10.改变字符的情形
+## 10.改变字符的情形
 
 ```
 x = "this is a test"
@@ -101,7 +101,7 @@ print(x.upper()) //所有字母转为大写
 print(x.title()) //转为标题格式
 ```
 
-### 11.format 函数
+## 11.format 函数
 
 ```
 a = "test"
@@ -148,7 +148,7 @@ num = 10000.0
 print(f"I have a {num:30,.4f} apples")
 ```
 
-### 12.去除空格
+## 12.去除空格
 
 ```
 a = "python "
@@ -157,14 +157,14 @@ a.lstrip() //把左边的空格全部去掉
 a.strip() //左右两边的空格都去掉
 ```
 
-### 13.注释
+## 13.注释
 
 使用 "#" 
 
-### 14.没写完的代码记得在后面加入 \ 然后才能换行 
+## 14.没写完的代码记得在后面加入 \ 然后才能换行 
 
-### 15.list
-#### 1.创建list
+## 15.list
+### 1.创建list
 ```
 a = ["a","b","c","d"]
 print(a)
@@ -182,18 +182,18 @@ print c
 
 同理，list可以乘以一个常数，会直接重复排列
 
-#### 2.获取list中元素
+### 2.获取list中元素
 
 ```
 a = ["a","b","c","d"]
 a[2] #获取的是第三个元素，他是从0开始
 ``` 
 
-#### 3.获取list的元素个数
+### 3.获取list的元素个数
 
 len(a)
 
-#### 4.更改list的值
+### 4.更改list的值
 
 ```
 a = ["a","b","c","d"]
@@ -201,7 +201,7 @@ a[2] = "fuck"
 print(a)
 ```
 
-#### 5.添加元素
+### 5.添加元素
 
 ```
 a = ["a","b","c","d"]
@@ -209,7 +209,7 @@ a.append("line")
 print(a)
 ```
 
-#### 6.插入元素
+### 6.插入元素
 
 ```
 a = ["a","b","c","d"]
@@ -217,14 +217,14 @@ a.insert(0,"wat") #0为想要添加到的位置，也就是这个元素会被放
 print(a)
 ```
 
-#### 7.删除元素
+### 7.删除元素
 
 ```
 a = ["a","b","c","d"]
 del a[0] #将会删除第一个元素
 print(a)
 ```
-#### 8.pop
+### 8.pop
 
 ```
 a = ["a","b","c","d"]
@@ -241,7 +241,7 @@ pop可以指定位置
 
 pop将会改变原list
 
-#### 9.remove：用元素名删除
+### 9.remove：用元素名删除
 
 ```
 a = ["a","b","c","d"]
@@ -251,7 +251,7 @@ print(a)
 
 如果list中有两个相同的value，就会删除开始的一个
 
-#### 10.对list的元素进行排序
+### 10.对list的元素进行排序
 
 ``` 
 a = ["b","a","c","d"]
@@ -275,7 +275,7 @@ print(sorted(a)) #会按照字母顺序排序
 print(sorted(a,reverse=True))#会按照字母顺序反向排序
 ```
 
-#### 11.range
+### 11.range
 
 ```
 a = list(range(10)) #list将range(10)强行转化为list
@@ -289,7 +289,7 @@ a = list(range(0,100,5)) #第一个参数是从哪里开始，第二个是到哪
 print(a)
 ```
 
-#### 12.slicing lists
+### 12.slicing lists
 
 ```
 a=list(range(0,100,5))
@@ -302,7 +302,7 @@ print(a[::-1]) #数列全部倒着写
 
 //2022.03.08
 
-#### 13.一些常用的函数
+### 13.一些常用的函数
 ```
 len(num) #list里面元素的个数
 max(num) #list里面的最大值
@@ -311,16 +311,16 @@ min(num) #list里面的最小值
 
 要用max/min函数，必须是int
 
-### 16.tuples
+## 16.tuples
 
-#### 1.创建
+### 1.创建
 
 ```
 a = ("apple","banana")
 ```
 
 
-#### 2.做加法
+### 2.做加法
 
 ```
 a = ("apple","banana")
@@ -328,7 +328,7 @@ b = ("cabbage",) #必须要在这里加逗号
 c = a + b
 print(c)
 ```
-#### 3.乘法
+### 3.乘法
 
 ```
 a = ("shit",)
@@ -337,14 +337,14 @@ print(a*3)
 
 会把原来的重复三遍
 
-#### 4.访问
+### 4.访问
 
 ```
 a = ("apple","banana")
 print(a[0])
 ```
 
-#### 5.修改性
+### 5.修改性
 
 不可以更改！！也就是修改和删除都不可以！
 
@@ -355,9 +355,9 @@ a = ("apple","banana")
 del a 
 ```
 
-### 17.sets
+## 17.sets
 
-#### 1.创建
+### 1.创建
 
 ```
 a = set([1,2,3]) #转换list到set
@@ -371,7 +371,7 @@ set是无序的
 
 不可以使用index进行访问
 
-#### 2.in函数
+### 2.in函数
 
 ```
 basket = {'apple','orange'}
@@ -379,7 +379,7 @@ print ('orange' in basket) #判断orange在不在basket里面，会返回False�
 ```
 tuple，list也可以
 
-#### 3.两个set的操作符
+### 3.两个set的操作符
 
 ```
 a = {'apple','orange','cabbage'}
@@ -390,26 +390,26 @@ print (a^b) #先取并，减去交
 print ((a|b)-(a&b)) #先取并，减去交
 ```
 
-### 18.字典
+## 18.字典
 
-#### 1.两个重要概念
+### 1.两个重要概念
 
 key和value
 
-#### 2.定义
+### 2.定义
 
 ```
 mydict = {key1:val1,key2:val2,key3:val3} #该代码会报错，注意看下面的笔记
 ```
 
-#### 3.创建
+### 3.创建
 
 ```
 sch = {"Monday":"Physic","Tuesday":"Python","Wednesday":"Math"}
 ```
 注意不可以使用index
 
-#### 4.访问字典
+### 4.访问字典
 
 ```
 sch = {"Monday":"Physic","Tuesday":"Python","Wednesday":"Math"}
@@ -418,7 +418,7 @@ print(sch.get("Monday",No class")) #用get函数来get value，第一个参数�
 print(sch.get("Sunday","No class") #应用，会返回No class
 ```
 
-#### 5.添加新元素
+### 5.添加新元素
 
 ```
 sch = {"Monday":"Physic","Tuesday":"Python","Wednesday":"Math"}
@@ -426,14 +426,14 @@ sch["THR"] = "Chinese" #第一种添加形式
 sch.update({"THR":"Chinese}) #第二种添加形式
 ```
 
-#### 6.修改元素
+### 6.修改元素
 
 ```
 sch = {"Monday":"Physic","Tuesday":"Python","Wednesday":"Math"}
 sch["Monday"] = "Chinese"
 ```
 
-#### 7.删除元素
+### 7.删除元素
 
 ```
 sch = {"Monday":"Physic","Tuesday":"Python","Wednesday":"Math"}
@@ -441,7 +441,7 @@ del sch["Monday"] #第一种形式
 sch.pop("Monday") #第二种形式，推出
 ```
 
-#### 8.只获取keys或是values
+### 8.只获取keys或是values
 
 ```
 sch = {"Monday":"Physic","Tuesday":"Python","Wednesday":"Math"}
@@ -449,16 +449,16 @@ print(sch.keys()) #返回所有keys
 print(sch.values()) #返回所有values
 ```
 
-#### 9.join函数
+### 9.join函数
 
 ```
 sch = {"Monday":"Physic","Tuesday":"Python","Wednesday":"Math"}
 print(", ".join(sch.keys())) #后面加的是可以遍历的数据结构,元素必须是string
 ```
 
-### 19.if else语句
+## 19.if else语句
 
-#### 1.基础语句（伪代码）
+### 1.基础语句（伪代码）
 
 ```
 if condition
@@ -467,7 +467,7 @@ else
 	execute sth else
 ```
 
-#### 2.举例
+### 2.举例
 
 ```
 x = True
@@ -480,7 +480,7 @@ print("Print regardless of the outcome of the if-else block") #这一行缩进�
 
 缩进注意：要么用tab，要么用space，但是space一定要一样的个数
 
-#### 3.elif
+### 3.elif
 
 伪代码：
 
@@ -495,9 +495,9 @@ else:
 
 如果满足if和elif，那么也只会执行if的语句
 
-### 20.for/loop
+## 20.for/loop
 
-#### 1.伪代码
+### 1.伪代码
 
 ```
 for item in item_list:
@@ -505,7 +505,7 @@ for item in item_list:
 ```
 
 for 循环只能用于eatable（tuple，list，set）
-#### 2.几个实例
+### 2.几个实例
 
 ```
 guest_list = ["Eric","Alice","John","Lisa"]
@@ -519,7 +519,7 @@ for f in my_set:
 	print(f)
 ```
 // 2022.03.15
-#### 3.和字典混合使用
+### 3.和字典混合使用
 
 ```
 my_dict={"apple":"red","peach":"pink"}
@@ -527,7 +527,7 @@ for f in my_dict:
 	print(f"The color of {f} is {my_dict[f]}") # f是key，my_dict[f]是value
 ```
 
-#### 4.把key和value同时赋值
+### 4.把key和value同时赋值
 
 ```
 my_dict={"apple":"red","peach":"pink"}
@@ -535,7 +535,7 @@ for f,c in my_dict.items(): #注意这个地方加了.items()
 	print(f"The color of {f} is {c}")
 ```
 
-#### 5.也可以之访问keys或者是value
+### 5.也可以之访问keys或者是value
 
 ```
 my_dict={"apple":"red","peach":"pink"}
@@ -545,7 +545,7 @@ for c in my_dict.values():
 	print(c)
 ```
 
-#### 6.range&for
+### 6.range&for
 
 ```
 for i in range(5):
@@ -553,7 +553,7 @@ for i in range(5):
 ```
 
 
-#### 7.List comprehension
+### 7.List comprehension
 实例1
 ```
 my_list = [1,2,3]
@@ -579,9 +579,9 @@ for w in vocab:
 		long_word.append(w)
 ```
 
-### 21.while/loop
+## 21.while/loop
 
-#### 1.一个实例
+### 1.一个实例
 
 ```
 n = 0
@@ -591,7 +591,7 @@ while n < 5:
 print("Finished while loop")
 ```
 
-#### 2. 注意避免死循环
+### 2. 注意避免死循环
 
 ```
 x = 1
@@ -599,9 +599,9 @@ while x <= 5:
 	print(x)
 ```
 
-### 22.break
+## 22.break
 
-#### 1.一个实例
+### 1.一个实例
 
 ```
 num = 0
@@ -612,9 +612,9 @@ while num <10:
 	print(num) #最终输出1
 ```
 
-### 23.continue
+## 23.continue
 
-#### 1.一个实例
+### 1.一个实例
 
 ```
 num = 0
@@ -625,9 +625,9 @@ while num <10:
 	print(num) # 输出1、3、5、7、9
 ```
 
-### 24.function
+## 24.function
 
-#### 1.function形式
+### 1.function形式
 
 
 ```
@@ -638,7 +638,7 @@ def functionMame(arg1,arg2,....,argN):
 
 所有写在函数的内容都要缩进
 
-#### 2.一些例子
+### 2.一些例子
 
 ``` 
 def greet_user():
@@ -648,7 +648,7 @@ def greet_user():
 great_user()
 ```
 
-#### 3.多个双引号
+### 3.多个双引号
 
 ```
 text = """It is a message""" 
@@ -663,7 +663,7 @@ print(lang_1)
 print(lang_2) #lang1和lang2是一样的，三个双引号允许写很多东西在多行之间
 ```
 
-#### 4.nultiple function calls
+### 4.nultiple function calls
 
 ```
 def print_num(num):
@@ -674,7 +674,7 @@ print_num(14)
 print_num(2)
 ```
 
-#### 5. parameters and arguments
+### 5. parameters and arguments
 
 ```
 def per(aniaml,pet): #parameters
@@ -684,7 +684,7 @@ per('dog','harry') #arguments
 
 postion arguments的意思是按顺序传参，这个例子是先传dog后传harry
 
-#### 6.keyword arugements
+### 6.keyword arugements
 
 ```
 def per(aniaml,pet): #parameters
@@ -694,7 +694,7 @@ per(aniaml='dog',pet='harry') #arguments
 
 可以不用按照顺序传参。
 
-#### 7.default values
+### 7.default values
 
 ```
 def per(aniaml = "dog",pet = "harry"):
@@ -713,7 +713,7 @@ def describe_pet(animal_type,pet_name):
 describe_pet() #不传或者穿少了都会报错
 ```
 
-#### 8.return
+### 8.return
 
 ```
 def get_name(first,last):
@@ -735,7 +735,7 @@ name = build('ann','spencer')
 print(name)
 ```
 
-#### 9.可以传入list
+### 9.可以传入list
 
 ```
 def greet(names):
@@ -747,7 +747,7 @@ users=['ann','john','jim']
 greet(users)
 ```
 
-#### 10.修改list
+### 10.修改list
 
 ```
 def greet_users(names):
@@ -765,7 +765,7 @@ print(users) #最后已经删掉了，print的是前两个
 
 **WDNMD,是title不是title，真是shit！！！！！**
 
-#### 11.避免修改原本的list
+### 11.避免修改原本的list
 
 ```
 def greet_users(names):
@@ -779,7 +779,7 @@ greet_users(users[:]) #相当于全部抽出来了，相当于一个copy
 print(users) 
 ```
 //2022.03.22
-#### 12.不确定argument的做法（使用*）
+### 12.不确定argument的做法（使用*）
 
 ```
 def make_pizza(*toppings):
@@ -789,7 +789,7 @@ make_pizza('a')
 make_pizza('a','b','c')
 ```
 
-#### 13.多个参数和单个参数可以混合使用，但是注意后面那个才能带星号
+### 13.多个参数和单个参数可以混合使用，但是注意后面那个才能带星号
 
 ```
 def a(a,*b):
@@ -800,7 +800,7 @@ a(16,"fuck")
 a(12,"shit","dict","test")
 ```
 
-#### 14.双星号(arbitrary keyword)
+### 14.双星号(arbitrary keyword)
 
 ```
 def build(first,last,**user): #传进去就相当于字典了
@@ -812,7 +812,7 @@ pro = build('albert','einstein',location='prin',field='phy')
 print(pro)
 ```
 
-#### 15.function annotations
+### 15.function annotations
 
 可以把参数的type固定住，也可以指定返回值
 
@@ -823,15 +823,15 @@ def greeting(name:str) -> str:  //如果有默认参数，则变为(name:str='An
 print(greeting('John'))
 ````
 
-### 24.import
+## 24.import
 
-#### 1.使用方法：先把函数存在.py
+### 1.使用方法：先把函数存在.py
 
 ```
 module_name.function_name()
 ```
 
-#### 2.具体用法，假设有一个pizza.py
+### 2.具体用法，假设有一个pizza.py
 
 ```
 import pizza
@@ -839,7 +839,7 @@ pizza.make_pizza(16,'pepperoni')
 pizza.make_pizza(12,'mushrooms','green peppers','extra cheese')
 ```
 
-#### 3.直接在import里面引用函数
+### 3.直接在import里面引用函数
 
 ```
 from pizza import make_Pizza
@@ -847,7 +847,7 @@ make_pizza(16,'pepperoni')
 make_pizza(12,'mushrooms','green peppers','extra cheese')
 ```
 
-#### 4.重新命名function name
+### 4.重新命名function name
 
 ```
 from pizza import make_pizza as mp
@@ -855,7 +855,7 @@ mp(16,'pepperoni')
 mp(12,'mushrooms','green peppers','extra cheese')
 ```
 
-#### 5.重新命名module name
+### 5.重新命名module name
 
 ```
 import pizza as p
@@ -863,7 +863,7 @@ p.make_pizza(16,'pepperoni')
 p.make_pizza(12,'mushrooms','green peppers','extra cheese')
 ```
 
-#### 6.可以import变量
+### 6.可以import变量
 
 ```
 person = {
@@ -879,7 +879,7 @@ a = profile.person["age"]
 print(a)
 ```
 
-### 25.命名函数
+## 25.命名函数
 
 ```
 x = lambda a : a +10 //前面的是参数，后面的事表达式
@@ -896,15 +896,15 @@ x = lambda a,b,c :a+b+c
 print(x(5,6,2))
 ```
 
-### 26.map函数
+## 26.map函数
 
-#### 1.基本语法
+### 1.基本语法
 
 ```
 map(funx,iter_obj) //把int传到前面的funx函数里
 ```
 
-#### 2.具体例子
+### 2.具体例子
 
 ```
 def double(n):
@@ -920,7 +920,7 @@ result = map(lamda x:x+x,numbers)
 print(list(result))
 ```
 
-#### 3.多个参数的map
+### 3.多个参数的map
 
 ```
 numbers1= [1,2,3]
@@ -929,7 +929,7 @@ result = map(lambda x,y:x+y,numbers1,numbers2) #numbers1,numbers2都要是iterab
 print(list(result))
 ```
 
-#### 4.int map
+### 4.int map
 
 ```
 int_list=[1,2,3]
@@ -938,9 +938,9 @@ print(test)
 ```
 
 
-### 27.python scope（作用域）
+## 27.python scope（作用域）
 
-#### 1.local scope
+### 1.local scope
 
 ```
 dey myfunx():
@@ -951,7 +951,7 @@ myfunc()
 
 以上案例x只能在函数里面使用，不能在外面使用
 
-#### 2.function inside funcion
+### 2.function inside funcion
 
 ```
 def myfunx():
@@ -965,7 +965,7 @@ myfunx()
 
 这个时候内部的myinnerfunx可以用外面那一层函数的x
 
-#### 3.全局变量
+### 3.全局变量
 
 ```
 x = 300
@@ -977,7 +977,7 @@ print(x)
 
 在整个文件里都可以使用
 
-#### 4.相同变量名的处理方法
+### 4.相同变量名的处理方法
 
 ```
 x = 300
@@ -989,7 +989,7 @@ myfunc()
 print(x) #这个地方print 300
 ```
 
-#### 5.声明global 变量
+### 5.声明global 变量
 ```
 def myfunx():
 	global x #在此处声明x是全局变量
@@ -1011,21 +1011,21 @@ myfunx()
 print(x) #将会输出300
 ```
 
-### 28.input函数
-#### 1.基本使用方法
+## 28.input函数
+### 1.基本使用方法
 ```
 msg = input("Tell me sth") #括号内是会输出在屏幕上的内容，用户可以输入内容
 print(msg)
 ```
 
 
-#### 2.可以和loop循环使用
+### 2.可以和loop循环使用
 
 // 2022.03.29
 
-### 29.filter函数
+## 29.filter函数
 
-#### 1.具体例子
+### 1.具体例子
 ```
 seq = [0,1,2,3,5,8,13]
 result = filter(lambda x: x%2!=0,seq) #将会拣取所有的奇数
@@ -1039,13 +1039,13 @@ print(list(result)) #将输出偶数
 ```
 注意filter函数只能包含iterable
 
-### 30.RegEx
+## 30.RegEx
 
-#### 1.四个基本函数
+### 1.四个基本函数
 
 findall,search,split,sub
 
-#### 2.findall
+### 2.findall
 
 将返回一个list，返回所有结果
 
@@ -1057,7 +1057,7 @@ x = re.findall("ai",txt) #第一个函数是搜索的对象，第二个参数是
 print(x)
 ```
 
-#### 3.search
+### 3.search
 
 将会返回一个match object，如果有多个匹配的，只有一个match对象会被返回
 
@@ -1090,7 +1090,7 @@ else:
 	没找到就会做这个
 ```
 
-#### 4.split
+### 4.split
 
 将会返回一个list，把找到的字符串，就用这个字符串，把string都分开，但是注意这个字符串并不会被包括进去
 
@@ -1115,7 +1115,7 @@ x = re.split(" ",txt,1) #这里只会找第一个空格，来进行分
 print(x)
 ```
 
-#### 5.sub
+### 5.sub
 
 替换函数
 
@@ -1135,11 +1135,11 @@ print(x)
 ```
 
 
-### 31.Match object
+## 31.Match object
 span,string,group
 
 这三个函数只能和search函数使用
-#### 1.span
+### 1.span
 将会返回第开始和结束的位置
 ```
 import re
@@ -1148,7 +1148,7 @@ x = re.search("ai",txt)
 print(x.span()) #开始的位置是5，结束的位置是7（注意7不包括）
 ```
 
-#### 2.string
+### 2.string
 
 ```
 import re
@@ -1157,7 +1157,7 @@ x = re.search("ai",txt)
 print(x.string) #print是txt的内容，注意string后面没有括号
 ```
 
-#### 3.group
+### 3.group
 
 ```
 import re
@@ -1166,9 +1166,9 @@ x = re.search("ai",txt)
 print(x.group()) #print的是查找到的字符串，注意如果跟下面的正则表达式一起用会返回搜索到的东西，而不是整个字符串
 ```
 
-### 32.特殊的符号（用来搜索）
+## 32.特殊的符号（用来搜索）
 
-#### 1.[]
+### 1.[]
 
 > [a-m]
 
@@ -1207,7 +1207,7 @@ print(x.group()) #print的是查找到的字符串，注意如果跟下面的正
 
 配合search函数，将会找到不以aeiou开头的单词
 
-#### 2.\
+### 2.\
 
 用来搜索一些特殊符号
 
@@ -1331,31 +1331,31 @@ print(re.findall(r"\W\W\W","123$$$abc3pm")) #这里将会返回$$$
 
 将会匹配到最后一个单词，也是只会返回最后一个单词
 
-#### 3. .
+### 3. .
 
 > he..o
 
 match n个长度的string，比如这个例子就回match hello，注意长度是会知道的
 
-#### 4.^
+### 4.^
 
 > ^hello 
 
 搜索以hello开头的
 
-#### 5.$
+### 5.$
 
 > planet$
 
 搜寻以planet结尾的
 
-#### 6.*
+### 6.*
 
 > he.*o
 
 出现零个或者多个，在这里指的是要找一个string，里面包含he，o。中间无论是什么什么东西都会符合。
 
-#### 7.+
+### 7.+
 
 > he.+o 
 
@@ -1369,13 +1369,13 @@ txt = "abcabcabc ababab acacac azzzzz"
 print(re.findall(r"\b(abc|ab|ac)+\b",txt)) #这里仅仅会输出abc ab ac 注意+号是把前面整个括号里面的来进行识别，如果不加括号只会匹配c
 print(re.findall(r"\b(?:abc|ab|ac)+\b",txt)) #?:做的是不仅仅是输出这些字符串，而是会把整个字符串输出
 ```
-#### 8.?
+### 8.?
 
 > he.?o 
 
 出现零个或一个
 
-#### 9.{}
+### 9.{}
 
 > he.{2}o
 
@@ -1383,13 +1383,13 @@ print(re.findall(r"\b(?:abc|ab|ac)+\b",txt)) #?:做的是不仅仅是输出这�
 
 例如hello会被返回，heo，helo，helllo都不行
 
-#### 10.|
+### 10.|
 
 > falls|stays
 
 只要命中任意一个就会返回，注意这个时候要用findall函数，不要用search
 
-#### 11.()
+### 11.()
 
 ```
 import re
@@ -1413,7 +1413,7 @@ print(re.findall(r"\b(IMG(\d+))\.png\b",txt)) #嵌套，将会返回[('IMG01', '
 ```
 
 
-#### 12.针对以上所有的符号一个应用
+### 12.针对以上所有的符号一个应用
 
 ```
 import re
@@ -1422,9 +1422,9 @@ start_im = [w for w in words if re.search(r"\Aim",w)]
 print(start_im) #将会输出整个字符，而不仅仅是im
 ```
 
-#### 13. search pattern最好都加上"r"
+### 13. search pattern最好都加上"r"
 
-#### 14.compile
+### 14.compile
 
 ```
 import re
@@ -1437,9 +1437,9 @@ result = prog.match(txt) # match 和 search基本一样
 
 //2022.04.12
 
-### 33.Numpy
+## 33.Numpy
 
-#### 1.创建一个numpy array
+### 1.创建一个numpy array
 
 ```
 import numpy as np
@@ -1451,21 +1451,21 @@ c = np.array([[[1,2],[3,4]],[[3,4],[6,8]]])
 print('c\n',c) #三维array
 ```
 
-#### 2.创建一个空array
+### 2.创建一个空array
 
 ```
 empty = np.empty((3,4),dtype=int) #dtype指的是数据类型，(3,4)代表的是3*4的二维矩阵
 print(empty) 
 ```
 
-#### 3.创建一个full array
+### 3.创建一个full array
 
 ```
 full = np.full([3,3],55,dtype=int) #[3,3]指的是3*3的二维矩阵，55指的是默认值
 print(full)
 ```
 
-#### 4.arange函数
+### 4.arange函数
 
 ```
 a = np.arange(10) #从0开始，到9（10不包括）
@@ -1482,14 +1482,14 @@ c = np.arange(2,3,0.1) #开始的值指定，结束的指定，第三个参数�
 
 产生的都是一维array
 
-#### 5.linspace函数
+### 5.linspace函数
 
 ```
 a = np.linspace(1.,4.,6) #第一个是开始，第二个是结束（这个值会取到），第三个是stepsize（也就是会分成几份，这里是从一到六会平均分成六份）
 print("a\n",a)
 ```
 
-#### 6.生成随机array
+### 6.生成随机array
 
 ```
 from numpy.random import default_rng #rng = random number generate
@@ -1498,7 +1498,7 @@ a = default_rng(seed).random((2,2)) # random后的参数是n*n的matrix，seed�
 print("a\n",a)
 ```
 
-#### 7.产生所有元素都是0或1的array
+### 7.产生所有元素都是0或1的array
 
 ```
 a = np.zeros([5,2],dtype = float) #产生所有都为0的array
@@ -1510,7 +1510,7 @@ b = np.ones([5,2],dtype = float) #产生所有都为1的array
 print(b)
 ```
 
-#### 8.eye函数
+### 8.eye函数
 
 产生一个单位矩阵
 
@@ -1524,7 +1524,7 @@ b = np.eye(3,5) #可以不一定是方阵，那么能搞到1的就会搞到1
 print(b)
 ```
 
-#### 9.diag函数
+### 9.diag函数
 
 传入一个1D array，会转换成一个n*n矩阵
 
@@ -1550,7 +1550,7 @@ a = np.diag([1,2,3],1) #将会产生一个4*4的矩阵，对角线得元素是0�
 b = np.diag([1,2,3],-1) #将会产生一个4*4矩阵，对角线的元素是0，下对角线的才是1，2，3，其实就是相当于在第一行全加了0
 ```
 
-#### 10.ndarray
+### 10.ndarray
 
 1. ndarray.ndim 
 
@@ -1585,7 +1585,7 @@ print(type(a))
 ``` 
 
 
-#### 11.基本的操作符
+### 11.基本的操作符
 
 若用基本操作符，是对每个元素都进行操作，并且返回一个新的array
 
@@ -1599,7 +1599,7 @@ print(10*np.sin(a))
 print(a<35)
 ```
 
-#### 12.叉乘和点乘
+### 12.叉乘和点乘
 
 ```
 A = np.array([[1,1],[0,1]])
@@ -1609,7 +1609,7 @@ print(A@B) #矩阵乘法
 print(A.dot(B)) #也是矩阵乘法
 ```
 
-#### 13.全局函数
+### 13.全局函数
 
 ```
 A = np.arange(3)
@@ -1628,7 +1628,7 @@ print(np.sum(a,axis=0,keepdims=True)) #求和的时候保持维度不变，也�
 print(np.sum(a,axis=0,keepdims=False)) #求和的时候不保持维度不变，默认情况就是false
 ```
 
-#### 14.index, slicing and iterating
+### 14.index, slicing and iterating
 
 ```
 a = np.arange(15).reshape(3,5)
@@ -1651,7 +1651,7 @@ x[1,2,...] 相当于 x[1,2,:,:,:] #假设x是一个五维array
 x[4,...,5,:] 相当于 x[4,:,:,5,:]
 ```
 
-#### 15.遍历
+### 15.遍历
 
 ```
 a = np.arange(15).reshape(3,5)
@@ -1667,7 +1667,7 @@ for ele in a.flat:
 	print(ele) 
 ```
 
-#### 14.reshape（一维变高维）
+### 14.reshape（一维变高维）
 
 ```
 a = np.arange(15)
@@ -1683,21 +1683,21 @@ a = np.arange(12).reshape(3,-1)
 print(a.shape)
 ```
 
-#### 15.把more-D 搞成1D（用ravel函数）
+### 15.把more-D 搞成1D（用ravel函数）
 
 ```
 a = np.arange(15).reshape(3,5)
 print(a.ravel()) #变成1D array
 ```
 
-#### 16.转置
+### 16.转置
 
 ```
 a = np.arange(15).reshape(3,5)
 print(a.T) #转置
 ```
 
-#### 17.resize
+### 17.resize
 
 将会直接改变a
 
@@ -1708,7 +1708,7 @@ a.resize(2,6) #这种用法将会改变a
 print(a.shape)
 ```
 
-#### 18.stacking（将数组组合起来）
+### 18.stacking（将数组组合起来）
 
 vstack 意味着垂直堆起来
 hstack 意味着水平堆起来
@@ -1721,7 +1721,7 @@ c = np.vstack((a,b)) #垂直堆起来（第二个放在第一个下面）
 d = np.hstack((a,b)) #水平堆起来（第二个放在第一个旁边）
 ```
 
-#### 19.advanced index
+### 19.advanced index
 
 
 ```
@@ -1765,7 +1765,7 @@ b = a > 4
 a[b] #这里出来的是1D array
 ```
 
-#### 20.做一些线性代数的操作
+### 20.做一些线性代数的操作
 
 ```
 A = np.array([[6,1,1],[4,-2,5],[2,8,7]])
@@ -1803,11 +1803,11 @@ print(np.linalg.solve(a,b))
 //2022.04.19
 
 
-### 34.collections
+## 34.collections
 
 > import collections
 
-#### 1.namedtuple
+### 1.namedtuple
 
 > namedtuple(<Name>,<[Names of Values]>)
 
@@ -1836,7 +1836,7 @@ print(titanic.genre) #调用参数
 print(ironman.rating)
 ```
 
-#### 2.从fict里面创建nametuple
+### 2.从fict里面创建nametuple
 
 ```
 from collections import namedtuple
@@ -1846,7 +1846,7 @@ book = namedtuple('book',['price','no_of_pages','author']) #key必须要一样�
 print(book(**dictionary)) #两个星星的意思是把dictionary里面的东西全部传到book里面
 ```
 
-#### 3.Counter
+### 3.Counter
 
 实际上是一个dict，有key和value
 key是element
@@ -1898,7 +1898,7 @@ for c,f in string_count.most_common(3): #此处赋值给两个valuable
 	print(f"{c} appears {f} times")
 ```
 
-#### 4.update和subtract（一加一减）
+### 4.update和subtract（一加一减）
 
 ```
 from collections import Counter #注意这里的c要大写
@@ -1917,7 +1917,7 @@ print(food)
 ```
 
 
-#### 5.ChainMap
+### 5.ChainMap
 
 ```
 from collections import ChainMap
@@ -1966,7 +1966,7 @@ my_dict.maps = reversed(my_dict.maps)
 print(my_dict)
 ```
 
-#### 6.defaultdict
+### 6.defaultdict
 避免访问到了不存在的值
 ```
 from collections import defaultdict
@@ -1978,7 +1978,7 @@ def_dict["fruit"] = "orange"
 print(def_dict["shit"]) #这里会返回value absent，因为这个key不存在
 ```
 
-#### 7.OrderedDict
+### 7.OrderedDict
 
 保持顺序不改变
 
@@ -2005,9 +2005,9 @@ for key, value in ordered_vehicle.items():
     print(key, value)
 ```
 
-### 35.文件操作
+## 35.文件操作
 
-#### 1.读取操作
+### 1.读取操作
 
 ```
 with open("pi.txt") as file_object: #file_object是变量名，可以改成任意想要的
@@ -2035,5 +2035,93 @@ with open(file_path) as a:
 	contents = a.read()
 	
 print(contents)
+```
+
+// 2022.04.26
+
+### （补充内容）zip
+
+```
+x = [1,2,3]
+y = [4,5,6]
+for i,j in zip (x,y):
+	print(f"{i},{j}")
+```
+
+### 2.一行行的读取文件
+
+```
+file_name = "pi.txt"
+with open(file_name) as file:
+	for line in file:
+		print(line)
+```
+
+### 3.将每一行转换成list
+
+```
+file_name = "pi.txt"
+with open(file_name) as file:
+	lines = file.readlines()
+
+for line in lines:
+	print(line.rstrip())
+```
+
+### 4.写入一个空文件
+
+```
+file = "p.txt"
+with open(file,'w') as file:
+	file.write("I love you.")
+```
+
+如果要换行，记得要再最后加入\n
+
+```
+file = "p.txt"
+with open(file,'w') as file:
+	file.write("I love you.\n")
+	file.write("I hate you.\n")
+```
+
+注意这样写会直接覆盖掉原来的文件
+
+
+### 5.append sth
+
+```
+file = "p.txt"
+with open(file,'a') as file: #这里是a，append mode
+	file.write("I love you.\n")
+	file.write("I hate you.\n")
+```
+
+## 36.Json
+> import json
+### 1.写入一个json
+
+```
+import json
+dict = {
+	"name" : "shit",
+	"fuck" : 2333
+}
+
+json = json.dumps(dict,indent=2) #后一个参数是指有多少个元素
+
+with open("test.json","w") as a:
+	a.write(json)
+```
+
+### 2.读取json文件
+
+```
+import json
+with open("test.json","r") as a:
+	json =  json.load(a)
+
+print(json)
+print(type(json)) #类型
 ```
 
