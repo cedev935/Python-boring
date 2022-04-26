@@ -2125,3 +2125,207 @@ print(json)
 print(type(json)) #类型
 ```
 
+## 37.CSV
+
+> import csv
+
+### 1.写csv
+
+```
+import csv
+headers = ["name","age","profession"]
+data = [
+	["jack",23,"Docter"],
+	["Milter",28,"Engineer"]
+]
+	
+with open("people.csv","w") as f:
+# with open("people.csv","w",newline='') as f: 有的编译器会在一行后面加上空行，这样子可以避免空行 
+	writer = csv.writer(f,delimiter = "\t") #\t指的是用什么来进行分割，如果不加上的话就会默认用逗号分隔
+	writer.writerow(headers) #先把标题写上
+	writer.writerows(data) #再把data写上
+```
+
+
+### 2.读csv
+
+```
+import csv
+with open("people.csv","r",)as file:
+	reader = csv.reader(file,delimiter = "\t")
+	cnt = 0 #从这一行往下的作用是不要把header print出来
+	for row in reader:
+		if cnt >0:
+			print(row)
+		cnt +=1
+```
+
+### 3.读csv，然后成为dictionary
+
+```
+import csv
+with open("people.csv","r") as file:
+	csv = csv.DictReader(file,delimiter = "\t") #就是这里的函数稍稍有点变化
+	for row in csv:
+		print(row)
+```
+
+### 4.写csv，作为dictionary
+
+```
+import csv
+with open("test.csv","w") as file:
+	fieldnames = ["player_name","fide"]
+	writer = csv.DictWriter(file,fieldnames=fieldnames) #前一个fieldnames是固定参数，后一个就是上一个变量名字
+	writer.writeheader()
+	writer.writerow({"player_name":"a","fide":"b"})
+```
+
+## 38.pandas
+
+> import pandas
+
+### 1.创建一个dataframe
+
+```
+import pandas as pd
+df = pd.DataFrame([[1,2],[4,5],[7,8]], #这是数据，就相当于矩阵一样排列
+	index=["cobra","viper","sidewinder"], #index是不可以改变的，相当于是表格竖着的那一堆
+	columns = ["max_speed","shield"]) #column也是不可以改变的，相当于是表格横着的那一堆
+
+print(df)
+
+```
+
+输出如下
+
+```
+            max_speed  shield
+cobra               1       2
+viper               4       5
+sidewinder          7       8
+```
+
+### 2.使用list创建dataframe
+
+```
+import pandas as pd
+lst = ["Apple","Peach","Pear"]
+
+df = pd.DataFrame(lst) #这样子index和column都是默认的，是一些数字，比如0，1，2
+print(df)
+```
+
+### 3.使用字典形式，加上list来创建dataframe
+
+```
+import pandas as pd
+data = {"Name":["Tom","nick","shit","bitch"],
+		"Age":[20,14,21,23]} #后面的字典会直接竖着排列在Name的下面
+		
+df = pd.DataFrame(data)
+
+print(df)
+```
+
+### 4.只是读取其中的一些列
+
+```
+import pandas as pd
+data = {"Name":["Tom","nick","shit","bitch"],
+		"Age":[20,14,21,23], #后面的字典会直接竖着排列在Name的下面
+		"Sex":["Boy","Boy","Girl","Girl"]}
+		
+df = pd.DataFrame(data)
+print(df[["Name","Sex"]]) #但会的也是一个dataframe，row给的还是默认的名字
+
+```
+
+### 5.处理行和列
+
+```
+import pandas as pd
+df = pd.DataFrame([[1,2],[4,5],[7,8]], #这是数据，就相当于矩阵一样排列
+	index=["cobra","viper","sidewinder"], #index是不可以改变的，相当于是表格竖着的那一堆
+	columns = ["max_speed","shield"]) #column也是不可以改变的，相当于是表格横着的那一堆
+
+print(df)
+print(df.loc["cobra"]) #使用名字来取，返回的是cobra对应那一行column名字和值
+print(df.iloc[0]) #使用位置来取，如果要去第二行，改为1
+```
+
+### 6.处理丢失的数据
+
+> np.nan #表示的是not a number，来代表这里没有数据
+
+> df.isnull() 函数来判断数据是否缺少
+
+```
+import pandas as pd
+import numpy as np
+dict = {"First Score":[100,90,np.nan,95],
+        "Second Score":[30,45,56,np.nan],
+        "Third Score":[np.nan,234,234,54]}
+df = pd.DataFrame(dict)
+df.isnull() 
+```
+
+把所有丢失的数据补上
+
+```
+print(df.fillna(0)) #里面的参数是用什么数字来补充
+print(df.replace(np.nan,0)) #第一个参数是要替换的东西，第二个参数是要用什么来替换
+```
+
+```
+df.dropna() #一行一行的扔掉，会把空数据直接扔掉（这里存疑！！）
+```
+
+### 7.对每一行做操作
+
+```
+import pandas as pd
+data = {"Name":["Tom","nick","shit","bitch"],
+		"Age":[20,14,21,23], #后面的字典会直接竖着排列在Name的下面
+		"Sex":["Boy","Boy","Girl","Girl"]}
+		
+df = pd.DataFrame(data)
+
+for i,j in df.iterrows():
+	print(f"{i}")
+	print=(j)
+	print()
+```
+
+### 8.iteation over columns
+```
+import pandas as pd
+data = {"Name":["Tom","nick","shit","bitch"],
+		"Age":[20,14,21,23], #后面的字典会直接竖着排列在Name的下面
+		"Sex":["Boy","Boy","Girl","Girl"]}
+		
+df = pd.DataFrame(data)
+column = list(df)
+
+for i in column:
+	print(df[i])
+	print("\n")
+```
+
+### 9.从csv文件中读出来作为panda
+
+```
+impoer pandas as pd
+pd.read_csv("test.csv",delimiter="\t")
+```
+
+### 10.把panda的dataframe写到csv文件
+
+```
+import pandas as pd
+df = pd.DataFrame([["Jack",24],["Rose",22]],columns = ["Name","Age"])
+df.to_csv("test.csv")
+```
+
+
+//Todo:记得找时间重复看8-10，可能有错误
