@@ -2329,3 +2329,513 @@ df.to_csv("test.csv")
 
 
 //Todo:记得找时间重复看8-10，可能有错误
+
+//2022.05.03
+
+### 11.从numpy创建pandas
+
+```
+import pandas as pd
+import numpy as np
+
+data = np.array(["Apple","Pear","Peach"])
+ser = pd.Series(data)
+print(ser[:2])
+```
+
+可以使用index进行访问
+
+```
+import pandas as pd
+import numpy as np
+
+data = np.array(["Apple","Pear","Peach"])
+ser = pd.Series(data,index=[1,4,5]) #指定index
+print(ser[1])
+
+data = np.array(["Apple","Pear","Peach"])
+ser = pd.Series(data,index=["red","yellow","pink"]) #指定index，一一对应
+print(ser["red"])
+```
+
+### 12.从序列中选择数据
+
+```
+import pandas as pd
+import numpy as np
+
+data = np.array(["Apple","Pear","Peach","Banana","Melon"])
+ser = pd.Series(data,index=[1,4,5,8,3])
+print(ser.head(3)) #取前三个，不管index怎么样
+print(ser[1:3]) #从第二个取到第三个（第四个不包含）
+print(ser.loc[3]) #使用index的方式取，在这里就是melon
+print(ser.iloc[3]) #取得是第四个，是按照顺序取，不管index
+```
+
+## 39.matplotilb
+
+### 1.开始x轴和y轴描点
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+
+plt.plot(xpoints,ypoints)
+plt.show()
+```
+
+### 2.默认x值
+自动补全，从0，1，2，3，4... 
+
+这里只有两个参数，所以只会补成0-1
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+
+plt.plot(ypoints)
+plt.show()
+```
+
+### 3.marker
+
+指定每个点的形状
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+
+plt.plot(xpoints,ypoints,marker="o")
+plt.show()
+```
+
+附录
+
+![image](https://user-images.githubusercontent.com/16254644/166445501-583dc1b4-1620-40a1-aaac-3320818575cd.png)
+
+### 4.linestyle
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+
+plt.plot(xpoints,ypoints,ls="-.")
+plt.show()
+```
+
+附录：
+
+![image](https://user-images.githubusercontent.com/16254644/166445698-a5597922-7009-404a-96b8-f8a4a5d3af15.png)
+
+
+### 5.可以改变颜色
+
+附录在上面
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+
+plt.plot(xpoints,ypoints,c="r")
+plt.show()
+```
+
+### 6.line width
+改变线条的粗细
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+
+plt.plot(xpoints,ypoints,linewidth="20.5")
+plt.show()
+```
+
+### 7.多个线条
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+y1 = np.array([3,8,1,10])
+y2 = np.array([6,2,7,11])
+
+plt.plot(y1)
+plt.plot(y2)
+
+plt.show()
+```
+ 
+### 8.format strings
+
+> marker|line|color 这是语法
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+
+plt.plot(xpoints,ypoints,"o:r") #此处
+plt.show()
+```
+
+### 9.label
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+plt.plot(xpoints,ypoints)
+plt.xlabel("Aver") #key
+plt.ylabel("HHHHH") #key
+plt.show()
+```
+
+### 10.创建一个title
+
+可以使用title()
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+plt.plot(xpoints,ypoints)
+plt.xlabel("Aver") 
+plt.ylabel("HHHHH") 
+plt.title("big brother is watching you") #key
+plt.show()
+```
+
+### 11.更改字体
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+
+font1 = {"family":"serif","color":"blue","size":20} #key
+font2 = {"family":"serif","color":"darkred","size":15} #key
+
+plt.plot(xpoints,ypoints)
+plt.xlabel("Aver",fontdict = font1) #key
+plt.ylabel("HHHHH",fontdict = font1)#key 
+plt.title("big brother is watching you",fontdict = font2) #key
+
+plt.show()
+```
+
+### 12.更改标题的位置
+
+参数有 left right center(默认)
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+plt.plot(xpoints,ypoints)
+plt.xlabel("Aver") 
+plt.ylabel("HHHHH") 
+plt.title("big brother is watching you",loc = "left") #key
+plt.show()
+```
+
+### 13.使用grid函数
+
+该函数会画出坐标格
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+
+plt.plot(xpoints,ypoints)
+
+plt.xlabel("Aver") 
+plt.ylabel("HHHHH") 
+plt.title("big brother is watching you") 
+
+plt.grid() #key
+plt.show()
+```
+
+### 14.使用grid函数只画横线或者竖线
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+
+plt.plot(xpoints,ypoints)
+
+plt.xlabel("Aver") 
+plt.ylabel("HHHHH") 
+plt.title("big brother is watching you") 
+
+plt.grid(axis = "x") #只需要竖着的线
+plt.show()
+```
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+
+plt.plot(xpoints,ypoints)
+
+plt.xlabel("Aver") 
+plt.ylabel("HHHHH") 
+plt.title("big brother is watching you") 
+
+plt.grid(axis = "y") #只需要横着的线
+plt.show()
+```
+
+### 15.更改坐标格的各种属性
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+xpoints = np.array([0,6])
+ypoints = np.array([0,250])
+
+plt.plot(xpoints,ypoints)
+
+plt.xlabel("Aver") 
+plt.ylabel("HHHHH") 
+plt.title("big brother is watching you") 
+
+plt.grid(color = "green",linestyle = "--", linewidth = 0.5) #更改各种属性
+plt.show()
+```
+
+### 16.显示多个点
+
+使用subplot()函数
+rows|column|position （可能是错的）
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+#plot1
+
+x = np.array([0,1,2,3])
+y = np.array([3,8,1,10])
+
+plt.subplot(1,2,1) # 1行2列，排在第一个
+plt.plot(x,y)
+
+#plot2
+
+x = np.array([0,1,2,3])
+y = np.array([10,20,30,40])
+
+plt.subplot(1,2,2)# 1行2列，排在第二个
+plt.plot(x,y)
+
+plt.show()
+```
+
+另外一个例子
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+#plot1
+
+x = np.array([0,1,2,3])
+y = np.array([3,8,1,10])
+
+plt.subplot(2,2,1) # 2行2列，排在第一象限
+plt.plot(x,y)
+
+#plot2
+
+x = np.array([0,1,2,3])
+y = np.array([10,20,30,40])
+
+plt.subplot(2,2,2)# 2行2列，排在第二象限
+plt.plot(x,y)
+
+#plot3
+
+x = np.array([0,1,2,3])
+y = np.array([10,20,30,12312424423234423])
+
+plt.subplot(2,2,3)# 2行2列，排在第三象限
+plt.plot(x,y)
+
+#plot4 
+x = np.array([0,1,2,3])
+y = np.array([10,20,30,23])
+
+plt.subplot(2,2,4)# 2行2列，排在第四象限
+plt.plot(x,y)
+
+
+
+plt.show()
+```
+
+
+如果要用title，要紧跟在这个函数后面
+
+### 17.super title
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+#plot1
+
+x = np.array([0,1,2,3])
+y = np.array([3,8,1,10])
+
+plt.subplot(2,2,1)
+plt.plot(x,y)
+
+#plot2
+
+x = np.array([0,1,2,3])
+y = np.array([10,20,30,40])
+
+plt.subplot(2,2,2)
+plt.plot(x,y)
+
+#plot3
+
+x = np.array([0,1,2,3])
+y = np.array([10,20,30,12312424423234423])
+
+plt.subplot(2,2,3)
+plt.plot(x,y)
+
+#plot4 
+x = np.array([0,1,2,3])
+y = np.array([10,20,30,23])
+
+plt.subplot(2,2,4)
+plt.plot(x,y)
+
+plt.suptitle("FUCK YOU") #key
+plt.show()
+```
+
+### 18.绘制散点图
+
+使用 scatter()函数
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.array([3,2,5,6,3245,436,3,234,64,34,23])
+y = np.array([3,42,543,123,54,65,234,65,12,43,12])
+
+plt.scatter(x,y)
+plt.show()
+```
+
+### 19.绘制多个散点图在一个图里
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+# 1
+x = np.array([3,2,5,6,3245,436,3,234,64,34,23])
+y = np.array([3,42,543,123,54,65,234,65,12,43,12])
+plt.scatter(x,y)
+
+# 2
+x = np.array([2,12,234,25,2,123,234])
+y = np.array([213,234,5,4,2,12,243])
+plt.scatter(x,y)
+plt.show()
+```
+
+### 20.给每个点不同的颜色看看
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.array([3,2,5,6,3245,436,3,234,64,34,23])
+y = np.array([3,42,543,123,54,65,234,65,12,43,12])
+
+colors = np.array(["red","blue","green","blue","green","blue","green","blue","green","blue","green"]) #颜色一定要对应多
+
+plt.scatter(x,y,c=colors) #key
+plt.show()
+```
+
+### 21.可以使用colormaps
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.array([3,2,5,6,3245,436,3,234,64,34,23])
+y = np.array([3,42,543,123,54,65,234,65,12,43,12])
+
+colors = np.array([0,10,20,30,40,50,60,70,80,90,100]) #key
+
+plt.scatter(x,y,c=colors,cmap = "viridis") #key
+plt.show()
+```
+
+### 22.更改点的大小
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.array([3,2,5,6,3245,436,3,234,64,34,23])
+y = np.array([3,42,543,123,54,65,234,65,12,43,12])
+
+sizes = np.array([233,10,20,30,40,50,60,70,80,90,100]) #注意个数要一样多
+
+plt.scatter(x,y,s=sizes) #key
+plt.show()
+```
+
+### 23.alpha
+更改透明度
+```
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.array([3,2,5,6,3245,436,3,234,64,34,23])
+y = np.array([3,42,543,123,54,65,234,65,12,43,12])
+
+sizes = np.array([233,10,20,30,40,50,60,70,80,90,100])
+
+plt.scatter(x,y,s=sizes,alpha = 0.5) #key
+plt.show()
+```
+
