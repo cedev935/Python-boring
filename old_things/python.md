@@ -2839,3 +2839,118 @@ plt.scatter(x,y,s=sizes,alpha = 0.5) #key
 plt.show()
 ```
 
+// 2022.05.10
+
+## 40.面向对象编程
+
+### 1.定义一个类
+
+```
+class Coordinate(object): // coordinate是类的名字，object是这个类的父类
+	#define attributes here
+```
+
+### 2.初始化类： __init__
+
+可以用来初始化一些参数
+
+```
+class Coordinate(object):
+    def __init__(self, x, y): #第一个参数必须是self
+        self.x = x
+        self.y = y
+```
+
+### 3.使用类
+
+```
+class Coordinate(object):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+		
+c = Coordinate(3,4)
+origin = Coordinate(0,0)
+print(c.x)
+print(origin.x) #注意使用"."来进行访问，不要使用()
+```
+
+self的参数不要自己串，python会自动传递
+
+### 4.实例：计算两个坐标之间的距离
+
+```
+class Coordinate(object):
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
+	def distance(self, other): #第一个参数一定是self
+		x_diff_sq = (self.x-other.x)**2
+		y_diff_sq = (self.y-other.y)**2
+		return (x_diff_sq + y_diff_sq)**0.5
+```
+
+具体使用
+
+#### 1.传统方法
+
+```
+c = Coordinate(3,4)
+zero = Coordinate(0,0)
+print(c.distance(zero))
+```
+
+#### 2.高级方法（不常用）
+
+```
+c = Coordinate(3,4)
+zero = Coordinate(0,0)
+print(Coordinate.distance(c, zero))
+```
+
+### 5.可以自定义 __str__
+
+```
+def __str__(self):
+	return "<"+str(self.x)+","+str(self.y)+">"
+```
+
+### 6.isinstance()
+
+检查某个对象是否是这个类的实例
+
+```
+print(isinstance(c,Coordinate))
+```
+
+### 7.定义一些基本的操作
+
+```
+__add__(self, other) -> self + other
+__sub__(self, other) -> self - other
+__eq__(self, other) -> self == other
+__lt__(self, other) -> self < other
+__len__(self) -> len(self)
+__str__(self) -> print self
+```
+
+### 8.geter和seter
+
+```
+class Animal(object):
+	def __init__(self, age):
+		self.age = age
+		self.name = None
+	def get_age(self):
+		return self.age
+	def get_name(self):
+		return self.name
+	def set_age(self, newage):
+		self.age = newage
+	def set_name(self, newname=""):
+		self.name = newname
+	def __str__(self):
+		return "animal:"+str(self.name)+":"+str(self.age)
+
+```
+
