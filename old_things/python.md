@@ -2839,6 +2839,7 @@ plt.scatter(x,y,s=sizes,alpha = 0.5) #key
 plt.show()
 ```
 
+### 24.
 // 2022.05.10
 
 ## 40.面向对象编程
@@ -2954,3 +2955,173 @@ class Animal(object):
 
 ```
 
+// 2022.05.17
+
+期末考试题型：单选题，判断题，完成任务（写代码）题
+
+
+### 9.一些例子来说明重定义内置参数
+
+例子1（add）:
+```
+class Coordinate(object):
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
+	def __str__(self):
+		return "<"+str(self.x)+","+str(self.y)+">"
+	def __add__(self, other):
+		return Coordinate(self.x + other.x,self.y + other.y)
+```
+
+具体使用
+
+```
+c = Coordinate(3,4)
+d = Coordinate(5,6)
+e = c + d
+print(e)
+```
+
+### 10.两种方法访问参数
+
+```
+a.age
+a.get_age()
+```
+
+### 11.可以设置默认参数
+
+```
+def set_name(self, newname=""):
+	self.name = newname
+```
+### 12.从属关系
+
+parent class：上级，父类
+child class：下级，子类
+
+### 13.子类
+
+```
+#以下是父类
+class Animal(object):
+	def __init__(self, age):
+		self.age = age
+		self.name = None
+	def get_age(self):
+		return self.age
+	def get_name(self):
+		return self.name
+	def set_age(self, newage):
+		self.age = newage
+	def set_name(self, newname=""):
+		self.name = newname
+	def __str__(self):
+		return "animal:"+str(self.name)+":"+str(self.age)
+#以下是子类
+class Cat(Animal):
+	def speak(self):
+		print("meow")
+	def __str__(self): #这里进行了override
+		return "cat:"+str(self.name)+":"+str(self.age)
+```
+
+子类若没有__init__，则会用父类的init
+
+### 14.关于子类的实例
+先决条件：Animal-Person-Student
+```
+# person类
+class Person(Animal):
+	def __init__(self, name, age):
+		Animal.__init__(self, age)
+		self.set_name(name)
+		self.friends = []
+	def get_friends(self):
+		return self.friends
+	def add_friend(self, fname):
+		if fname not in self.friends:
+			self.friends.append(fname)
+	def speak(self):
+		print("hello")
+	def age_diff(self, other):
+		diff = self.age - other.age
+		print(abs(diff), "year difference")
+	def __str__(self):
+		return "person:"+str(self.name)+":"+str(self.age)
+```
+
+```
+# student类
+import random
+class Student(Person):
+	def __init__(self, name, age, major=None):
+		Person.__init__(self, name, age)
+		self.major = major
+	def change_major(self, major):
+		self.major = major
+	def speak(self):
+		r = random.random()
+		if r < 0.25:
+			print("i have homework")
+		elif 0.25 <= r < 0.5:
+			print("i need sleep")
+		elif 0.5 <= r < 0.75:
+			print("i should eat")
+		else:
+			print("i am watching tv")
+	def __str__(self):
+		return "student:"+str(self.name)+":"+str(self.age)+":"+str(self.major)
+```
+
+### 15.CLASS VARIABLES 
+
+在class后面加上一个变量，是可以修改的
+
+具体例子如下
+```
+class Rabbit(Animal):
+	tag = 1
+	def __init__(self, age, parent1=None, parent2=None):
+		Animal.__init__(self, age)
+		self.parent1 = parent1
+		self.parent2 = parent2
+		self.rid = Rabbit.tag
+		Rabbit.tag += 1 #注意，这是不属于self的，而是属于rabbit类的
+``` 
+
+一个更切合实际的例子如下
+
+```
+class Rabbit(Animal):
+	tag = 1
+	def __init__(self, age, parent1=None, parent2=None):
+		Animal.__init__(self, age)
+		self.parent1 = parent1
+		self.parent2 = parent2
+		self.rid = Rabbit.tag
+		Rabbit.tag += 1
+	def get_rid(self):
+		return str(self.rid).zfill(3) #zfill在这里强行把它转化为三位数，例如1就会转化为001
+	def get_parent1(self):
+		return self.parent1
+	def get_parent2(self):
+		return self.parent2
+```
+
+### 16.重定义add
+
+```
+def __add__(self, other):
+# returning object of same type as this class
+	return Rabbit(0, self, other)
+```
+
+### 17.可以判断两个是否相等
+
+```
+def __eq__(self, other):
+	parents_same = self.parent1.rid == other.parent1.rid and self.parent2.rid == other.parent2.rid
+	parents_opposite = self.parent2.rid == other.parent1.rid and self.parent1.rid == other.parent2.rid
+	return parents_same or parents_opposite
