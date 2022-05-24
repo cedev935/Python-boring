@@ -3125,3 +3125,88 @@ def __eq__(self, other):
 	parents_same = self.parent1.rid == other.parent1.rid and self.parent2.rid == other.parent2.rid
 	parents_opposite = self.parent2.rid == other.parent1.rid and self.parent1.rid == other.parent2.rid
 	return parents_same or parents_opposite
+```
+
+// 2022.05.24
+
+## 41.Debug
+
+### 1.try和expect语句
+
+例子：
+
+```
+try:
+	a = int(input("Tell me one number:"))
+	b = int(input("Tell me another number:"))
+	print(a/b)
+except:
+	print("Bug in user input.")
+```
+
+还可以加入expect的错误参数
+
+```
+try:
+	a = int(input("Tell me one number: "))
+	b = int(input("Tell me another number: "))
+	print("a/b = ", a/b)
+	print("a+b = ", a+b)
+except ValueError: #这里传入错误类型
+	print("Could not convert to a number.")
+except ZeroDivisionError: #这里传入错误类型
+	print("Can't divide by zero")
+except:
+	print("Something went very wrong.")
+```
+
+### 2.try，except，else，finally
+
+具体例子：
+```
+def divide(x, y):
+	try:
+		result = x // y
+	except ZeroDivisionError: #有错误就会执行这个
+		print("Sorry ! You are dividing by zero ")
+	else: #没错误就会执行这个
+		print("Yeah ! Your answer is :", result)
+	finally: #不管怎么样都会执行这个
+		print('This is always executed')
+```
+
+### 3.可以使用raise exception来对进行报错
+语法：
+
+> raise <exceptionName>(<arguments>)
+
+ValueError 是错误类型，括号内是报错内容
+
+```
+raise Exception("descriptive string")
+```
+
+具体例子
+
+```
+def get_ratios(L1, L2):
+	ratios = []
+	for index in range(len(L1)):
+		try:
+			ratios.append(L1[index]/L2[index])
+		except ZeroDivisionError:
+			ratios.append(float('nan')) #nan = not a number
+		except:
+			raise ValueError('get_ratios called with bad arg')
+	return ratios
+```
+
+### 4.assert
+
+```
+def avg(grades):
+	assert len(grades) != 0, 'no grades data' #逗号前面是条件，如果条件是正确的，就会继续，如果是错的（不符合），程序就会在这里停止，然后把后面一句话print出来
+	return sum(grades)/len(grades)
+```
+
+
